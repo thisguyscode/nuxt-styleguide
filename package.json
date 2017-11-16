@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "inuitcss": "^6.0.0-beta.5",
     "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
