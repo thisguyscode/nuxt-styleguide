@@ -1,58 +1,31 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        starter-styleguide
-      </h1>
-      <h2 class="subtitle">
-        Opinionated Nuxt starter with styleguide
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section :class="$style.base">
+    <uiDemo/>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import uiDemo from '~/components/ui-demo.vue'
 
 export default {
   components: {
-    Logo
+    uiDemo
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" module>
+
+/* Dependencies
+========================================================================== */
+@value c-test "sass-loader!~/assets/styles/test.scss";
+
+
+
+/* Base class
+========================================================================== */
+.base {
+  composes: o-box o-box--huge from c-test;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

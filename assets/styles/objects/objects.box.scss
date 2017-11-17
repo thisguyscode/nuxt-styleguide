@@ -1,0 +1,59 @@
+/* ==========================================================================
+   # BOX
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// SETTINGS
+@import "node_modules/inuitcss/settings/settings.core";
+
+// TOOLS
+@import "node_modules/inuitcss/tools/tools.clearfix";
+
+// OBJECTS
+@import "node_modules/inuitcss/objects/objects.box";
+
+
+
+
+
+/* Base class
+========================================================================== */
+
+.box {
+  @extend .o-box;
+}
+
+
+
+
+
+/* Size modifiers
+========================================================================== */
+
+.box--tiny {
+  @extend .o-box--tiny;
+}
+
+
+.box--small {
+  @extend .o-box--small;
+}
+
+.box--large {
+  @extend .o-box--large;
+}
+
+
+.box--huge {
+  @extend .o-box--huge;
+}
+
+

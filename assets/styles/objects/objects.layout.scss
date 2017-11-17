@@ -1,0 +1,66 @@
+/* ==========================================================================
+   # LAYOUT
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// SETTINGS
+@import "node_modules/inuitcss/settings/settings.core";
+
+// OBJECTS
+@import "node_modules/inuitcss/objects/objects.layout";
+
+
+
+
+
+/* Base class
+========================================================================== */
+.layout {
+  @extend .o-layout;
+}
+
+
+
+
+
+/* Child classes
+========================================================================== */
+.layout__item {
+  @extend .o-layout__item;
+}
+
+
+
+
+
+/* Size modifiers
+========================================================================== */
+
+.layout--tiny {
+  @extend .o-layout--tiny;
+}
+
+
+.layout--small {
+  @extend .o-layout--small;
+}
+
+
+.layout--large {
+  @extend .o-layout--large;
+}
+
+
+.layout--huge {
+  @extend .o-layout--huge;
+}
+
+

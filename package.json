@@ -16,6 +16,7 @@
     "inuitcss": "^6.0.0-beta.5",
     "node-sass": "^4.6.1",
     "nuxt": "^1.0.0-rc11",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {

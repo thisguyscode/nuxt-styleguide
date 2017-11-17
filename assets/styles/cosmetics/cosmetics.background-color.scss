@@ -1,0 +1,16 @@
+$test: #000;
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.black {
+  background-color: $test;
+  color: white;
+}
+
+.orange {
+  background-color: orange;
+  color: black;
+}
