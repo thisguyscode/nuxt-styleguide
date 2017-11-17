@@ -1,0 +1,40 @@
+/* ==========================================================================
+   # SIZES
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+// NONE
+
+
+
+
+
+/* Values
+========================================================================== */
+
+$px-font-size:					16; // Pixels
+$px-line-height:				32; // Pixels
+
+
+// ! ----------
+// ! Don't change these variables!
+// ! These are used to create the new $rhythm based on $px-font-size and $px-line-height.
+$base-font-size:				  ($px-font-size / 16) * 1rem; // ! Don't change this!
+$base-line-height:				($px-line-height / $px-font-size); // ! Don't change this!
+$rhythm:						      ($base-font-size * $base-line-height); // ! Don't change this!
+// ! ----------
+
+
+$unit-xs:   $rhythm * 0.25;
+$unit-sm:   $rhythm * 0.5;
+$unit-md:   $rhythm * 1;
+$unit-lg:   $rhythm * 1.5;
+$unit-xl:   $rhythm * 2;
+$unit-xxl:  $rhythm * 3;

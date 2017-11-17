@@ -1,0 +1,54 @@
+/* ==========================================================================
+   # BUTTON
+========================================================================== */
+
+/**
+ *  In most cases should be used in conjunction with cosmetics.button
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.sizes";
+@import "~assets/styles/values/values.typography";
+
+
+
+
+
+/* Base class
+========================================================================== */
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  padding: $unit-xs $unit-md;
+  font-family: $font-display;
+  font-size: $font-size-xs;
+}
+
+
+
+
+
+/* Size modifiers
+========================================================================== */
+
+.button--small {
+  padding: $unit-xs $unit-md;
+}
+
+
+.button--large {
+  padding: $unit-xs $unit-md;
+}
+
+
+.button--huge {
+  padding: $unit-xs $unit-md;
+}
+
+

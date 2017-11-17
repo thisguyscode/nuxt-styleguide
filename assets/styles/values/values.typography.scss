@@ -1,0 +1,128 @@
+/* ==========================================================================
+   # SIZES
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.sizes";
+
+// TOOLS
+@import "~assets/styles/tools/tools.calc-font-size";
+
+
+
+
+/* Modular scale
+========================================================================== */
+
+// Options for modular scale
+$modular-scales: (
+	'minor-second': 1.067,
+	'major-second': 1.125,
+	'minor-third': 1.2,
+	'major-third': 1.25,
+	'perfect-fourth': 1.333,
+	'augmented-fourth': 1.414,
+	'perfect-fifth': 1.5,
+	'minor-sixth': 1.6,
+	'golden-section': 1.618,
+	'major-sixth': 1.667,
+	'minor-seventh': 1.778,
+	'major-seventh': 1.875,
+	'octave': 2,
+	'major-tenth': 2.5,
+	'major-eleventh': 2.667,
+	'major-twelfth': 3,
+	'double-octave': 4
+);
+
+// Selected modular scale
+$modular-scale: 'major-second';
+
+
+
+
+/* Family / Stack
+========================================================================== */
+
+$font-display:				"SF Pro Display", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Helvetica", "Lucida Grande", -apple-system, BlinkMacSystemFont, "Trebuchet MS", sans-serif;
+$font-body:				    "SF Pro Text", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Helvetica", "Lucida Grande", -apple-system, BlinkMacSystemFont, "Trebuchet MS", sans-serif;
+$font-mono:						'Courier New', monospace;
+
+
+// Set the cap values for the most likely font in stack?
+// To get the cap height: zoom to 500% in your browser and adjust these values.
+$cap-font-display:			0.1em;
+$cap-font-body:					0.067em;
+$cap-font-mono:					0.25em;
+
+
+
+
+
+/* Sizes
+========================================================================== */
+
+/**
+ *  1. Create a variable map
+ *  2. Represents a skipped step in the modular scale iteration
+ */
+
+$font-sizes: (
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  '--skip-1--', /*[2]*/
+  'xl',
+  '--skip-1--', /*[2]*/
+  '--skip-1--', /*[2]*/
+  '--skip-1--', /*[2]*/
+  'xxl',
+  '--skip-1--', /*[2]*/
+  '--skip-1--', /*[2]*/
+  'xxxl',
+  '--skip-1--', /*[2]*/
+  'xxxxl');
+
+$font-size-default:		  'lg'; // Starting size of the modular scale
+
+$font-sizes:					  calc-font-sizes($modular-scale, $font-sizes, $font-size-default);
+
+$font-size-xs:					map-get($font-sizes, xs);
+$font-size-sm:					map-get($font-sizes, sm);
+$font-size-md:					map-get($font-sizes, md);
+$font-size-lg:					map-get($font-sizes, lg);
+$font-size-xl:					map-get($font-sizes, xl);
+$font-size-xxl:					map-get($font-sizes, xxl);
+$font-size-xxxl:				map-get($font-sizes, xxxl);
+$font-size-xxxxl:				map-get($font-sizes, xxxxl);
+
+
+
+
+
+/* Weights
+========================================================================== */
+
+$font-weight-regular: 300;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
+
+
+
+
+
+/* Layout
+========================================================================== */
+
+$heading-trailer:				  $rhythm * 0.5;
+$paragraph-trailer:				$rhythm * 1;
