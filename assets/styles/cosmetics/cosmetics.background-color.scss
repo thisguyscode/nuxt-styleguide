@@ -1,16 +1,48 @@
-$test: #000;
+/* ==========================================================================
+   # BACKGROUND-COLOR
+========================================================================== */
+
+/**
+ *  Apply simple background-color / color combos
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.colors";
+
+
+
+
+
+/* By Color
+========================================================================== */
 
 .blue {
   background-color: blue;
-  color: white;
+  color: $lightest;
 }
 
 .black {
-  background-color: $test;
-  color: white;
+  background-color: $darkest;
+  color: $lightest;
 }
 
 .orange {
   background-color: orange;
-  color: black;
+  color: $darkest;
+}
+
+
+
+
+
+/* By Lightness
+========================================================================== */
+.darkest {
+  background-color: $darkest;
+  color: $lightest;
 }
