@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style module>
 
 /* Dependencies
 ========================================================================== */

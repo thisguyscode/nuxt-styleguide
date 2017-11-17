@@ -27,15 +27,22 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     extend (config, ctx) {
       /*
       ** Change localIdentName of css-module classes in vue components
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
       if (ctx.dev) {
-        vueLoader.options.cssModules = {localIdentName: '[name]-[local]-[hash:3]'}
+        vueLoader.options.cssModules = {
+          importLoaders: true,
+          localIdentName: '[name]-[local]-[hash:3]'
+        }
       } else {
-        vueLoader.options.cssModules = {localIdentName: '[hash:7]'}
+        vueLoader.options.cssModules = {
+          importLoaders: true,
+          localIdentName: '[hash:7]'
+        }
       }
       /*
       ** Run ESLint on save
