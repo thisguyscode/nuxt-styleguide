@@ -31,12 +31,6 @@ import uiCode from '~/components/ui-code'
 export default {
   components: {
     uiCode
-  },
-  computed: {
-    code: function () {
-      // eslint-disable-next-line import/no-webpack-loader-syntax
-      return require('!raw-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss')
-    }
   }
 }
 </script>
