@@ -1,5 +1,5 @@
 /* ==========================================================================
-   # BOX
+   # LIST-INLINE
 ========================================================================== */
 
 /**
@@ -14,9 +14,6 @@
 // VALUES
 @import "~assets/styles/values/values.sizes";
 
-// TOOLS
-@import "node_modules/inuitcss/tools/tools.clearfix";
-
 
 
 
@@ -24,16 +21,25 @@
 /* Base class
 ========================================================================== */
 
-.box {
-  @include inuit-clearfix();
+.list-inline {
   display: block;
-  padding: $unit-md;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
+  list-style: none;
 }
 
+
+
+
+/* Child classes
+========================================================================== */
+
+.list-inline__item {
+  display: inline-block;
+  margin-right: $unit-md;
+
+  > :last-child {
+    margin-right: 0;
+  }
+}
 
 
 
@@ -41,22 +47,22 @@
 /* Size modifiers
 ========================================================================== */
 
-.box--flush {
-  padding: 0;
+.list-inline--flush {
+  margin-right: 0;
 }
 
-.box--xs {
-  padding: $unit-xs;
+.list-inline--xs {
+  margin-right: $unit-xs;
 }
 
-.box--sm {
-  padding: $unit-sm;
+.list-inline--sm {
+  margin-right: $unit-sm;
 }
 
-.box--lg {
-  padding: $unit-lg;
+.list-inline--lg {
+  margin-right: $unit-lg;
 }
 
-.box--xl {
-  padding: $unit-xl;
+.list-inline--xl {
+  margin-right: $unit-xl;
 }

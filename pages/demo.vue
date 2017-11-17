@@ -7,11 +7,9 @@
 
 <script>
 import uiDemo from '~/components/ui-demo'
-import uiTempNav from '~/components/ui-temp-nav'
 import uiCode from '~/components/ui-code'
 export default {
   components: {
-    uiTempNav,
     uiDemo,
     uiCode
   },

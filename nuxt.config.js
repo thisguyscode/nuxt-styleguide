@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '~assets/styles/global.scss'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -21,7 +24,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    postcss: [],
     extend (config, ctx) {
       /*
       ** Change localIdentName of css-module classes in vue components

@@ -1,8 +1,19 @@
 <template>
   <div>
+    <ui-temp-nav/>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import uiTempNav from '~/components/ui-temp-nav'
+export default {
+  components: {
+    uiTempNav
+  }
+}
+</script>
+
 
 <style>
 html {

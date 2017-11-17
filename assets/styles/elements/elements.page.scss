@@ -10,7 +10,7 @@
 
 /* Dependencies
 ========================================================================== */
-// NONE
+@import "~assets/styles/values/values.colors";
 
 
 
@@ -29,9 +29,8 @@
   overflow: hidden; /* [1] */
   overflow-y: scroll; /* [1] */
   position: relative;
-  background-color: $clr-primary;
-  color: $neutral-00;
-  text-align: center;
+  background-color: $darkest;
+  color: $lightest;
 }
 
 body {
