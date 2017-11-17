@@ -1,15 +1,23 @@
 <template>
   <section :class="$style.base">
     <uiDemo/>
+    <ui-code :code="code"/>
   </section>
 </template>
 
 <script>
-import uiDemo from '~/components/ui-demo.vue'
-
+import uiDemo from '~/components/ui-demo'
+import uiCode from '~/components/ui-code'
 export default {
   components: {
-    uiDemo
+    uiDemo,
+    uiCode
+  },
+  computed: {
+    code: function () {
+      // eslint-disable-next-line import/no-webpack-loader-syntax
+      return require('!raw-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss')
+    }
   }
 }
 </script>
@@ -18,14 +26,13 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value c-test "sass-loader!~/assets/styles/test.scss";
-
+@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 
 
 /* Base class
 ========================================================================== */
 .base {
-  composes: o-box o-box--huge from c-test;
+  composes: box box--huge  from o-box;
 }
 
 </style>

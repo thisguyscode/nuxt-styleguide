@@ -1,28 +1,21 @@
 /* ==========================================================================
-   # BACKGROUND-COLOR
+   # GLOBAL
 ========================================================================== */
 
 /**
- *  Apply simple background-color / color combos
+ *  Site-wide brute-force styling
  */
 
 
 
-/* Dependencies
+/* Generic
 ========================================================================== */
-
-// VALUES
-@import "~assets/styles/values/values.colors";
+@import "~assets/styles/generic/generic.my-resets";
 
 
 
 
-/* Base class
+
+ /* Elements
 ========================================================================== */
-.button {
-  background-color: $neutral-00;
-  color: $neutral-100;
-  &:hover {
-    background-color: $neutral-30;
-  }
-}
+@import "~assets/styles/elements/elements.page";

@@ -43,6 +43,21 @@
 /* By Lightness
 ========================================================================== */
 .darkest {
-  background-color: $darkest;
+  background-color: $lightness-00;
   color: $lightest;
+}
+
+.dark {
+  background-color: $lightness-10;
+  color: $lightest;
+}
+
+.light {
+  background-color: $lightness-90;
+  color: $darkest;
+}
+
+.lightest {
+  background-color: $lightness-100;
+  color: $darkest;
 }

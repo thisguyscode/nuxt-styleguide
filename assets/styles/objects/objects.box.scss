@@ -11,14 +11,11 @@
 /* Dependencies
 ========================================================================== */
 
-// SETTINGS
-@import "node_modules/inuitcss/settings/settings.core";
+// VALUES
+@import "~assets/styles/values/values.sizes";
 
 // TOOLS
 @import "node_modules/inuitcss/tools/tools.clearfix";
-
-// OBJECTS
-@import "node_modules/inuitcss/objects/objects.box";
 
 
 
@@ -28,7 +25,13 @@
 ========================================================================== */
 
 .box {
-  @extend .o-box;
+  @include inuit-clearfix();
+  display: block; /* [1] */
+  padding: $unit-md;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -38,22 +41,22 @@
 /* Size modifiers
 ========================================================================== */
 
-.box--tiny {
-  @extend .o-box--tiny;
+.box--flush {
+  padding: 0;
 }
 
-
-.box--small {
-  @extend .o-box--small;
+.box--xs {
+  padding: $unit-xs;
 }
 
-.box--large {
-  @extend .o-box--large;
+.box--sm {
+  padding: $unit-sm;
 }
 
-
-.box--huge {
-  @extend .o-box--huge;
+.box--lg {
+  padding: $unit-lg;
 }
 
-
+.box--xl {
+  padding: $unit-xl;
+}

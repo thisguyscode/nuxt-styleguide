@@ -3,7 +3,7 @@
 ========================================================================== */
 
 /**
- *  ___NOTES___
+ *  Self-explanatory
  */
 
 
@@ -19,14 +19,27 @@
 /* Neutral
 ========================================================================== */
 
-// By lightness
 $darkest: hsl(0, 0, 0%);
 $lightest: hsl(0, 0, 100%);
+
+// By lightness
+$lightness-100: $lightest;
+$lightness-10: mix($lightest, $darkest, 10%);
+$lightness-20: mix($lightest, $darkest, 20%);
+$lightness-30: mix($lightest, $darkest, 30%);
+$lightness-40: mix($lightest, $darkest, 40%);
+$lightness-50: mix($lightest, $darkest, 50%);
+$lightness-60: mix($lightest, $darkest, 60%);
+$lightness-70: mix($lightest, $darkest, 70%);
+$lightness-80: mix($lightest, $darkest, 80%);
+$lightness-90: mix($lightest, $darkest, 90%);
+$lightness-00: $darkest;
 
 
 // Not by lightness
 $neutral-00: $darkest;
 $neutral-100: $lightest;
+
 $neutral-10: mix($neutral-100, $neutral-00, 10%);
 $neutral-30: mix($neutral-100, $neutral-00, 30%);
 $neutral-70: mix($neutral-100, $neutral-00, 70%);

@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # BUTTON
+   # CODE
 ========================================================================== */
 
 /**
- *  In most cases should be used in conjunction with cosmetics.button
+ *  ___NOTES___
  */
 
 
@@ -12,7 +12,6 @@
 ========================================================================== */
 
 // VALUES
-@import "~assets/styles/values/values.sizes";
 @import "~assets/styles/values/values.typography";
 
 
@@ -22,13 +21,10 @@
 /* Base class
 ========================================================================== */
 
-.button {
-  display: inline-block;
-  cursor: pointer;
-  padding: $unit-xs $unit-md;
-  font-family: $font-display;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-bold;
+.code {
+  font-family: $font-mono;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semi;
 }
 
 
@@ -38,18 +34,6 @@
 /* Size modifiers
 ========================================================================== */
 
-.button--small {
-  padding: $unit-xs $unit-md;
-}
-
-
-.button--large {
-  padding: $unit-xs $unit-md;
-}
-
-
-.button--huge {
-  padding: $unit-xs $unit-md;
-}
+.code--sm {}
 
 

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   # PAGE
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// SETTINGS
+@import "node_modules/inuitcss/settings/settings.core";
+
+// OBJECTS
+@import "node_modules/inuitcss/objects/objects.layout";
+
+
+
+
+
+/* Styles
+========================================================================== */
+
+/**
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ */
+
+ html {
+  overflow: hidden; /* [1] */
+  overflow-y: scroll; /* [1] */
+  position: relative;
+  background-color: $clr-primary;
+  color: $neutral-00;
+  text-align: center;
+}
+
+body {
+  background-color: $neutral-90;
+}
