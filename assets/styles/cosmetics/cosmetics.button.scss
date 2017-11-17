@@ -1,7 +1,28 @@
+/* ==========================================================================
+   # BACKGROUND-COLOR
+========================================================================== */
+
+/**
+ *  Apply simple background-color / color combos
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.colors";
+
+
+
+
+/* Base class
+========================================================================== */
 .button {
-  background-color: black;
-  color: white;
+  background-color: $neutral-100;
+  color: $neutral-00;
   &:hover {
-    background-color: #666;
+    background-color: $neutral-70;
   }
 }
