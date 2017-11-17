@@ -27,7 +27,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extractCSS: true,
     extend (config, ctx) {
       /*
       ** Change localIdentName of css-module classes in vue components
