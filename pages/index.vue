@@ -26,13 +26,11 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 
 
 /* Base class
 ========================================================================== */
 .base {
-  composes: box box--huge  from o-box;
 }
 
 </style>
