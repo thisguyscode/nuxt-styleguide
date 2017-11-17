@@ -1,9 +1,12 @@
 module.exports = {
+  router: {
+    base: '/nuxt-styleguide/'
+  },
   /*
   ** Headers of the page
   */
   head: {
-    title: 'starter-styleguide',
+    title: 'nuxt-styleguide',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

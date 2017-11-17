@@ -89,10 +89,10 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value o-code "sass-loader!~/assets/styles/objects/objects.code.scss";
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-code "sass-loader!~/assets/styles/objects/_objects.code.scss";
+@value o-box "sass-loader!~/assets/styles/objects/_objects.box.scss";
 
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
 
 
 

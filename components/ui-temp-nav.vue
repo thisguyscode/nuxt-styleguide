@@ -5,7 +5,7 @@
         <nuxt-link :class="$style.link" to="/">Home</nuxt-link>
       </li>
       <li :class="$style.item">
-        <nuxt-link :class="$style.link" to="/">Demo</nuxt-link>
+        <nuxt-link :class="$style.link" to="/demo/">Demo</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -20,9 +20,9 @@ export default {}
 /* Dependencies
 ========================================================================== */
 
-@value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
+@value o-list-inline "sass-loader!~/assets/styles/objects/_objects.list-inline.scss";
 
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
 
 
 

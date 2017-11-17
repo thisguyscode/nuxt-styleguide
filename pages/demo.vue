@@ -16,7 +16,7 @@ export default {
   computed: {
     code: function () {
       // eslint-disable-next-line import/no-webpack-loader-syntax
-      return require('!raw-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss')
+      return require('!raw-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss')
     }
   }
 }

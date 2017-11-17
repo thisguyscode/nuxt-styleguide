@@ -35,7 +35,7 @@ export default {
   computed: {
     code: function () {
       // eslint-disable-next-line import/no-webpack-loader-syntax
-      return require('!raw-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss')
+      return require('!raw-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss')
     }
   }
 }
@@ -45,15 +45,15 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value o-button "sass-loader!~/assets/styles/objects/objects.button.scss";
-@value o-layout "sass-loader!~/assets/styles/objects/objects.layout.scss";
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-button "sass-loader!~/assets/styles/objects/_objects.button.scss";
+@value o-layout "sass-loader!~/assets/styles/objects/_objects.layout.scss";
+@value o-box "sass-loader!~/assets/styles/objects/_objects.box.scss";
 
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
-@value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
+@value c-button "sass-loader!~/assets/styles/cosmetics/_cosmetics.button.scss";
 @value c-test "sass-loader!~/assets/styles/test.scss";
 
-@value u-widths "sass-loader!~/assets/styles/utilities/utilities.widths.scss";
+@value u-widths "sass-loader!~/assets/styles/utilities/_utilities.widths.scss";
 
 
 

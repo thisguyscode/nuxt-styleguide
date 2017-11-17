@@ -1,27 +1,11 @@
 <template>
   <section :class="$style.base">
-    <ui-demo/>
-    <ui-code :code="code"/>
+    <h1 :class="$style.heading">Home</h1>
   </section>
 </template>
 
 <script>
-import uiDemo from '~/components/ui-demo'
-import uiTempNav from '~/components/ui-temp-nav'
-import uiCode from '~/components/ui-code'
-export default {
-  components: {
-    uiTempNav,
-    uiDemo,
-    uiCode
-  },
-  computed: {
-    code: function () {
-      // eslint-disable-next-line import/no-webpack-loader-syntax
-      return require('!raw-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss')
-    }
-  }
-}
+export default {}
 </script>
 
 <style lang="scss" module>
@@ -29,10 +13,26 @@ export default {
 /* Dependencies
 ========================================================================== */
 
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
+
+
+
 
 /* Base class
 ========================================================================== */
+
 .base {
+  composes: blue  from c-background-color;
+}
+
+
+
+
+
+/* Child classes
+========================================================================== */
+.heading {
+  composes: green  from c-background-color;
 }
 
 </style>
