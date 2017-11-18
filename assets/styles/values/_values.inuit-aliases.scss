@@ -1,0 +1,33 @@
+/* ==========================================================================
+   # INUIT-ALLIASES
+========================================================================== */
+
+/**
+ *  Redefine inuit variables to fit within the local styling system
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+/**
+ *  Though there are some variable dependencies here, it's best not to
+ *  import as the 'variable not defined' warnings can help to maintain
+ *  proper code structure.
+ *
+ *  I.E. This file is ONLY a funnel for variables.
+ */
+
+
+
+
+/* Sizes
+========================================================================== */
+
+$inuit-global-spacing-unit: $unit-md;
+
+$inuit-global-spacing-unit-tiny: $unit-xs;
+$inuit-global-spacing-unit-small: $unit-sm;
+$inuit-global-spacing-unit-large: $unit-lg;
+$inuit-global-spacing-unit-huge: $unit-lg;
