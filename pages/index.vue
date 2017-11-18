@@ -1,38 +1,34 @@
 <template>
-  <section :class="$style.base">
-    <h1 :class="$style.heading">Home</h1>
+  <section :class="$style.root">
+    <ui-a/>
+    <ui-b/>
+    <ui-c/>
   </section>
 </template>
 
 <script>
-export default {}
+import uiA from '~/components/ui-a'
+import uiB from '~/components/ui-b'
+import uiC from '~/components/ui-c'
+export default {
+  components: {
+    uiA,
+    uiB,
+    uiC
+  }
+}
 </script>
 
-<style module>
+<style lang="scss" module>
 
 /* Dependencies
 ========================================================================== */
-
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
-
+// NONE
 
 
-
-/* Base class
+/* Root class
 ========================================================================== */
-
-.base {
-  composes: blue  from c-background-color;
-}
-
-
-
-
-
-/* Child classes
-========================================================================== */
-.heading {
-  composes: green  from c-background-color;
+.root {
 }
 
 </style>

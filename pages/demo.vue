@@ -1,36 +1,34 @@
 <template>
-  <section :class="$style.base">
-    <ui-demo/>
-    <ui-code :code="code"/>
+  <section :class="$style.root">
+    <ui-a/>
+    <ui-b/>
+    <ui-c/>
   </section>
 </template>
 
 <script>
-import uiDemo from '~/components/ui-demo'
-import uiCode from '~/components/ui-code'
+import uiA from '~/components/ui-a'
+import uiB from '~/components/ui-b'
+import uiC from '~/components/ui-c'
 export default {
   components: {
-    uiDemo,
-    uiCode
-  },
-  computed: {
-    code: function () {
-      // eslint-disable-next-line import/no-webpack-loader-syntax
-      return require('!raw-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss')
-    }
+    uiA,
+    uiB,
+    uiC
   }
 }
 </script>
 
-<style module>
+<style lang="scss" module>
 
 /* Dependencies
 ========================================================================== */
+// NONE
 
 
-/* Base class
+/* Root class
 ========================================================================== */
-.base {
+.root {
 }
 
 </style>
