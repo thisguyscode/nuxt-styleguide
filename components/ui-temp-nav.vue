@@ -20,9 +20,9 @@ export default {}
 /* Dependencies
 ========================================================================== */
 
-@value o-list-inline "sass-loader!~/assets/styles/objects/_objects.list-inline.scss";
+@value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
 
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
 
 

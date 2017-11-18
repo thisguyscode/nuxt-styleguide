@@ -16,8 +16,8 @@ export default {}
 
 /* Dependencies
 ========================================================================== */
-@value o-layout "sass-loader!~/assets/styles/objects/_objects.layout.scss";
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/_cosmetics.background-color.scss";
+@value o-layout "sass-loader!~/assets/styles/objects/objects.layout.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
 
 
