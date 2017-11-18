@@ -1,7 +1,7 @@
 {
   "name": "starter-styleguide",
   "version": "1.0.0",
-  "description": "Opinionated Nuxt starter with styleguide",
+  "description": "Experimental Nuxt starter with css-modules and styleguide",
   "author": "tiny <tiny@tinyworld.xyz>",
   "private": true,
   "scripts": {

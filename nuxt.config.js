@@ -10,7 +10,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Opinionated Nuxt starter with styleguide' }
+      { hid: 'description', name: 'description', content: 'Experimental Nuxt starter with css-modules and styleguide' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -32,14 +32,15 @@ module.exports = {
       ** Change localIdentName of css-module classes in vue components
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
-      vueLoader.options.cssModules = {
-        localIdentName: '[name]__[local]'
+      if (ctx.dev) {
+        vueLoader.options.cssModules = {
+          localIdentName: '[name]__[local]'
+        }
+      } else {
+        vueLoader.options.cssModules = {
+          localIdentName: '[hash:8]'
+        }
       }
-      //  else {
-      //   vueLoader.options.cssModules = {
-      //     localIdentName: '[hash:7]'
-      //   }
-      // }
       /*
       ** Run ESLint on save
       */
