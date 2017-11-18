@@ -11,7 +11,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "prod": "nuxt build && nuxt start"
   },
   "dependencies": {
     "highlight.js": "^9.12.0",
