@@ -27,49 +27,20 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     extend (config, ctx) {
-      //
-      //
-      /** Run .scss files through sass-vars-loader before anything else */
-      // const scssLoader = config.module.rules.find((loader) => loader.test.toString() === '/\\.scss$/')
-      // scssLoader.use.splice(5, 0, sassVarsLoader)
-
-      // /** Remove default image rule */
-      // const imageRule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')
-      // config.module.rules.splice(config.module.rules.indexOf(imageRule), 1)
-
-      // /** Push new image rule */
-      // config.module.rules.push({
-      //   test: /\.(png|jpe?g|gif|tiff|webp|svg)$/i,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 1000,
-      //         name: 'img/[name].[hash:4].[ext]'
-      //       }
-      //     }
-      //   ]
-      // })
-      //
-      //
       /*
       ** Change localIdentName of css-module classes in vue components
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
       vueLoader.options.cssModules = {
-        modules: true,
-        importLoaders: 1
+        localIdentName: '[name]-[local]-[hash:3]'
       }
-      if (ctx.dev) {
-        vueLoader.options.cssModules = {
-          localIdentName: '[name]-[local]-[hash:3]'
-        }
-      } else {
-        vueLoader.options.cssModules = {
-          localIdentName: '[hash:7]'
-        }
-      }
+      //  else {
+      //   vueLoader.options.cssModules = {
+      //     localIdentName: '[hash:7]'
+      //   }
+      // }
       /*
       ** Run ESLint on save
       */
