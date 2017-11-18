@@ -27,14 +27,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extractCSS: true,
     extend (config, ctx) {
       /*
       ** Change localIdentName of css-module classes in vue components
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
       vueLoader.options.cssModules = {
-        localIdentName: '[name]-[local]-[hash:3]'
+        localIdentName: '[name]__[local]'
       }
       //  else {
       //   vueLoader.options.cssModules = {
