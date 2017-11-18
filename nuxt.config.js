@@ -32,16 +32,29 @@ module.exports = {
       ** Change localIdentName of css-module classes in vue components
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
-      if (ctx.dev) {
-        vueLoader.options.cssModules = {
-          localIdentName: '[name]__[local]'
-        }
-      } else {
-        vueLoader.options.cssModules = {
-          localIdentName: '[hash:8]'
-        }
-      }
+
       /*
+      ** Temporary - should be different localIdentName for production as
+      ** compared to development (see below)
+      */
+      vueLoader.options.cssModules = {
+        localIdentName: '[name]__[local]'
+      }
+
+      /*
+      ** Commented out for debugging convenience
+      */
+      // if (ctx.dev) {
+      //   vueLoader.options.cssModules = {
+      //     localIdentName: '[name]__[local]'
+      //   }
+      // } else {
+      //   vueLoader.options.cssModules = {
+      //     localIdentName: '[hash:8]'
+      //   }
+      // }
+      /*
+
       ** Run ESLint on save
       */
       if (ctx.dev && ctx.isClient) {
