@@ -1,5 +1,6 @@
 <template>
-  <section :class="$style.root">
+  <section>
+    <p><nuxt-link to='/blank/'>Go to another page</nuxt-link></p>
     <ui-a/>
     <ui-b/>
     <ui-c/>
@@ -18,17 +19,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" module>
-
-/* Dependencies
-========================================================================== */
-// NONE
-
-
-/* Root class
-========================================================================== */
-.root {
-}
-
-</style>

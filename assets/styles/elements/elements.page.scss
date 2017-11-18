@@ -29,8 +29,13 @@
   overflow: hidden; /* [1] */
   overflow-y: scroll; /* [1] */
   position: relative;
-  background-color: $darkest;
-  color: $lightest;
+  background-color: $lightest;
+  color: $darkest;
+  
+  // Temp
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 20px;
 }
 
 body {
