@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals')
+
 module.exports = {
   router: {
     base: '/nuxt-styleguide/'
@@ -17,6 +19,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  plugins: [
+    '~/plugins/vue-awesome.js'
+  ],
   css: [
     '~assets/styles/global.scss'
   ],
@@ -54,8 +59,15 @@ module.exports = {
       //     localIdentName: '[hash:8]'
       //   }
       // }
+      if (ctx.isServer) {
+        /** Dunno why but this allows vue-awesome icons to be rendered server-side */
+        config.externals = [
+          nodeExternals({
+            whitelist: [/\.(?!(?:js|json)$).{1,5}$/i, /^vue-awesome/, /es6-promise/]
+          })
+        ]
+      }
       /*
-
       ** Run ESLint on save
       */
       if (ctx.dev && ctx.isClient) {

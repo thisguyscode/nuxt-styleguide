@@ -3,17 +3,18 @@
 
   <aside :class="$style.sidebar">
     <ui-sidebar>
-      <p :class="$style.heading"><nuxt-link to='/blank/'>Go to another page</nuxt-link></p>
       <ul :class="$style.fileTree">
         <ui-collapsable-item :model="fileSystem"/>
         <ui-collapsable-item :model="fileSystem"/>
         <ui-collapsable-item :model="fileSystem"/>
       </ul>
+      <ui-directory-tree :root="fileSystem"/>
     </ui-sidebar>
   </aside>
 
   <main :class="$style.contentArea">
     <div :class="$style.contentInner">
+      <p :class="$style.heading"><nuxt-link to='/blank/'>Go to another page</nuxt-link></p>
       <ui-a :class="$style.contentItem"/>
       <ui-b :class="$style.contentItem"/>
       <ui-c :class="$style.contentItem"/>
@@ -29,6 +30,7 @@ import uiB from '~/components/ui-b'
 import uiC from '~/components/ui-c'
 import uiSidebar from '~/components/ui-sidebar'
 import uiCollapsableItem from '~/components/ui-collapsable-item'
+import uiDirectoryTree from '~/components/ui-directory-tree'
 
 import fileSystem from '~/data/fileSystem.json'
 
@@ -43,7 +45,8 @@ export default {
     uiB,
     uiC,
     uiSidebar,
-    uiCollapsableItem
+    uiCollapsableItem,
+    uiDirectoryTree
   }
 }
 </script>
@@ -56,7 +59,7 @@ export default {
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
-@value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
+@value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
@@ -90,7 +93,7 @@ export default {
 ========================================================================== */
 
   .fileTree {
-    composes: list-bare  from o-list-bare;
+    composes: list-directory  from o-list-directory;
   }
 
 

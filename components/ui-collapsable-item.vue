@@ -3,10 +3,13 @@
   
   <!-- ITEM -->
   <p :class="[$style.item, itemClass]" @click="toggle">
-    <!-- Heading -->
-    <span>{{model.name}}</span>
     <!-- Icon -->
-    <span v-if="itemIsFolder">[{{open ? '-' : '+'}}]</span>
+    <ui-icon :class="$style.icon" name="folder" v-if="open && itemIsFolder"></ui-icon>
+    <ui-icon :class="$style.icon" name="folder-o" v-else-if="open === false && itemIsFolder"></ui-icon>
+    <ui-icon :class="$style.icon" name="file-o"  v-else="open === false && itemIsFolder === false"></ui-icon>
+    <!-- <span v-if="itemIsFolder">[{{open ? '-' : '+'}}] </span> -->
+    <!-- Heading -->
+    <span>{{ model.name }}</span>
   </p>
 
   <!-- CONTENTS (if folder) -->
@@ -16,7 +19,7 @@
     :class="$style.folderContentsList">
     <!-- Recursively use this component -->
     <ui-collapsable-item
-      v-for="model in model.children"
+      v-for="model in model.items"
       :model="model"
       :key="model.id">
     </ui-collapsable-item>
@@ -51,8 +54,8 @@ export default {
       }
     },
     itemIsFolder: function () {
-      return this.model.children &&
-        this.model.children.length
+      return this.model.items &&
+        this.model.items.length
     }
   },
   methods: {
@@ -73,7 +76,7 @@ export default {
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
-@value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
+@value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
 
 @value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
 
@@ -90,19 +93,39 @@ export default {
 
 
 
-/* Child classes
+
+
+/* Item
 ========================================================================== */
+
 .item {
   composes: text  from o-text;
   composes: margin-bottom-sm  from u-spacings;
+  cursor: pointer;
 }
 
 .itemIsOpen {
   composes: bold  from c-text-style;
 }
 
+
+
+
+/* Item
+========================================================================== */
+// Needs abstracting!
+.icon {
+  composes: margin-right-sm  from u-spacings;
+}
+
+
+
+
+/* Folder contents
+========================================================================== */
+
 .folderContentsList {
-  composes: list-bare  from o-list-bare;
+  composes: list-directory  from o-list-directory;
 }
 
 </style>

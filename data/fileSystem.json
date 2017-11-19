@@ -1,25 +1,25 @@
 {
-  "name": "test",
-  "children": [
-    { "name": "hello" },
-    { "name": "wat" },
+  "name": "Folder",
+  "items": [
+    { "name": "Hello" },
+    { "name": "Wat" },
     {
-      "name": "child folder",
-      "children": [
+      "name": "Child folder",
+      "items": [
         {
-          "name": "child folder",
-          "children": [
-            { "name": "hello" },
-            { "name": "wat" }
+          "name": "Child folder",
+          "items": [
+            { "name": "Hello" },
+            { "name": "Wat" }
           ]
         },
-        { "name": "hello" },
-        { "name": "wat" },
+        { "name": "Hello" },
+        { "name": "Wat" },
         {
-          "name": "child folder",
-          "children": [
-            { "name": "hello" },
-            { "name": "wat" }
+          "name": "Child folder",
+          "items": [
+            { "name": "Hello" },
+            { "name": "Wat" }
           ]
         }
       ]

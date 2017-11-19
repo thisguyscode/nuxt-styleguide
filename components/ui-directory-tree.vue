@@ -1,18 +1,18 @@
 <template>
-  <section :class="$style.root">
+  <ul :class="$style.root">
     <ui-collapsable-item
-      v-for="folder in system.folders"
-      :trigger="folder.name"
-      :items="folder.files"
-      :key="folder.id" />
-  </section>
+      v-for="item in root.items"
+      :model="item"
+      :key="item.id"
+    />
+  </ul>
 </template>
 
 <script>
-import uiCollapsableList from '~/components/ui-collapsable-item'
+import uiCollapsableItem from '~/components/ui-collapsable-item'
 export default {
   props: {
-    system: {
+    root: {
       type: Object,
       required: false
     }
@@ -29,6 +29,8 @@ export default {
 ========================================================================== */
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 
+@value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
+
 
 
 
@@ -36,6 +38,7 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
+  composes: list-directory  from o-list-directory;
 }
 
 
