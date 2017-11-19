@@ -1,15 +1,15 @@
 <template>
   <section :class="$style.root">
-    <ui-collapsable-list
+    <ui-collapsable-item
       v-for="folder in system.folders"
       :trigger="folder.name"
-      :items="folder.items"
+      :items="folder.files"
       :key="folder.id" />
   </section>
 </template>
 
 <script>
-import uiCollapsableList from '~/components/ui-collapsable-list'
+import uiCollapsableList from '~/components/ui-collapsable-item'
 export default {
   props: {
     system: {
@@ -18,7 +18,7 @@ export default {
     }
   },
   components: {
-    uiCollapsableList
+    uiCollapsableItem
   }
 }
 </script>

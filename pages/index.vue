@@ -4,7 +4,11 @@
   <aside :class="$style.sidebar">
     <ui-sidebar>
       <p :class="$style.heading"><nuxt-link to='/blank/'>Go to another page</nuxt-link></p>
-      <ui-directory-tree :system="fileSystem"/>
+      <ul :class="$style.fileTree">
+        <ui-collapsable-item :model="fileSystem"/>
+        <ui-collapsable-item :model="fileSystem"/>
+        <ui-collapsable-item :model="fileSystem"/>
+      </ul>
     </ui-sidebar>
   </aside>
 
@@ -24,38 +28,14 @@ import uiA from '~/components/ui-a'
 import uiB from '~/components/ui-b'
 import uiC from '~/components/ui-c'
 import uiSidebar from '~/components/ui-sidebar'
-import uiDirectoryTree from '~/components/ui-directory-tree'
+import uiCollapsableItem from '~/components/ui-collapsable-item'
+
+import fileSystem from '~/data/fileSystem.json'
+
 export default {
   data: () => {
     return {
-      fileSystem: {
-        folders: [
-          {
-            name: 'x',
-            items: [
-              'a',
-              'b',
-              'c'
-            ]
-          },
-          {
-            name: 'y',
-            items: [
-              'a',
-              'b',
-              'c'
-            ]
-          },
-          {
-            name: 'z',
-            items: [
-              'a',
-              'b',
-              'c'
-            ]
-          }
-        ]
-      }
+      fileSystem: fileSystem
     }
   },
   components: {
@@ -63,7 +43,7 @@ export default {
     uiB,
     uiC,
     uiSidebar,
-    uiDirectoryTree
+    uiCollapsableItem
   }
 }
 </script>
@@ -76,6 +56,7 @@ export default {
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
@@ -100,6 +81,19 @@ export default {
     .heading {
       composes: heading  from o-heading;
     }
+
+
+
+
+
+/* ContentArea
+========================================================================== */
+
+  .fileTree {
+    composes: list-bare  from o-list-bare;
+  }
+
+
 
 
 
