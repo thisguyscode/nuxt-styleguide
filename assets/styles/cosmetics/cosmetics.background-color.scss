@@ -14,36 +14,34 @@
 // VALUES
 @import "~assets/styles/values/values.colors";
 
+// TOOLS
+@import "~assets/styles/tools/tools.contrasting-color";
 
 
 
 
-/* By Color
+
+/* By contrast
 ========================================================================== */
 
-.blue {
-  background-color: blue;
-  color: $lightest;
+.neutral-00 {
+  background-color: $neutral-00;
+  color: contrasting-color($neutral-00, $lightest, $darkest);
 }
 
-.black {
-  background-color: $darkest;
-  color: $lightest;
+.neutral-05 {
+  background-color: $neutral-05;
+  color: contrasting-color($neutral-05, $lightest, $darkest);
 }
 
-.orange {
-  background-color: orange;
-  color: $darkest;
+.neutral-95 {
+  background-color: $neutral-95;
+  color: contrasting-color($neutral-95, $lightest, $darkest);
 }
 
-.purple {
-  background-color: purple;
-  color: $lightest;
-}
-
-.green {
-  background-color: green;
-  color: $lightest;
+.neutral-100 {
+  background-color: $neutral-100;
+  color: contrasting-color($neutral-100, $lightest, $darkest);
 }
 
 
@@ -52,8 +50,9 @@
 
 /* By Lightness
 ========================================================================== */
+
 .darkest {
-  background-color: $lightness-00;
+  background-color: $darkest;
   color: $lightest;
 }
 
@@ -68,6 +67,33 @@
 }
 
 .lightest {
-  background-color: $lightness-100;
+  background-color: $lightest;
   color: $darkest;
+}
+
+
+
+
+
+/* By Color
+========================================================================== */
+
+.blue {
+  background-color: $blue;
+  color: contrasting-color($blue, $lightest, $darkest);
+}
+
+.orange {
+  background-color: $orange;
+  color: contrasting-color($orange, $lightest, $darkest);
+}
+
+.green {
+  background-color: $green;
+  color: contrasting-color($green, $lightest, $darkest);
+}
+
+.purple {
+  background-color: $purple;
+  color: contrasting-color($purple, $lightest, $darkest);
 }

@@ -36,11 +36,28 @@ $lightness-90: mix($lightest, $darkest, 90%);
 $lightness-00: $darkest;
 
 
-// Not by lightness
+// By contrast
 $neutral-00: $darkest;
 $neutral-100: $lightest;
 
+$neutral-05: mix($neutral-100, $neutral-00, 5%);
 $neutral-10: mix($neutral-100, $neutral-00, 10%);
 $neutral-30: mix($neutral-100, $neutral-00, 30%);
 $neutral-70: mix($neutral-100, $neutral-00, 70%);
 $neutral-90: mix($neutral-100, $neutral-00, 90%);
+$neutral-95: mix($neutral-100, $neutral-00, 95%);
+
+
+
+
+/* Common (by color name)
+========================================================================== */
+$red: hsla(358, 88, 55, 1);
+$pink: hsla(346, 78, 78, 1);
+$purple: hsla(290, 20, 40, 1);
+$blue: hsla(217, 80, 60, 1);
+$blue-green: hsla(170, 80, 42, 1);
+$green: hsla(144, 80, 40, 1);
+$yellow-green: hsla(84, 90, 60, 1);
+$yellow: hsla(52, 93, 53, 1);
+$orange: hsla(30, 95, 60, 1);

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   # CONTRASTING-COLOR
+========================================================================== */
+
+/**
+ * Calculates appropriate text color for background based on perceptual
+ * brightness
+ */
+
+ 
+
+/* SQRT
+========================================================================== */
+/**
+ * A mathematical function used in defining perceptual brightness of colors
+ */
+
+ @function sqrt ($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+      $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+      $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+
+
+/* BRIGHTNESS
+========================================================================== */
+// Brightness math based on:
+// http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx
+
+$red-magic-number: 241;
+$green-magic-number: 691;
+$blue-magic-number: 68;
+$brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;
+
+@function brightness($color) {
+// Extract color components
+$red-component: red($color);
+$green-component: green($color);
+$blue-component: blue($color);
+
+// YIQ takes into account color weight
+$yiq: (($red-component*299)+($green-component*587)+($blue-component*114))/1000;
+
+// MID calculates a brightness value in 3d color space between 0 and 255
+$mid: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
+
+// Pick which to use
+$value: $yiq;
+
+$percent: 100% * $value / 255;
+@return $percent;
+}
+
+
+
+/* CONTRASTING-COLOR
+========================================================================== */
+@function contrasting-color($color, $light, $dark) {
+  @if brightness($color) < 50 {
+    @return $light;
+  } @else {
+    @return $dark;
+  }
+}

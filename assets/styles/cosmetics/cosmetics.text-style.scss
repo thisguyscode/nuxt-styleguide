@@ -1,0 +1,34 @@
+/* ==========================================================================
+   # BACKGROUND-COLOR
+========================================================================== */
+
+/**
+ *  Apply simple background-color / color combos
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.typography";
+
+
+
+
+
+/* Weight
+========================================================================== */
+
+.regular {
+  font-weight: $font-weight-regular;
+}
+
+.semi-bold {
+  font-weight: $font-weight-semi;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}

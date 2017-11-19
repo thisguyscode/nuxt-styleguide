@@ -1,0 +1,33 @@
+/* ==========================================================================
+   # GRID
+========================================================================== */
+
+/**
+ *  Define gridlex variables such as naming and spacing
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+@import "~assets/styles/values/values.sizes";
+@import "~assets/styles/values/values.breakpoints";
+
+
+
+
+/* Values
+========================================================================== */
+
+$gl-gridName:         grid;
+$gl-colName:          grid__item;
+$gl-gutter:           $unit-sm; // Total left + right
+$gl-gutter-vertical:  $unit-sm;
+$gl-mq-list: (
+  wide:     map-get($mq-breakpoints, wide),
+  desktop:  map-get($mq-breakpoints, desktop),
+  tablet:   map-get($mq-breakpoints, tablet),
+  mobile:   map-get($mq-breakpoints, mobile),
+  tiny:     map-get($mq-breakpoints, tiny)
+);
