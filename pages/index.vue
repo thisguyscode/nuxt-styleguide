@@ -27,7 +27,7 @@ import uiSidebar from '~/components/ui-sidebar'
 import uiCollapsableItem from '~/components/ui-collapsable-item'
 import uiDirectoryTree from '~/components/ui-directory-tree'
 
-import fileSystem from '~/data/fileSystem.json'
+import fileSystem from '~/data/fs/styles.json'
 
 export default {
   data: () => {

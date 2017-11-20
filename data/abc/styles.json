@@ -1,0 +1,275 @@
+{
+  "path": "assets/styles",
+  "name": "styles",
+  "children": [
+    {
+      "path": "assets/styles/TEMPLATE.scss",
+      "name": "TEMPLATE.scss",
+      "size": 397,
+      "extension": ".scss",
+      "type": "file"
+    },
+    {
+      "path": "assets/styles/config",
+      "name": "config",
+      "children": [
+        {
+          "path": "assets/styles/config/config.baseline.scss",
+          "name": "config.baseline.scss",
+          "size": 248,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 248,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/cosmetics",
+      "name": "cosmetics",
+      "children": [
+        {
+          "path": "assets/styles/cosmetics/cosmetics.background-color.scss",
+          "name": "cosmetics.background-color.scss",
+          "size": 1851,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/cosmetics/cosmetics.button.scss",
+          "name": "cosmetics.button.scss",
+          "size": 586,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/cosmetics/cosmetics.text-style.scss",
+          "name": "cosmetics.text-style.scss",
+          "size": 634,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 3071,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/elements",
+      "name": "elements",
+      "children": [
+        {
+          "path": "assets/styles/elements/elements.page.scss",
+          "name": "elements.page.scss",
+          "size": 811,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 811,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/generic",
+      "name": "generic",
+      "children": [
+        {
+          "path": "assets/styles/generic/generic.my-resets.scss",
+          "name": "generic.my-resets.scss",
+          "size": 548,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 548,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/global.scss",
+      "name": "global.scss",
+      "size": 551,
+      "extension": ".scss",
+      "type": "file"
+    },
+    {
+      "path": "assets/styles/objects",
+      "name": "objects",
+      "children": [
+        {
+          "path": "assets/styles/objects/objects.box.scss",
+          "name": "objects.box.scss",
+          "size": 900,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.button.scss",
+          "name": "objects.button.scss",
+          "size": 982,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.code.scss",
+          "name": "objects.code.scss",
+          "size": 664,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.grid.scss",
+          "name": "objects.grid.scss",
+          "size": 7827,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.heading.scss",
+          "name": "objects.heading.scss",
+          "size": 800,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.list-bare.scss",
+          "name": "objects.list-bare.scss",
+          "size": 448,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.list-directory.scss",
+          "name": "objects.list-directory.scss",
+          "size": 509,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.list-inline.scss",
+          "name": "objects.list-inline.scss",
+          "size": 1059,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.sidebar.scss",
+          "name": "objects.sidebar.scss",
+          "size": 984,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/objects/objects.text.scss",
+          "name": "objects.text.scss",
+          "size": 834,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 15007,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/tools",
+      "name": "tools",
+      "children": [
+        {
+          "path": "assets/styles/tools/tools.calc-font-size.scss",
+          "name": "tools.calc-font-size.scss",
+          "size": 1337,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/tools/tools.contrasting-color.scss",
+          "name": "tools.contrasting-color.scss",
+          "size": 1890,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/tools/tools.gridlex.scss",
+          "name": "tools.gridlex.scss",
+          "size": 5790,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 9017,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/utilities",
+      "name": "utilities",
+      "children": [
+        {
+          "path": "assets/styles/utilities/utilities.spacings.scss",
+          "name": "utilities.spacings.scss",
+          "size": 1701,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/utilities/utilities.widths.scss",
+          "name": "utilities.widths.scss",
+          "size": 5119,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 6820,
+      "type": "directory"
+    },
+    {
+      "path": "assets/styles/values",
+      "name": "values",
+      "children": [
+        {
+          "path": "assets/styles/values/values.breakpoints.scss",
+          "name": "values.breakpoints.scss",
+          "size": 499,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/values/values.colors.scss",
+          "name": "values.colors.scss",
+          "size": 1684,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/values/values.grid.scss",
+          "name": "values.grid.scss",
+          "size": 911,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/values/values.inuit-aliases.scss",
+          "name": "values.inuit-aliases.scss",
+          "size": 886,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/values/values.sizes.scss",
+          "name": "values.sizes.scss",
+          "size": 1014,
+          "extension": ".scss",
+          "type": "file"
+        },
+        {
+          "path": "assets/styles/values/values.typography.scss",
+          "name": "values.typography.scss",
+          "size": 2908,
+          "extension": ".scss",
+          "type": "file"
+        }
+      ],
+      "size": 7902,
+      "type": "directory"
+    }
+  ],
+  "size": 44372,
+  "type": "directory"
+}
