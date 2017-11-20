@@ -1,7 +1,7 @@
 <template>
   <ul :class="$style.root">
     <ui-collapsable-item
-      v-for="item in root.items"
+      v-for="item in root.children"
       :model="item"
       :key="item.id"
     />
