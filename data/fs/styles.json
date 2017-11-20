@@ -3,13 +3,6 @@
   "name": "styles",
   "children": [
     {
-      "path": "assets/styles/TEMPLATE.scss",
-      "name": "TEMPLATE.scss",
-      "size": 397,
-      "extension": ".scss",
-      "type": "file"
-    },
-    {
       "path": "assets/styles/config",
       "name": "config",
       "children": [
@@ -270,6 +263,6 @@
       "type": "directory"
     }
   ],
-  "size": 44372,
+  "size": 43975,
   "type": "directory"
 }

@@ -1,8 +1,9 @@
 var dirTree = require('directory-tree')
-var tree = dirTree('assets/styles')
 var mkdirp = require('mkdirp')
 var fs = require('fs')
 var getDirName = require('path').dirname
+
+var tree = dirTree('assets/styles', {exclude: /TEMPLATE.scss/})
 
 function writeFile (path, contents, cb) {
   mkdirp(getDirName(path), function (err) {
