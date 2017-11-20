@@ -1,0 +1,60 @@
+/* ==========================================================================
+   # ITERATE COLORS
+========================================================================== */
+
+/**
+ *  Iterate through a range of colors.
+ *  Currently just for the purposes of wireframing
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.colors";
+
+// TOOLS
+@import "~assets/styles/tools/tools.contrasting-color";
+
+
+
+
+/* Variables
+========================================================================== */
+$colors:
+  $blue,
+  $red,
+  $orange,
+  $yellow-green,
+  $purple,
+  $green,
+  $yellow;
+
+
+
+
+/* Mixin
+========================================================================== */
+
+@mixin iterate-colors ($background: true) {
+  // @each $color in $color-map {
+  @for $i from 1 through length($colors) {
+    $color: nth($colors, $i);
+    
+    // $i: index($color-map, $color);
+
+    @if ($background = true) {
+      &:nth-of-type(#{$i}) {
+        background-color: $color;
+        color: contrasting-color($color, $lightest, $darkest);
+      }
+    } @else {
+      &:nth-of-type(#{$i}) {
+        background-color: $color;
+        color: contrasting-color($color, $lightest, $darkest);
+      }
+    }
+  }
+}

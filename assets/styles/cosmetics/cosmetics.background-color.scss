@@ -15,6 +15,7 @@
 @import "~assets/styles/values/values.colors";
 
 // TOOLS
+@import "~assets/styles/tools/tools.iterate-colors";
 @import "~assets/styles/tools/tools.contrasting-color";
 
 
@@ -96,4 +97,14 @@
 .purple {
   background-color: $purple;
   color: contrasting-color($purple, $lightest, $darkest);
+}
+
+
+
+
+/* Misc
+========================================================================== */
+
+.each-different {
+  @include iterate-colors();
 }
