@@ -1,0 +1,80 @@
+/* ==========================================================================
+   # BACKGROUND-COLOR
+========================================================================== */
+
+/**
+ *  Apply simple background-color / color combos
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.colors";
+
+
+
+
+
+/* Variables
+========================================================================== */
+
+$standard-weight: 1px;
+
+
+
+
+
+
+/* Edge(s)
+========================================================================== */
+
+.all {
+  border: $standard-weight solid transparent;
+}
+
+.x {
+  border-left: $standard-weight solid transparent;
+  border-right: $standard-weight solid transparent;
+}
+
+.y {
+  border-top: $standard-weight solid transparent;
+  border-bottom: $standard-weight solid transparent;
+}
+
+.top {
+  border-top: $standard-weight solid transparent;
+}
+
+.right {
+  border-right: $standard-weight solid transparent;
+}
+
+.bottom {
+  border-bottom: $standard-weight solid transparent;
+}
+
+.left {
+  border-left: $standard-weight solid transparent;
+}
+
+
+
+
+/* Color
+========================================================================== */
+
+.heavy {
+  border-color: $neutral-00;
+}
+
+.light {
+  border-color: $neutral-70;
+}
+
+.very-light {
+  border-color: $neutral-90;
+}
