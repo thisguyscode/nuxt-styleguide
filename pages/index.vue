@@ -3,11 +3,6 @@
 
   <aside :class="$style.sidebar">
     <ui-sidebar>
-      <ul :class="$style.fileTree">
-        <ui-collapsable-item :model="fileSystem"/>
-        <ui-collapsable-item :model="fileSystem"/>
-        <ui-collapsable-item :model="fileSystem"/>
-      </ul>
       <ui-directory-tree :root="fileSystem"/>
     </ui-sidebar>
   </aside>

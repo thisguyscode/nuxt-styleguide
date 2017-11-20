@@ -52,6 +52,9 @@ export default {
       if (this.open) {
         return this.$style.itemIsOpen
       }
+      if (this.itemIsFolder) {
+        return this.$style.itemIsFolder
+      }
     },
     itemIsFolder: function () {
       return this.model.items &&
@@ -73,6 +76,10 @@ export default {
 
 /* Dependencies
 ========================================================================== */
+// VALUES
+@import "~assets/styles/values/values.colors";
+
+// CLASSES
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
@@ -101,11 +108,17 @@ export default {
 .item {
   composes: text  from o-text;
   composes: margin-bottom-sm  from u-spacings;
+  color: $neutral-30;
   cursor: pointer;
+}
+
+.itemIsFolder {
+  composes: bold  from c-text-style;
 }
 
 .itemIsOpen {
   composes: bold  from c-text-style;
+  color: $neutral-00;
 }
 
 
@@ -126,6 +139,7 @@ export default {
 
 .folderContentsList {
   composes: list-directory  from o-list-directory;
+  border-left: 2px solid $neutral-70;
 }
 
 </style>

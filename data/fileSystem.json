@@ -1,28 +1,44 @@
 {
-  "name": "Folder",
   "items": [
-    { "name": "Hello" },
-    { "name": "Wat" },
     {
-      "name": "Child folder",
+      "name": "global",
       "items": [
         {
-          "name": "Child folder",
+          "name": "config",
           "items": [
-            { "name": "Hello" },
-            { "name": "Wat" }
+            { "name": "config" }
           ]
         },
-        { "name": "Hello" },
-        { "name": "Wat" },
         {
-          "name": "Child folder",
+          "name": "values",
           "items": [
-            { "name": "Hello" },
-            { "name": "Wat" }
+            { "name": "colors" },
+            { "name": "spacing" },
+            { "name": "typography" }
           ]
         }
       ]
-    }
+    },
+    {
+      "name": "global",
+      "items": [
+        {
+          "name": "config",
+          "items": [
+            { "name": "config" }
+          ]
+        },
+        {
+          "name": "values",
+          "items": [
+            { "name": "colors" },
+            { "name": "spacing" },
+            { "name": "typography" }
+          ]
+        }
+      ]
+    },
+    { "name": "filename__01.xyz" },
+    { "name": "filename__02.xyz" }
   ]
 }

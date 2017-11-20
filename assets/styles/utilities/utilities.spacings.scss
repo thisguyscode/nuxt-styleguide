@@ -49,9 +49,9 @@ $spacing-properties: (
 );
 
 $spacing-sizes: (
-  null: $unit-md,
   '-xs': $unit-xs,
   '-sm': $unit-sm,
+  '-md': $unit-md,
   '-lg': $unit-lg,
   '-xl': $unit-xl,
   '-none': 0
