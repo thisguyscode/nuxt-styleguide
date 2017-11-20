@@ -4,8 +4,8 @@
   <!-- ITEM -->
   <p :class="[$style.item, itemClass]" @click="toggle">
     <!-- Icon -->
-    <ui-icon :class="$style.icon" name="folder" v-if="open && itemIsFolder"></ui-icon>
-    <ui-icon :class="$style.icon" name="folder-o" v-else-if="open === false && itemIsFolder"></ui-icon>
+    <ui-icon :class="$style.icon" name="folder-o" v-if="open && itemIsFolder"></ui-icon>
+    <ui-icon :class="$style.icon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
     <ui-icon :class="$style.icon" name="file-o"  v-else="open === false && itemIsFolder === false"></ui-icon>
     <!-- <span v-if="itemIsFolder">[{{open ? '-' : '+'}}] </span> -->
     <!-- Heading -->
@@ -19,9 +19,9 @@
     :class="$style.folderContentsList">
     <!-- Recursively use this component -->
     <ui-collapsable-item
-      v-for="model in model.items"
-      :model="model"
-      :key="model.id">
+      v-for="item in model.children"
+      :model="item"
+      :key="item.id">
     </ui-collapsable-item>
   </ul>
 
@@ -57,8 +57,8 @@ export default {
       }
     },
     itemIsFolder: function () {
-      return this.model.items &&
-        this.model.items.length
+      return this.model.children &&
+        this.model.children.length
     }
   },
   methods: {
@@ -110,6 +110,7 @@ export default {
   composes: margin-bottom-sm  from u-spacings;
   color: $neutral-30;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .itemIsFolder {
