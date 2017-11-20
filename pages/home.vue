@@ -11,7 +11,6 @@
     <div :class="$style.contentHeader">
       <ui-breadcrumbs :list="list"/>
     </div>
-    <nuxt-link to="/home/global/">global</nuxt-link>
     <div :class="$style.contentInner">
       <nuxt-child/>
     </div>
