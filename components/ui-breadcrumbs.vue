@@ -8,10 +8,14 @@
         <nuxt-link :class="$style.homeLink" to="/">Home</nuxt-link>
       </li> -->
 
-      <li :class="$style.item" v-for="(item, index) in computedList" :key="item.id">
+      <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
+        <!-- HOME ICON -->
         <ui-icon :class="$style.homeIcon" v-if="isFirst(index)" name="home"/>
-        <span :class="$style.current" v-if="isLast(index)">{{ showName(item) }}</span>
-        <nuxt-link :class="$style.link" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
+        <ui-icon :class="$style.homeIcon" v-else name="home"/>
+        <!-- TEXT -->
+        <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
+        <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
+        <!-- ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
 
@@ -21,38 +25,38 @@
 
 <script>
 export default {
-  props: {
-    list: {
-      type: Array,
-      required: true,
-      default: () => []
-    },
-    separator: String
-  },
   mounted () {
-    console.log(this.computedList)
+    // console.log(this.list)
   },
   computed: {
-    computedList: function () {
-      var list = this.list
-      list.pop()
+    list: function () {
+      var list = []
+      this.$route.matched.forEach((item) => {
+        if (!item.path.endsWith('/')) {
+          list.push(item)
+        }
+      })
       return list
     }
   },
   methods: {
     isLast: function (index) {
-      var list = this.computedList
+      var list = this.list
       return index === list.length - 1
     },
     isFirst: function (index) {
       return index === 0
     },
     showName: function (item) {
-      var path = item.path
-      var start = path.lastIndexOf('/') + 1
-      var end = path.length
-      var name = path.substr(start, end)
-      return name
+      if (item.name) {
+        return item.name
+      } else {
+        var path = item.path
+        var start = path.lastIndexOf('/') + 1
+        var end = path.length
+        var name = path.substr(start, end)
+        return name
+      }
     }
   }
 }
@@ -103,16 +107,20 @@ export default {
 /* Text / Icons
 ========================================================================== */
       
-      .homeLink,
-      .current,
-      .link {
-        composes: text  from o-text;
+
+      .currentRouteLink {
         composes: bold  from c-text-style;
         text-decoration: none;
       }
 
-      .current,
-      .link {
+      .homeLink,
+      .currentRouteLink,
+      .routeLink {
+        composes: text  from o-text;
+      }
+
+      .currentRouteLink,
+      .routeLink {
         composes: margin-right-xs  from u-spacings;
       }
 
@@ -122,7 +130,8 @@ export default {
 
       .homeIcon {
         composes: margin-right-xs from u-spacings;
-        height: .8em;
+        vertical-align: text-top;
+        height: 1.1em;
       }
 
 </style>
