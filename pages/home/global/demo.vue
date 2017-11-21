@@ -1,13 +1,15 @@
 <template>
-  <section>
-    <nuxt-child/>
-  </section>
+<section>
+
+  <h2>global/demo.vue</h2>
+  <nuxt-link to="/home/global">to global</nuxt-link>
+  <nuxt-child/>
+
+</section>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>

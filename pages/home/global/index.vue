@@ -1,9 +1,8 @@
 <template>
 <section>
-
-  <p>Global content</p>
-  <nuxt-link to="/home/global/demo">Demo</nuxt-link>
-  <nuxt-child/>
+  
+  <h2>global/index.vue</h2>
+  <nuxt-link to="/home/global/demo">to demo</nuxt-link>
 
 </section>
 </template>
@@ -12,7 +11,3 @@
 <script>
 export default {}
 </script>
-
-
-<style>
-</style>

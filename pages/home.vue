@@ -12,6 +12,7 @@
       <ui-breadcrumbs :list="list"/>
     </div>
     <div :class="$style.contentInner">
+      <h1>home.vue</h1>
       <nuxt-child/>
     </div>
   </main>
@@ -42,6 +43,9 @@ export default {
     list: function () {
       return this.$route.matched
     }
+  },
+  mounted () {
+    // console.log(this.$route)
   }
 }
 </script>

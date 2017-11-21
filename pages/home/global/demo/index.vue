@@ -1,20 +1,15 @@
 <template>
-  <section>
-    <code>
-      <pre>{{code}}</pre>
-    </code>
-  </section>
+<section>
+
+  <h2>demo/index.vue</h2>
+  <nuxt-link to="/home/global">to global</nuxt-link>
+  <nuxt-child/>
+
+</section>
 </template>
 
 <script>
-export default {
-  computed: {
-    code: function () {
-      // eslint-disable-next-line
-      return require('raw-loader!~/assets/styles/cosmetics/cosmetics.border.scss')
-    }
-  }
-}
+export default {}
 </script>
 
 <style>
