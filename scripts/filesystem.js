@@ -3,11 +3,10 @@
 ========================================================================== */
 
 /**
- * Converts the file system to a JSON object and applies some simple string
- * modifications.
+ * Converts configured directories to a custom formatted JSON for use
+ * in the app.
  *
- * Currently only for the styles directory - mostly experimental
- * at this point.
+ * A little experimental at the moment
 */
 
 /* Dependencies
@@ -15,19 +14,25 @@
 var dirTree = require('directory-tree')
 var mkdirp = require('mkdirp')
 var fs = require('fs')
-var path = require('path')
+var PATH = require('path')
 
 /* Config Variables
 ========================================================================== */
-var src = 'assets/styles'
+var styles = {
+  src: 'assets/styles',
+  exclude: /TEMPLATE.scss/
+}
+var components = {
+  src: 'components',
+  exclude: /TEMPLATE.scss/
+}
 var dest = 'data/fs/styles.json'
-var tree = dirTree(src, {exclude: /TEMPLATE.scss/})
-var getDirName = path.dirname
 
 /* Functions
 ========================================================================== */
 // Write a file to disk
 function writeFile (path, contents, cb) {
+  var getDirName = PATH.dirname
   mkdirp(getDirName(path), function (err) {
     if (err) {
       return cb(err)
@@ -35,6 +40,7 @@ function writeFile (path, contents, cb) {
     fs.writeFile(path, contents, cb)
   })
 }
+
 // Recursively remove the source from each obj.path in the directory
 function removeDirectoryString (directoryObject, stringToRemove) {
   var obj = directoryObject.children
@@ -51,13 +57,22 @@ function removeDirectoryString (directoryObject, stringToRemove) {
 
 /* On script run
 ========================================================================== */
-// Remove src directory from paths
-var formattedTree = removeDirectoryString(tree, src)
-// Rename the root path
-formattedTree.path = '/'
-// Convert to JSON String
-var stringified = JSON.stringify(formattedTree, null, 2)
+// Compile styles tree
+var stylesTree = dirTree(styles.src, {exclude: styles.exclude})
+var stylesFormatted = removeDirectoryString(stylesTree, styles.src)
+stylesFormatted.path = 'styles'
+
+// Compile components tree
+var componentsTree = dirTree(components.src, {exclude: components.exclude})
+var componentsFormatted = componentsTree
+componentsFormatted.path = 'components'
+
+// Merge objects
+var merged = []
+merged.push(stylesFormatted, componentsFormatted)
+
 // Write the JSON string to file
+var stringified = JSON.stringify(merged, null, 2)
 writeFile(dest, stringified, 'utf-8', function (err) {
   if (err) {
     return console.log(err)
