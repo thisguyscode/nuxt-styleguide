@@ -57,8 +57,7 @@ export default {
       }
     },
     itemIsFolder: function () {
-      return this.model.children &&
-        this.model.children.length
+      return this.model.children && this.model.children.length
     }
   },
   methods: {
