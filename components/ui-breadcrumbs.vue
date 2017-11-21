@@ -18,9 +18,11 @@
 </template>
 
 <script>
+// import isEmpty from 'lodash/isEmpty'
 export default {
   mounted () {
-    console.log(this.list)
+    // console.log(this.list)
+    console.log(this.$route)
   },
   computed: {
     list: function () {
@@ -42,6 +44,7 @@ export default {
       return index === 0
     },
     showName: function (item) {
+      // var name = ''
       var path = item.path
       var start = path.lastIndexOf('/') + 1
       var end = path.length

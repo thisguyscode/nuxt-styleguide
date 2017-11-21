@@ -48,7 +48,6 @@ function replaceDirectoryString (directoryObject, stringToReplace, newString) {
   for (var key in obj) {
     var current = obj[key]
     var trimmed = current.path.replace(`${stringToReplace}`, `${newString}`)
-    console.log(trimmed)
     current.path = trimmed
     // console.log(current.path)
     if (current.children) {
@@ -80,8 +79,14 @@ if (components.newName) {
 var merged = []
 merged.push(stylesFormatted, componentsFormatted)
 
+// Wrap in an object
+var object = {}
+object.path = '/'
+object.name = 'root'
+object.children = merged
+
 // Write the JSON string to file
-var stringified = JSON.stringify(merged, null, 2)
+var stringified = JSON.stringify(object, null, 2)
 writeFile(dest, stringified, 'utf-8', function (err) {
   if (err) {
     return console.log(err)

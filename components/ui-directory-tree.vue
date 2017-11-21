@@ -1,7 +1,7 @@
 <template>
   <ul :class="$style.root">
     <ui-directory-item
-      v-for="object in root"
+      v-for="object in root.children"
       :model="object"
       :key="object.id"
     />
