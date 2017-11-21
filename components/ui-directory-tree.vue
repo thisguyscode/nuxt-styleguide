@@ -1,12 +1,9 @@
 <template>
   <ul :class="$style.root">
-    <li>
-      <nuxt-link to="root.path">{{root.name}}</nuxt-link>
-    </li>
     <ui-directory-item
-      v-for="item in root.children"
-      :model="item"
-      :key="item.id"
+      v-for="object in root"
+      :model="object"
+      :key="object.id"
     />
   </ul>
 </template>
