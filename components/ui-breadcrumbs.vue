@@ -9,13 +9,13 @@
       </li> -->
 
       <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
-        <!-- HOME ICON -->
+        <!-- ITEM ICON -->
         <ui-icon :class="$style.homeIcon" v-if="isFirst(index)" name="home"/>
-        <ui-icon :class="$style.homeIcon" v-else name="home"/>
+        <ui-icon :class="$style.homeIcon" v-else name="folder-open-o"/>
         <!-- TEXT -->
         <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
         <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
-        <!-- ICON -->
+        <!-- SEPERATOR ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
 
@@ -26,7 +26,7 @@
 <script>
 export default {
   mounted () {
-    // console.log(this.list)
+    console.log(this.list)
   },
   computed: {
     list: function () {
