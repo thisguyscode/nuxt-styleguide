@@ -1,6 +1,6 @@
 <template>
   <ul :class="$style.root">
-    <ui-collapsable-item
+    <ui-directory-item
       v-for="item in root.children"
       :model="item"
       :key="item.id"
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import uiCollapsableItem from '~/components/ui-collapsable-item'
+import uiDirectoryItem from '~/components/ui-directory-item'
 export default {
   props: {
     root: {
@@ -18,7 +18,7 @@ export default {
     }
   },
   components: {
-    uiCollapsableItem
+    uiDirectoryItem
   }
 }
 </script>

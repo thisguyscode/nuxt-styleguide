@@ -4,7 +4,7 @@
   <!-- ITEM -->
   <p :class="[$style.item, itemClass]" @click="toggle">
     <!-- Icon -->
-    <ui-icon :class="$style.icon" name="folder-o" v-if="open && itemIsFolder"></ui-icon>
+    <ui-icon :class="$style.icon" name="folder-open-o" v-if="open && itemIsFolder"></ui-icon>
     <ui-icon :class="$style.icon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
     <ui-icon :class="$style.icon" name="file-o"  v-else="open === false && itemIsFolder === false"></ui-icon>
     <!-- <span v-if="itemIsFolder">[{{open ? '-' : '+'}}] </span> -->
@@ -30,7 +30,7 @@
 
 
 <script>
-import uiCollapsableItem from '~/components/ui-collapsable-item'
+import uiDirectoryItem from '~/components/ui-directory-item'
 export default {
   name: 'ui-collapsable-item',
   data: function () {
@@ -39,7 +39,7 @@ export default {
     }
   },
   components: {
-    uiCollapsableItem
+    uiDirectoryItem
   },
   props: {
     model: {
