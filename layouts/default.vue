@@ -19,7 +19,7 @@
 import uiSidebar from '~/components/ui-sidebar'
 import uiDirectoryTree from '~/components/ui-directory-tree'
 
-import fileSystem from '~/data/fs/main.json'
+import fileSystem from '~/data/filesystem/main.json'
 
 export default {
   data: () => {

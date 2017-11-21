@@ -20,13 +20,14 @@ var PATH = require('path')
 ========================================================================== */
 var styles = {
   src: 'assets/styles',
-  exclude: /TEMPLATE.scss/
+  exclude: /TEMPLATE.scss/,
+  newName: 'common'
 }
 var components = {
   src: 'components',
   exclude: /TEMPLATE.scss/
 }
-var dest = 'data/fs/main.json'
+var dest = 'data/filesystem/main.json'
 
 /* Functions
 ========================================================================== */
@@ -42,14 +43,16 @@ function writeFile (path, contents, cb) {
 }
 
 // Recursively remove the source from each obj.path in the directory
-function removeDirectoryString (directoryObject, stringToRemove) {
+function replaceDirectoryString (directoryObject, stringToReplace, newString) {
   var obj = directoryObject.children
   for (var key in obj) {
     var current = obj[key]
-    var trimmed = current.path.replace(`${stringToRemove}/`, '')
+    var trimmed = current.path.replace(`${stringToReplace}`, `${newString}`)
+    console.log(trimmed)
     current.path = trimmed
+    // console.log(current.path)
     if (current.children) {
-      removeDirectoryString(current, stringToRemove)
+      replaceDirectoryString(current, stringToReplace, newString)
     }
   }
   return directoryObject
@@ -59,13 +62,19 @@ function removeDirectoryString (directoryObject, stringToRemove) {
 ========================================================================== */
 // Compile styles tree
 var stylesTree = dirTree(styles.src, {exclude: styles.exclude})
-var stylesFormatted = removeDirectoryString(stylesTree, styles.src)
-stylesFormatted.path = 'common'
+var stylesFormatted = replaceDirectoryString(stylesTree, styles.src, styles.newName)
+if (styles.newName) {
+  stylesFormatted.path = styles.newName
+  stylesFormatted.name = styles.newName
+}
 
 // Compile components tree
 var componentsTree = dirTree(components.src, {exclude: components.exclude})
 var componentsFormatted = componentsTree
-componentsFormatted.path = 'components'
+if (components.newName) {
+  componentsFormatted.path = components.newName
+  componentsFormatted.name = components.newName
+}
 
 // Merge objects
 var merged = []
