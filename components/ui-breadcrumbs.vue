@@ -1,12 +1,6 @@
 <template>
   <nav :class="$style.root">
     <ol :class="$style.list">
-      
-      <!-- <li :class="$style.item">
-        <span :class="$style.current" v-if="isLast(index)">Home</span>
-        <ui-icon :class="$style.homeIcon" name="home"/>
-        <nuxt-link :class="$style.homeLink" to="/">Home</nuxt-link>
-      </li> -->
 
       <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
         <!-- ITEM ICON -->
@@ -48,15 +42,11 @@ export default {
       return index === 0
     },
     showName: function (item) {
-      if (item.name) {
-        return item.name
-      } else {
-        var path = item.path
-        var start = path.lastIndexOf('/') + 1
-        var end = path.length
-        var name = path.substr(start, end)
-        return name
-      }
+      var path = item.path
+      var start = path.lastIndexOf('/') + 1
+      var end = path.length
+      var name = path.substr(start, end)
+      return name
     }
   }
 }
