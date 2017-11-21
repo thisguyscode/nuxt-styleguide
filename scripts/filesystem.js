@@ -25,7 +25,7 @@ var styles = {
 }
 var components = {
   src: 'components',
-  exclude: /TEMPLATE.scss/
+  exclude: /README.md/
 }
 var dest = 'data/filesystem/main.json'
 

@@ -286,13 +286,6 @@
     "name": "components",
     "children": [
       {
-        "path": "components/README.md",
-        "name": "README.md",
-        "size": 202,
-        "extension": ".md",
-        "type": "file"
-      },
-      {
         "path": "components/ui-a.vue",
         "name": "ui-a.vue",
         "size": 503,
@@ -349,7 +342,7 @@
         "type": "file"
       }
     ],
-    "size": 10579,
+    "size": 10377,
     "type": "directory"
   }
 ]
