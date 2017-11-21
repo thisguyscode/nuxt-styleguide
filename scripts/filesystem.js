@@ -26,7 +26,7 @@ var components = {
   src: 'components',
   exclude: /TEMPLATE.scss/
 }
-var dest = 'data/fs/styles.json'
+var dest = 'data/fs/main.json'
 
 /* Functions
 ========================================================================== */
@@ -60,7 +60,7 @@ function removeDirectoryString (directoryObject, stringToRemove) {
 // Compile styles tree
 var stylesTree = dirTree(styles.src, {exclude: styles.exclude})
 var stylesFormatted = removeDirectoryString(stylesTree, styles.src)
-stylesFormatted.path = 'styles'
+stylesFormatted.path = 'common'
 
 // Compile components tree
 var componentsTree = dirTree(components.src, {exclude: components.exclude})

@@ -1,6 +1,6 @@
 [
   {
-    "path": "styles",
+    "path": "common",
     "name": "styles",
     "children": [
       {
@@ -330,7 +330,7 @@
       {
         "path": "components/ui-directory-tree.vue",
         "name": "ui-directory-tree.vue",
-        "size": 912,
+        "size": 832,
         "extension": ".vue",
         "type": "file"
       },
@@ -349,7 +349,7 @@
         "type": "file"
       }
     ],
-    "size": 10659,
+    "size": 10579,
     "type": "directory"
   }
 ]
