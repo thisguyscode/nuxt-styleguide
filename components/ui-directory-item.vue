@@ -2,15 +2,15 @@
 <li :class="$style.root">
   
   <!-- ITEM -->
-  <p :class="[$style.item, itemClass]" @click="toggle">
+  <nuxt-link :class="[$style.item, itemClass]" @click.native="toggle" :to="'/home/' + model.path">
     <!-- Icon -->
     <ui-icon :class="$style.icon" name="folder-open-o" v-if="open && itemIsFolder"></ui-icon>
     <ui-icon :class="$style.icon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
-    <ui-icon :class="$style.icon" name="file-o"  v-else="open === false && itemIsFolder === false"></ui-icon>
+    <ui-icon :class="$style.icon" name="file-o"  v-else></ui-icon>
     <!-- <span v-if="itemIsFolder">[{{open ? '-' : '+'}}] </span> -->
     <!-- Heading -->
     <span>{{ model.name }}</span>
-  </p>
+  </nuxt-link>
 
   <!-- CONTENTS (if folder) -->
   <ul
@@ -94,7 +94,7 @@ export default {
 ========================================================================== */
 
 .root {
-  composes: margin-bottom-sm  from u-spacings;
+  // composes: margin-bottom-sm  from u-spacings;
 }
 
 
@@ -107,6 +107,7 @@ export default {
 .item {
   composes: text  from o-text;
   composes: margin-bottom-sm  from u-spacings;
+  display: inline-block;
   color: $neutral-30;
   cursor: pointer;
   white-space: nowrap;
@@ -139,6 +140,7 @@ export default {
 
 .folderContentsList {
   composes: list-directory  from o-list-directory;
+  composes: margin-bottom-sm  from u-spacings;
   border-left: 2px solid $neutral-70;
 }
 
