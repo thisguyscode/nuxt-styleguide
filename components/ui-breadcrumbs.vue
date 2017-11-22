@@ -1,21 +1,25 @@
 <template>
   <nav :class="$style.root">
-    <ol :class="$style.list">
+    <ul :class="$style.list">
 
-      <li :class="[$style.item, itemClass(index)]" v-for="(item, index) in list" :key="item.id">
-        <!-- ITEM ICON -->
-        <div :class="$style.itemHighlightArea">
+      <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
+        <!-- if current -->
+        <span :class="$style.currentRouteLink" v-if="isLast(index)">
           <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
           <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
-          <!-- TEXT -->
-          <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
-          <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
-        </div>
+          {{ showName(item) }}
+        </span>
+        <!-- if link -->
+        <nuxt-link :class="$style.routeLink" v-else :to="item.path">
+          <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
+          <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
+          <span>{{ showName(item) }}</span>
+        </nuxt-link>
         <!-- SEPERATOR ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
 
-    </ol>
+    </ul>
   </nav>
 </template>
 
@@ -51,11 +55,6 @@ export default {
     }
   },
   methods: {
-    itemClass: function (index) {
-      if (!this.isLast(index)) {
-        return this.$style.itemIsClickable
-      }
-    },
     itemIconName: function (item) {
       if (item.type === 'file') {
         return 'file-o'
@@ -109,6 +108,7 @@ export default {
 ========================================================================== */
 .root {
   composes: box box--sm  from o-box;
+  position: relative;
 }
 
 
@@ -117,69 +117,54 @@ export default {
 
 /* Layout
 ========================================================================== */
-  .list {
-    composes: list-inline  from o-list-inline;
-  }
+.list {
+  composes: list-inline list-inline--xs  from o-list-inline;
+  position: relative;
+}
 
-    .item {
-      composes: list-inline__item list-inline--xs  from o-list-inline;
-    }
-      
-    .itemIsClickable {
-      &:hover,
-      &:focus {
-        > .itemHighlightArea {
-          background-color: black;
-          color: white;
-        }
-      }
-    }
- 
+  .item {
+    composes: list-inline__item  from o-list-inline;
+    position: relative;
+  }
+  
 
     
 
 
 /* Text / Icons
 ========================================================================== */
-      
+  .currentRouteLink {
+    composes: bold  from c-text-style;
+    text-decoration: none;
+    position: relative;
+  }
 
-      .currentRouteLink {
-        composes: bold  from c-text-style;
-        text-decoration: none;
-      }
+  .currentRouteLink,
+  .routeLink {
+    composes: padding-xs  from u-spacings;
+    composes: margin-right-xs  from u-spacings;
+    composes: text  from o-text;
+    position: relative;
+  }
 
-      .currentRouteLink,
-      .routeLink {
-        composes: padding-xs  from u-spacings;
-        composes: padding-right-none  from u-spacings;
-        composes: text  from o-text;
-      }
+  .routeLink {
+    composes: hover-neutral-90  from c-background-color;
+  }
 
-      // .routeLink {
-      //   &:hover {
-      //     background-color: black;
-      //     > .itemHighlightArea {
-      //       background-color: black;
-      //       color: white;
-      //     }
-      //   }
-      // }
+  .itemIcon {
+    composes: margin-right-xs  from u-spacings;
+    vertical-align: text-top;
+    height: 1.1em;
+    position: relative;
+  }
 
-      .seperatorIcon {
-        composes: margin-right-xs from u-spacings;
-        height: .6em;
-      }
 
-      .itemIcon {
-        // composes: margin-right-xs from u-spacings;
-        vertical-align: text-top;
-        height: 1.1em;
-      }
-      
-      .itemHighlightArea {
-        composes: padding-xs  from u-spacings;
-        composes: margin-right-xs  from u-spacings;
-        display: inline-block;
-      }
+.seperatorIcon {
+  height: .6em;
+  position: relative;
+}
+
+
+
 
 </style>

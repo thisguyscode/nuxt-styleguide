@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # BACKGROUND-COLOR
+   # BORDER
 ========================================================================== */
 
 /**
- *  Apply simple background-color / color combos
+ *  ___NOTES___
  */
 
 
@@ -67,8 +67,16 @@ $standard-weight: 1px;
 /* Color
 ========================================================================== */
 
+.very-heavy {
+  border-color: $neutral-20;
+}
+
 .heavy {
-  border-color: $neutral-00;
+  border-color: $neutral-30;
+}
+
+.medium {
+  border-color: $neutral-50;
 }
 
 .light {
@@ -76,5 +84,5 @@ $standard-weight: 1px;
 }
 
 .very-light {
-  border-color: $neutral-90;
+  border-color: $neutral-80;
 }

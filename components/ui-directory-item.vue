@@ -72,15 +72,15 @@ export default {
     },
     itemClass: function () {
       if (this.open) {
-        return this.$style.itemIsOpen
+        return this.$style.item_isOpen
       }
       if (this.itemIsFolder) {
-        return this.$style.itemIsFolder
+        return this.$style.item_isFolder
       }
     },
     toggleClass: function () {
       if (!this.itemIsFolder) {
-        return this.$style.toggleIsDisabled
+        return this.$style.toggle_isDisabled
       }
     },
     toggleTabIndex: function () {
@@ -166,11 +166,11 @@ export default {
   }
 }
 
-.itemIsFolder {
+.item_isFolder {
   // composes: bold  from c-text-style;
 }
 
-.itemIsOpen {
+.item_isOpen {
   composes: bold  from c-text-style;
   color: $neutral-00;
 }
@@ -197,7 +197,7 @@ export default {
     }
   }
 
-  .toggleIsDisabled {
+  .toggle_isDisabled {
     pointer-events: none;
   }
 

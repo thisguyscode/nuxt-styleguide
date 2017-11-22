@@ -50,21 +50,31 @@
 ========================================================================== */
 
 .list-inline--flush {
-  margin-right: 0;
+  > .list-inline__item {
+    margin-right: 0;
+  }
 }
 
 .list-inline--xs {
-  margin-right: $unit-xs;
+  > .list-inline__item {
+    margin-right: $unit-xs;
+  }
 }
 
 .list-inline--sm {
-  margin-right: $unit-sm;
+  > .list-inline__item {
+    margin-right: $unit-sm;
+  }
 }
 
 .list-inline--lg {
-  margin-right: $unit-lg;
+  > .list-inline__item {
+    margin-right: $unit-lg;
+  }
 }
 
 .list-inline--xl {
-  margin-right: $unit-xl;
+  > .list-inline__item {
+    margin-right: $unit-xl;
+  }
 }

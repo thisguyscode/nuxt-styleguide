@@ -48,7 +48,7 @@ export default {
 ========================================================================== */
 
   .contentHeader {
-    composes: bottom heavy  from c-border;
+    composes: bottom light  from c-border;
   }
 
   .contentInner {

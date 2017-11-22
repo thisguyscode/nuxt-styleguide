@@ -42,8 +42,15 @@ $neutral-100: $lightest;
 
 $neutral-05: mix($neutral-100, $neutral-00, 5%);
 $neutral-10: mix($neutral-100, $neutral-00, 10%);
+$neutral-15: mix($neutral-100, $neutral-00, 15%);
+$neutral-20: mix($neutral-100, $neutral-00, 20%);
 $neutral-30: mix($neutral-100, $neutral-00, 30%);
+
+$neutral-50: mix($neutral-100, $neutral-00, 50%);
+
 $neutral-70: mix($neutral-100, $neutral-00, 70%);
+$neutral-80: mix($neutral-100, $neutral-00, 80%);
+$neutral-85: mix($neutral-100, $neutral-00, 85%);
 $neutral-90: mix($neutral-100, $neutral-00, 90%);
 $neutral-95: mix($neutral-100, $neutral-00, 95%);
 

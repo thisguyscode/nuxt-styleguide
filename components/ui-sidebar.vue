@@ -26,7 +26,7 @@ export default {}
 .root {
   composes: box  from o-box;
   composes: neutral-95  from c-background-color;
-  composes: right heavy  from c-border;
+  composes: right light  from c-border;
   height: 100%;
 }
 

@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # BACKGROUND-COLOR
+   # TEXT-COLOR
 ========================================================================== */
 
 /**
- *  Apply simple background-color / color combos
+ *  Apply simple color to element
  */
 
 
@@ -13,10 +13,6 @@
 
 // VALUES
 @import "~assets/styles/values/values.colors";
-
-// TOOLS
-@import "~assets/styles/tools/tools.iterate-colors";
-@import "~assets/styles/tools/tools.contrasting-color";
 
 
 
@@ -28,6 +24,10 @@ $contrast-colors: (
   'neutral-00': $neutral-00,
   'neutral-05': $neutral-05,
   'neutral-10': $neutral-10,
+  'neutral-20': $neutral-20,
+  'neutral-30': $neutral-30,
+  'neutral-70': $neutral-70,
+  'neutral-80': $neutral-80,
   'neutral-90': $neutral-90,
   'neutral-95': $neutral-95,
   'neutral-100': $neutral-100
@@ -57,14 +57,12 @@ $common-colors: (
 @each $contrast-color-namespace, $contrast-color in $contrast-colors {
 
   .#{$contrast-color-namespace} {
-    background-color: $contrast-color;
-    color: contrasting-color($contrast-color, $lightest, $darkest)
+    color: $contrast-color;
   }
 
   .hover-#{$contrast-color-namespace} {
     &:hover {
-      background-color: $contrast-color;
-      color: contrasting-color($contrast-color, $lightest, $darkest)
+      color: $contrast-color;
     }
   }
   
@@ -79,14 +77,12 @@ $common-colors: (
 @each $lightness-color-namespace, $lightness-color in $lightness-colors {
   
   .#{$lightness-color-namespace} {
-    background-color: $lightness-color;
-    color: contrasting-color($lightness-color, $lightest, $darkest)
+    color: $lightness-color;
   }
 
   .hover-#{$lightness-color-namespace} {
     &:hover {
-      background-color: $lightness-color;
-      color: contrasting-color($lightness-color, $lightest, $darkest)
+      color: $lightness-color;
     }
   }
   
@@ -100,26 +96,13 @@ $common-colors: (
 @each $common-color-namespace, $common-color in $common-colors {
   
   .#{$common-color-namespace} {
-    background-color: $common-color;
-    color: contrasting-color($common-color, $lightest, $darkest)
+    color: $common-color;
   }
 
   .hover-#{$common-color-namespace} {
     &:hover {
-      background-color: $common-color;
-      color: contrasting-color($common-color, $lightest, $darkest)
+      color: $common-color;
     }
   }
   
-}
-
-
-
-
-
-/* Misc
-========================================================================== */
-
-.each-different {
-  @include iterate-colors();
 }
