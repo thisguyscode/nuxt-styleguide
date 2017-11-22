@@ -23,7 +23,6 @@
 
 .heading {
   font-family: $font-display;
-  font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   margin-bottom: $unit-sm;
 }
@@ -35,7 +34,21 @@
 /* Size modifiers
 ========================================================================== */
 
-.heading--sm {}
+.heading--alpha {
+  font-size: $font-size-xxxl;
+}
+
+.heading--beta {
+  font-size: $font-size-xxl;
+}
+
+.heading--gamma {
+  font-size: $font-size-xl;
+}
+
+.heading--delta {
+  font-size: $font-size-lg;
+}
 
 
 
