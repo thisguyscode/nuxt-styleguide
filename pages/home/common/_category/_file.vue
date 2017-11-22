@@ -1,19 +1,19 @@
 <template>
   <section>
     <h1 :class="$style.heading">{{ $route.params.file }}</h1>
-    <code>
-      <pre>{{ code }}</pre>
-    </code>
+    <ui-code-block :code="code" :languages="['scss', 'js']"/>
   </section>
 </template>
 
 <script>
+import uiCodeBlock from '~/components/ui-code-block'
 export default {
+  components: {
+    uiCodeBlock
+  },
   computed: {
     code: function () {
-      // if (this.$route.params.file && this.$route.params.category) {
       return require(`!raw-loader!~/assets/styles/${this.$route.params.category}/${this.$route.params.file}`)
-      // }
     }
   }
 }

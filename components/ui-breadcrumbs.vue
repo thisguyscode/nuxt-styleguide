@@ -2,13 +2,15 @@
   <nav :class="$style.root">
     <ol :class="$style.list">
 
-      <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
+      <li :class="[$style.item, itemClass(index)]" v-for="(item, index) in list" :key="item.id">
         <!-- ITEM ICON -->
-        <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
-        <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
-        <!-- TEXT -->
-        <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
-        <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
+        <div :class="$style.itemHighlightArea">
+          <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
+          <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
+          <!-- TEXT -->
+          <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
+          <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
+        </div>
         <!-- SEPERATOR ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
@@ -49,6 +51,11 @@ export default {
     }
   },
   methods: {
+    itemClass: function (index) {
+      if (!this.isLast(index)) {
+        return this.$style.itemIsClickable
+      }
+    },
     itemIconName: function (item) {
       if (item.type === 'file') {
         return 'file-o'
@@ -118,6 +125,15 @@ export default {
       composes: list-inline__item list-inline--xs  from o-list-inline;
     }
       
+    .itemIsClickable {
+      &:hover,
+      &:focus {
+        > .itemHighlightArea {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
  
 
     
@@ -134,17 +150,20 @@ export default {
 
       .currentRouteLink,
       .routeLink {
-        composes: margin-right-xs  from u-spacings;
         composes: padding-xs  from u-spacings;
+        composes: padding-right-none  from u-spacings;
         composes: text  from o-text;
       }
 
-      .routeLink {
-        &:hover {
-          background-color: black;
-          color: white;
-        }
-      }
+      // .routeLink {
+      //   &:hover {
+      //     background-color: black;
+      //     > .itemHighlightArea {
+      //       background-color: black;
+      //       color: white;
+      //     }
+      //   }
+      // }
 
       .seperatorIcon {
         composes: margin-right-xs from u-spacings;
@@ -155,6 +174,12 @@ export default {
         // composes: margin-right-xs from u-spacings;
         vertical-align: text-top;
         height: 1.1em;
+      }
+      
+      .itemHighlightArea {
+        composes: padding-xs  from u-spacings;
+        composes: margin-right-xs  from u-spacings;
+        display: inline-block;
       }
 
 </style>

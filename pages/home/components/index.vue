@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>COMPONENTS</h1>
+    <h1 :class="$style.heading">components</h1>
   </section>
 </template>
 
@@ -10,6 +10,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" module>
+
+/* Dependencies
+========================================================================== */
+@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+
+// @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+
+
+
+
+
+/* Heading
+========================================================================== */
+.heading {
+  composes: heading heading--alpha  from o-heading;
+}
+
 
 </style>
