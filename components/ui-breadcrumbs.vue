@@ -115,7 +115,7 @@ export default {
   }
 
     .item {
-      composes: list-inline__item list-inline--sm  from o-list-inline;
+      composes: list-inline__item list-inline--xs  from o-list-inline;
     }
       
  
@@ -132,23 +132,27 @@ export default {
         text-decoration: none;
       }
 
-      .homeLink,
       .currentRouteLink,
       .routeLink {
+        composes: margin-right-xs  from u-spacings;
+        composes: padding-xs  from u-spacings;
         composes: text  from o-text;
       }
 
-      .currentRouteLink,
       .routeLink {
-        composes: margin-right-sm  from u-spacings;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
       }
 
       .seperatorIcon {
+        composes: margin-right-xs from u-spacings;
         height: .6em;
       }
 
       .itemIcon {
-        composes: margin-right-xs from u-spacings;
+        // composes: margin-right-xs from u-spacings;
         vertical-align: text-top;
         height: 1.1em;
       }

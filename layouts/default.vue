@@ -44,7 +44,7 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
-  composes: grid grid--no-wrap  from o-grid;
+  composes: grid grid--no-wrap grid--align-stretch  from o-grid;
 }
 
 

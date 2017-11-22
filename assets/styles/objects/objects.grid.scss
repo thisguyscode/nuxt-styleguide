@@ -62,6 +62,10 @@ $offsets: false;
   }
 }
 
+.grid--align-stretch {
+  align-items: stretch;
+}
+
 .grid--no-wrap {
   flex-wrap: nowrap;
 }
