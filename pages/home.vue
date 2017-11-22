@@ -6,9 +6,6 @@
   </div>
 
   <div :class="$style.contentInner">
-    <h1><nuxt-link to="/home/common">Common</nuxt-link></h1>
-    <h1><nuxt-link to="/home/components">Components</nuxt-link></h1>
-    <h1><nuxt-link to="/home/common/global">Common/global</nuxt-link></h1>
     <nuxt-child/>
   </div>
 

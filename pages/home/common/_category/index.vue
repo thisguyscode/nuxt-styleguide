@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h1>{{ $route.params.category }}</h1>
   </section>
 </template>
 
