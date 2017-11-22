@@ -28,8 +28,9 @@ export default {
 /* Dependencies
 ========================================================================== */
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
-
 @value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
 
@@ -39,6 +40,7 @@ export default {
 ========================================================================== */
 .root {
   composes: list-directory  from o-list-directory;
+  composes: padding-left-none  from u-spacings;
 }
 
 
