@@ -39,17 +39,12 @@ export default {
 /* Dependencies
 ========================================================================== */
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
-@value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
-
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
-@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
 
 /* Root class
 ========================================================================== */
 .root {
-  composes: grid  from o-grid;
+  composes: grid grid--no-wrap  from o-grid;
 }
 
 
