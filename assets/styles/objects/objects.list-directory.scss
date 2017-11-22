@@ -1,5 +1,5 @@
 /* ==========================================================================
-   # BOX
+   # LIST-DIRECTORY
 ========================================================================== */
 
 /**
@@ -22,7 +22,26 @@
 ========================================================================== */
 
 .list-directory {
-  padding-left: $unit-sm;
+  padding-left: $unit-sm + $unit-xs;
   list-style: none;
 }
 
+
+
+
+
+
+/* Child classes
+========================================================================== */
+
+  .list-directory__item {
+    position: relative;
+    margin-bottom: $unit-xs;
+  }
+
+    .list-directory__line {
+      position: absolute;
+      top: $unit-xs;
+      left: $unit-xs;
+      bottom: $unit-xs;
+    }

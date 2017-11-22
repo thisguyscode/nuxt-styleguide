@@ -35,6 +35,16 @@
   color: contrasting-color($neutral-05, $lightest, $darkest);
 }
 
+.neutral-10 {
+  background-color: $neutral-10;
+  color: contrasting-color($neutral-10, $lightest, $darkest);
+}
+
+.neutral-90 {
+  background-color: $neutral-90;
+  color: contrasting-color($neutral-90, $lightest, $darkest);
+}
+
 .neutral-95 {
   background-color: $neutral-95;
   color: contrasting-color($neutral-95, $lightest, $darkest);
