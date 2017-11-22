@@ -241,14 +241,24 @@ export default {
   .previewLink {
     composes: liner liner--break-left  from o-liner;
     composes: padding-horizontal-xs  from u-spacings;
+    color: $neutral-10;
     display: flex;
     align-items: center;
     z-index: 100;
     cursor: pointer;
+    > .previewLinkIcon {
+      opacity: .7;
+    }
+    &:hover,
+    &:focus {
+      > .previewLinkIcon {
+        opacity: 1;
+      }
+    }
   }
 
     .previewLinkIcon {
-      // height: 1rem;
+      height: 1em;
       // vertical-align: text;
     }
 
