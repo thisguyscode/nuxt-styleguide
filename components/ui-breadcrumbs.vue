@@ -24,11 +24,7 @@
 </template>
 
 <script>
-// import isEmpty from 'lodash/isEmpty'
 export default {
-  mounted () {
-    // console.log(this.list)
-  },
   computed: {
     list: function () {
       var list = []
@@ -131,33 +127,38 @@ export default {
     
 
 
-/* Text / Icons
+/* Links
 ========================================================================== */
-  .currentRouteLink {
-    composes: bold  from c-text-style;
-    text-decoration: none;
-    position: relative;
-  }
+.routeLink {
+  composes: hover-neutral-90  from c-background-color;
+}
 
-  .currentRouteLink,
-  .routeLink {
-    composes: padding-xs  from u-spacings;
-    composes: margin-right-xs  from u-spacings;
-    composes: text  from o-text;
-    position: relative;
-  }
+.currentRouteLink {
+  composes: bold  from c-text-style;
+  text-decoration: none;
+  position: relative;
+}
 
-  .routeLink {
-    composes: hover-neutral-90  from c-background-color;
-  }
+.currentRouteLink,
+.routeLink {
+  composes: padding-xs  from u-spacings;
+  composes: margin-right-xs  from u-spacings;
+  composes: text  from o-text;
+  position: relative;
+}
 
-  .itemIcon {
-    composes: margin-right-xs  from u-spacings;
-    vertical-align: text-top;
-    height: 1.1em;
-    position: relative;
-  }
 
+
+
+
+/* Icons
+========================================================================== */
+.itemIcon {
+  composes: margin-right-xs  from u-spacings;
+  vertical-align: text-top;
+  height: 1.1em;
+  position: relative;
+}
 
 .seperatorIcon {
   height: .6em;

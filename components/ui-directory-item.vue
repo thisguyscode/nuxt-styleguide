@@ -10,12 +10,16 @@
     </nuxt-link>
     
     <!-- Clickable toggle -->
-    <a :class="[$style.toggle, toggleClass]" @click="toggleClickHandler" @keyup.enter="toggleEnterHandler" :tabindex="toggleTabIndex">
+    <a
+      @click="toggleClickHandler"
+      @keyup.enter="toggleEnterHandler"
+      :class="[$style.toggle, toggleClass]"
+      :tabindex="toggleTabIndex">
       <!-- Icon -->
       <ui-icon :class="$style.itemIcon" name="folder-open-o" v-if="open && itemIsFolder"></ui-icon>
       <ui-icon :class="$style.itemIcon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
       <ui-icon :class="$style.itemIcon" name="file"  v-else></ui-icon>
-      <!-- Heading -->
+      <!-- Text -->
       <span :class="$style.itemText">{{ model.name }}</span>
     </a>
 
@@ -74,9 +78,6 @@ export default {
       if (this.open) {
         return this.$style.item_isOpen
       }
-      if (this.itemIsFolder) {
-        return this.$style.item_isFolder
-      }
     },
     toggleClass: function () {
       if (!this.itemIsFolder) {
@@ -119,18 +120,16 @@ export default {
 @import "~assets/styles/values/values.colors";
 
 // CLASSES
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
-@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
-@value u-position "sass-loader!~/assets/styles/utilities/utilities.position.scss";
 @value u-hidden-visually "sass-loader!~/assets/styles/utilities/utilities.hidden-visually.scss";
 
 
@@ -153,21 +152,11 @@ export default {
   composes: text  from o-text;
   composes: list-directory__item  from o-list-directory;
   composes: margin-right-lg  from u-spacings;
+  composes: neutral-30  from c-text-color;
+  composes: soft-hover-only  from c-button;
   width: 100%;
-  display: block;
-  color: $neutral-30;
-  cursor: pointer;
   white-space: nowrap;
   position: relative;
-  &:hover,
-  &:focus {
-    background-color: $neutral-100;
-    box-shadow: inset 0 0 0 1px $neutral-70;
-  }
-}
-
-.item_isFolder {
-  // composes: bold  from c-text-style;
 }
 
 .item_isOpen {
@@ -190,6 +179,7 @@ export default {
     composes: padding-xs  from u-spacings;
     display: block;
     position: relative;
+    
     &:hover,
     &:focus {
       background-color: $neutral-90;
@@ -206,29 +196,36 @@ export default {
 
 /* File Link
 ========================================================================== */
-  .fileLink {
-    composes: liner liner--link-bloater  from o-liner;
-    &:hover,
-    &:focus {
-      background-color: $neutral-90;
-      box-shadow: inset 0 0 0 1px $neutral-70;
-    }
+.fileLink {
+  composes: liner liner--link-bloater  from o-liner;
+  
+  &:hover,
+  &:focus {
+    background-color: $neutral-90;
+    box-shadow: inset 0 0 0 1px $neutral-70;
+  }
+}
+
+  .fileLinkText {
+    composes: hidden-visually  from u-hidden-visually;
   }
 
-    .fileLinkText {
-      composes: hidden-visually  from u-hidden-visually;
-    }
+
 
 
 
 /* Preview Link
 ========================================================================== */
+
+// Easiest to repeat .item here as all the code actually relates to
+// .previewLink
 .item {
   &:hover,
   &:focus {
     > .previewLink {
       background-color: $neutral-100;
       box-shadow: inset 0 0 0 1px $neutral-70;
+      
       &:hover,
       &:focus {
         background-color: $neutral-90;
@@ -238,29 +235,29 @@ export default {
   }
 }
   
-  .previewLink {
-    composes: liner liner--break-left  from o-liner;
-    composes: padding-horizontal-xs  from u-spacings;
-    color: $neutral-10;
-    display: flex;
-    align-items: center;
-    z-index: 100;
-    cursor: pointer;
+.previewLink {
+  composes: liner liner--break-left  from o-liner;
+  composes: padding-horizontal-xs  from u-spacings;
+  composes: neutral-10  from c-text-color;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  > .previewLinkIcon {
+    opacity: .7;
+  }
+  
+  &:hover,
+  &:focus {
     > .previewLinkIcon {
-      opacity: .7;
-    }
-    &:hover,
-    &:focus {
-      > .previewLinkIcon {
-        opacity: 1;
-      }
+      opacity: 1;
     }
   }
+}
 
-    .previewLinkIcon {
-      height: 1em;
-      // vertical-align: text;
-    }
+  .previewLinkIcon {
+    height: 1em;
+  }
 
 
 
