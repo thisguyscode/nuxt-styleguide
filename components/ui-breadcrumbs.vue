@@ -7,8 +7,8 @@
         <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
         <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
         <!-- TEXT -->
-        <span :class="$style.currentRouteLink" v-if="!isFirst(index) && isLast(index)">{{ showName(item) }}</span>
-        <nuxt-link :class="$style.routeLink" v-else-if="isLast(index)" :to="item.path">{{ showName(item) }}</nuxt-link>
+        <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
+        <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
         <!-- SEPERATOR ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
