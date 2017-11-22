@@ -1,0 +1,55 @@
+/* ==========================================================================
+   # LIST-BARE
+========================================================================== */
+/**
+ * An object which allows for cleaner markup. Rather than wrapping an
+ * entire element in an <a> tag, we can instead follow the method outlined below
+ * and have the <a> inline with the rest of the element content. The parent must
+ * have a positioning context (i.e. position: relative/absolute.
+ *
+ * <div class="c-card">
+ *   <a href="#">
+ *     <span class="o-link-bloater"></span>
+ *   </a>
+ *   <div class="c-card__content">
+ *     ...
+ *   </div>
+ * </div>
+ *
+ * One should also add a text span to the link for the sake of screen readers
+ *
+ * <a href="#">
+ *   <span class="o-link-bloater"></span>
+ *   <span class="u-hidden-visually">Please read me screenreader</span>
+ * </a>
+ */
+
+
+
+
+/* Dependencies
+========================================================================== */
+// NONE
+
+
+
+
+
+/* Base class
+========================================================================== */
+
+/**
+ * 1. Make sure other links can be clicked on top of the bloated one
+ * 2. A strange hack to make sure this works in IE
+ */
+
+ .link-bloater {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0; /*[1]*/
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='); /*[2]*/
+}
+
