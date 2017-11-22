@@ -36,7 +36,6 @@
     <!-- Recursively use this component -->
     <ui-collapsable-item
       v-for="item in model.children"
-      :openOverride="childrenOpen"
       :model="item"
       :key="item.id">
     </ui-collapsable-item>
