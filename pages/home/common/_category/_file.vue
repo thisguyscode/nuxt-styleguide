@@ -1,7 +1,10 @@
 <template>
   <section>
-    <span :class="$style.categoryHeading">{{ $route.params.category }}</span>
-    <h1 :class="$style.heading">{{ $route.params.file }}</h1>
+    <!-- <span :class="$style.categoryHeading">{{ $route.params.category }}</span> -->
+    <h1 :class="$style.heading">
+      <ui-icon :class="$style.headingLogo" name="file"/>
+      <span>{{ $route.params.file }}</span>
+    </h1>
     <ui-code-block :code="code" :languages="['scss', 'js']"/>
   </section>
 </template>
@@ -29,6 +32,8 @@ export default {
 
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
 
 /* Root class
 ========================================================================== */
@@ -43,7 +48,13 @@ export default {
 
   .heading {
     composes: heading heading--beta  from o-heading;
+    composes: margin-bottom-md  from u-spacings;
   }
+
+    .headingLogo {
+      composes: margin-right-xs from u-spacings;
+      height: .8em;
+    }
 
   .categoryHeading {
     composes: heading heading--delta  from o-heading;
