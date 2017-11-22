@@ -4,11 +4,11 @@
 
       <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
         <!-- ITEM ICON -->
-        <ui-icon :class="$style.homeIcon" v-if="isFirst(index)" name="home"/>
-        <ui-icon :class="$style.homeIcon" v-else name="folder-open-o"/>
+        <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
+        <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
         <!-- TEXT -->
-        <span :class="$style.currentRouteLink" v-if="isLast(index)">{{ showName(item) }}</span>
-        <nuxt-link :class="$style.routeLink" v-else :to="item.path">{{ showName(item) }}</nuxt-link>
+        <span :class="$style.currentRouteLink" v-if="!isFirst(index) && isLast(index)">{{ showName(item) }}</span>
+        <nuxt-link :class="$style.routeLink" v-else-if="isLast(index)" :to="item.path">{{ showName(item) }}</nuxt-link>
         <!-- SEPERATOR ICON -->
         <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
       </li>
@@ -22,20 +22,42 @@
 export default {
   mounted () {
     // console.log(this.list)
-    console.log(this.$route)
   },
   computed: {
     list: function () {
       var list = []
       this.$route.matched.forEach((item) => {
         if (!item.path.endsWith('/')) {
-          list.push(item)
+          var obj = Object.create(item)
+          var start = obj.path.lastIndexOf('/') + 1
+          var end = obj.path.length - 1
+          var testString = obj.path.substr(start, end)
+          if (testString === ':name') {
+            obj.path = '/home/components/' + this.$route.params.name
+            obj.type = 'file'
+          } else if (testString === ':category') {
+            obj.path = '/home/common/' + this.$route.params.category
+            obj.type = 'folder'
+          } else if (testString === ':file') {
+            obj.path = '/home/common/' + this.$route.params.category + '/' + this.$route.params.file
+            obj.type = 'file'
+          }
+          list.push(obj)
         }
       })
       return list
     }
   },
   methods: {
+    itemIconName: function (item) {
+      if (item.type === 'file') {
+        return 'file-o'
+      } else if (item.type === 'folder') {
+        return 'folder-open-o'
+      } else {
+        return 'folder-open-o'
+      }
+    },
     isLast: function (index) {
       var list = this.list
       return index === list.length - 1
@@ -44,11 +66,15 @@ export default {
       return index === 0
     },
     showName: function (item) {
-      // var name = ''
-      var path = item.path
-      var start = path.lastIndexOf('/') + 1
-      var end = path.length
-      var name = path.substr(start, end)
+      var name = ''
+      if (item.customName) {
+        name = item.customName
+      } else {
+        var path = item.path
+        var start = path.lastIndexOf('/') + 1
+        var end = path.length
+        name = path.substr(start, end)
+      }
       return name
     }
   }
@@ -75,7 +101,7 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
-  composes: box  from o-box;
+  composes: box box--sm  from o-box;
 }
 
 
@@ -89,7 +115,7 @@ export default {
   }
 
     .item {
-      composes: list-inline__item list-inline--xs  from o-list-inline;
+      composes: list-inline__item list-inline--sm  from o-list-inline;
     }
       
  
@@ -114,14 +140,14 @@ export default {
 
       .currentRouteLink,
       .routeLink {
-        composes: margin-right-xs  from u-spacings;
+        composes: margin-right-sm  from u-spacings;
       }
 
       .seperatorIcon {
         height: .6em;
       }
 
-      .homeIcon {
+      .itemIcon {
         composes: margin-right-xs from u-spacings;
         vertical-align: text-top;
         height: 1.1em;
