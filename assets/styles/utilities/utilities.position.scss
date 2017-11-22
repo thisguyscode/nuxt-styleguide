@@ -1,0 +1,63 @@
+/* ==========================================================================
+   # POSITION
+   ========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+ 
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.sizes";
+
+
+
+
+
+/* Variables
+========================================================================== */
+
+/* stylelint-disable string-quotes */
+
+$directions: (
+  'top': 'top',
+  'bottom': 'bottom',
+  'left': 'left',
+  'right': 'right'
+);
+
+$sizes: (
+  '-xs': $unit-xs,
+  '-sm': $unit-sm,
+  '-md': $unit-md,
+  '-lg': $unit-lg,
+  '-xl': $unit-xl,
+  '-none': 0
+);
+
+/* stylelint-enable string-quotes */
+
+
+
+
+
+/* Function
+========================================================================== */
+
+
+@each $direction-namespace, $direction in $directions {
+
+  @each $size-namespace, $size in $sizes {
+
+    .#{$direction-namespace}#{$size-namespace} {
+      #{$direction}: $size !important;
+    }
+
+  }
+
+}
