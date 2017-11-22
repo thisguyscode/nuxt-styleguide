@@ -1,0 +1,92 @@
+/* ==========================================================================
+   # LINER
+========================================================================== */
+
+/**
+ *  A simple object which grips the edges of the nearest ancestor with a
+ *  posititioning context (i.e. which has position:relative, position:absolute,
+ *  position:fixed or position:sticky)
+ */
+
+
+
+
+/* Dependencies
+========================================================================== */
+// NONE
+
+
+
+
+
+/* Base class
+========================================================================== */
+
+/**
+ * 1. Make sure other links can be clicked on top of the bloated one
+ * 2. A strange hack to make sure this works in IE
+ */
+
+ .liner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+
+
+/* Layout modifiers
+========================================================================== */
+
+.liner--break-left {
+  left: auto;
+}
+
+.liner--break-right {
+  right: auto;
+}
+
+.liner--break-top {
+  top: auto;
+}
+
+.liner--break-bottom {
+  bottom: auto;
+}
+
+
+/* Link-bloater class
+========================================================================== */
+
+/**
+ *  The liner can be used inside of a link to bloat the clickable area.
+ *
+ *    <div class="card">
+ *      <a href="#">
+ *        <span class="liner liner--link-bloater"></span>
+ *        <span class="hidden-visually">
+ *           Name of link (for screenreaders
+ *        </span>
+ *      </a>
+ *      ...
+ *      <button>Send</button>
+ *    </div>
+ *
+ *  This allows for the entire card (in the example above) to be clickable,
+ *  but with the flexibility of having other links / buttons etc. within it
+ *  within being invalid markup
+ */
+
+/**
+ * 1. Allow other links in the same parent to be clickable on top
+ * 2. A strange hack to make sure this works in IE
+ */
+
+.liner--link-bloater {
+  z-index: 0; /*[1]*/
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='); /*[2]*/
+}
+
