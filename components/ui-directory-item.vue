@@ -154,6 +154,7 @@ export default {
   composes: margin-right-lg  from u-spacings;
   composes: neutral-30  from c-text-color;
   composes: soft-hover-only  from c-button;
+  cursor: pointer;
   width: 100%;
   white-space: nowrap;
   position: relative;
