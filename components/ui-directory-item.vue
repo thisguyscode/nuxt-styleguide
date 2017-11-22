@@ -2,11 +2,11 @@
 <li :class="$style.root">
   
   <!-- ITEM -->
-  <nuxt-link :class="[$style.item, itemClass]" @click.native="toggle" :to="'/home/' + model.path">
+  <nuxt-link :class="[$style.item, itemClass]" @click.native="toggle" :to="linkTo">
     <!-- Icon -->
     <ui-icon :class="$style.icon" name="folder-open-o" v-if="open && itemIsFolder"></ui-icon>
     <ui-icon :class="$style.icon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
-    <ui-icon :class="$style.icon" name="file-o"  v-else></ui-icon>
+    <ui-icon :class="$style.icon" name="file"  v-else></ui-icon>
     <!-- <span v-if="itemIsFolder">[{{open ? '-' : '+'}}] </span> -->
     <!-- Heading -->
     <span>{{ model.name }}</span>
@@ -32,6 +32,9 @@
 <script>
 import uiDirectoryItem from '~/components/ui-directory-item'
 export default {
+  mounted () {
+    // console.log(this.$route.path)
+  },
   name: 'ui-collapsable-item',
   data: function () {
     return {
@@ -48,6 +51,9 @@ export default {
     }
   },
   computed: {
+    linkTo: function () {
+      return '/home/' + this.model.path
+    },
     itemClass: function () {
       if (this.open) {
         return this.$style.itemIsOpen
@@ -114,7 +120,7 @@ export default {
 }
 
 .itemIsFolder {
-  composes: bold  from c-text-style;
+  // composes: bold  from c-text-style;
 }
 
 .itemIsOpen {
