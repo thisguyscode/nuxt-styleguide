@@ -36,7 +36,9 @@ $contrast-colors: (
   'neutral-85': $neutral-85,
   'neutral-90': $neutral-90,
   'neutral-95': $neutral-95,
-  'neutral-100': $neutral-100
+  'neutral-100': $neutral-100,
+  'semi-neutral-00': rgba($neutral-00, .7),
+  'semi-neutral-100': rgba($neutral-100, .7)
 );
 
 $lightness-colors: (
