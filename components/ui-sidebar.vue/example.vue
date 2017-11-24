@@ -1,9 +1,21 @@
 <template>
   <ui-sidebar>
-    <div style="background-color: red; height: 10px;"></div>
+    <p :class="$style.text">Text</p>
   </ui-sidebar>
 </template>
+
 
 <script>
 export default {}
 </script>
+
+
+<style lang="scss" module>
+
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+
+.text {
+  composes: text  from o-text;
+}
+
+</style>
