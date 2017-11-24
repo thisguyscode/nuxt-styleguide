@@ -22,11 +22,18 @@ $gutter-width: 3rem;
 /* Root class
 ========================================================================== */
 .root {
-  composes: neutral-10  from c-background-color;
+  composes: neutral-00  from c-background-color;
   max-width: 100%;
-  border-radius: 10px;
   overflow: hidden;
   position: relative;
+}
+
+.root_rounded {
+  border-radius: 10px;
+}
+
+.root_roundedBottomOnly {
+  border-radius: 0 0 10px 10px;
 }
 
 
@@ -47,6 +54,7 @@ $gutter-width: 3rem;
   composes: box  from o-box;
   composes: code  from o-code;
   composes: padding-left-xl  from u-spacings;
+  overflow-x: scroll;
   // padding-left: $gutter-width;
 }
 
@@ -64,6 +72,7 @@ $gutter-width: 3rem;
   composes: liner liner--break-right  from o-liner;
   composes: padding-horizontal-sm  from u-spacings;
   composes: neutral-70  from c-text-color;
+  composes: semi-neutral-00  from c-background-color;
   composes: right very-heavy from c-border;
   text-align: right;
   width: $gutter-width;
