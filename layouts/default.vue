@@ -31,11 +31,6 @@ export default {
   components: {
     uiSidebar,
     uiDirectoryTree
-  },
-  computed: {
-    testCode: function () {
-      return require(`!raw-loader!~/assets/styles/config/config.baseline.scss`)
-    }
   }
 }
 </script>
