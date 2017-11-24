@@ -17,7 +17,7 @@
 
 
 <script>
-import uiSidebar from '~/components/ui-sidebar'
+import uiSidebar from '~/components/ui-sidebar.vue'
 import uiDirectoryTree from '~/components/ui-directory-tree.vue'
 
 import fileSystem from '~/data/filesystem/main.json'
