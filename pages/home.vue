@@ -5,6 +5,10 @@
     <ui-breadcrumbs/>
   </div>
 
+  <div :class="[$style.contentHeader, $style.placeholderHeader]">
+    <ui-breadcrumbs/>
+  </div>
+
   <div :class="$style.contentInner">
     <nuxt-child/>
   </div>
@@ -49,6 +53,16 @@ export default {
 
   .contentHeader {
     composes: bottom light  from c-border;
+    composes: neutral-95  from c-background-color;
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+  }
+
+  .placeholderHeader {
+    position: relative;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .contentInner {
