@@ -5,14 +5,15 @@
   "author": "tiny <tiny@tinyworld.xyz>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "npm run fs && nuxt",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-    "build": "nuxt build",
+    "build": "npm run fs && nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "prod": "nuxt build && nuxt start",
+    "fs": "node scripts/filesystem.js && node scripts/components.js",
     "filesystem": "node scripts/filesystem.js",
     "components": "node scripts/components.js"
   },

@@ -416,7 +416,7 @@
             {
               "path": "components/ui-code-block.vue/example.vue",
               "name": "example.vue",
-              "size": 77,
+              "size": 222,
               "extension": ".vue",
               "type": "file"
             },
@@ -456,7 +456,7 @@
               "type": "file"
             }
           ],
-          "size": 4805,
+          "size": 4950,
           "type": "directory"
         },
         {
@@ -466,7 +466,7 @@
             {
               "path": "components/ui-directory-item.vue/example.vue",
               "name": "example.vue",
-              "size": 77,
+              "size": 638,
               "extension": ".vue",
               "type": "file"
             },
@@ -499,7 +499,7 @@
               "type": "file"
             }
           ],
-          "size": 6924,
+          "size": 7485,
           "type": "directory"
         },
         {
@@ -509,7 +509,7 @@
             {
               "path": "components/ui-directory-tree.vue/example.vue",
               "name": "example.vue",
-              "size": 77,
+              "size": 2508,
               "extension": ".vue",
               "type": "file"
             },
@@ -542,7 +542,7 @@
               "type": "file"
             }
           ],
-          "size": 1020,
+          "size": 3451,
           "type": "directory"
         },
         {
@@ -552,7 +552,7 @@
             {
               "path": "components/ui-sidebar.vue/example.vue",
               "name": "example.vue",
-              "size": 77,
+              "size": 153,
               "extension": ".vue",
               "type": "file"
             },
@@ -585,11 +585,11 @@
               "type": "file"
             }
           ],
-          "size": 874,
+          "size": 950,
           "type": "directory"
         }
       ],
-      "size": 18818,
+      "size": 22031,
       "type": "directory"
     }
   ]
