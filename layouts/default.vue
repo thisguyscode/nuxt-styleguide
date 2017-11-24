@@ -3,7 +3,6 @@
    
   <aside :class="$style.sidebar">
     <ui-sidebar>
-      <h1 :class="$style.sidebarHeading">Menu</h1>
       <ui-directory-tree :root="fileSystem"/>
     </ui-sidebar>
   </aside>
@@ -51,9 +50,6 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
-  // display: flex;
-  // width: 100%;
-  // position: relative;
   composes: grid grid--no-wrap grid--align-stretch  from o-grid;
 }
 
@@ -64,15 +60,10 @@ export default {
 ========================================================================== */
 
   .sidebar {
-    // flex-basis: 20%;
-    composes: grid__cell  grid__cell--1/4-at-tablet  grid__cell--1/5-at-desktop  from o-grid;
+    overflow-y: scroll;
+    height: 100vh;
+    composes: grid__cell  grid__cell--auto-size  from o-grid;
   }
-
-    .sidebarHeading {
-      composes: heading heading--delta  from o-heading;
-      composes: padding-bottom-sm  from u-spacings;
-      composes: bottom very-light  from c-border;
-    }
 
 
 
@@ -84,6 +75,8 @@ export default {
 
   .contentArea {
     composes: grid__cell  grid__cell--auto-size  from o-grid;
+    overflow-y: scroll;
+    height: 100vh;
   }
 
 
