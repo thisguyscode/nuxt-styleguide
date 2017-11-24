@@ -23,6 +23,7 @@
 
 <script>
 import uiCodeBlock from '~/components/ui-code-block'
+import uiA from '~/components/ui-a.vue'
 export default {
   mounted () {
     console.log(uiCodeBlock)
