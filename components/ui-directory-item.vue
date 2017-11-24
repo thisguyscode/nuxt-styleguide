@@ -54,6 +54,7 @@ import uiDirectoryItem from '~/components/ui-directory-item'
 export default {
   mounted () {
     // console.log(this.$route.path)
+    // console.log(this.model.path)
   },
   name: 'ui-collapsable-item',
   data: function () {
@@ -71,13 +72,21 @@ export default {
     }
   },
   computed: {
+    dirPrefix: function () {
+      return '/home/'
+    },
     linkTo: function () {
-      return '/home/' + this.model.path
+      return this.dirPrefix + this.model.path
     },
     itemClass: function () {
-      if (this.open) {
-        return this.$style.item_isOpen
+      var array = []
+      if (this.$route.path === this.dirPrefix + this.model.path) {
+        array.push(this.$style.item_isActive)
       }
+      if (this.open) {
+        array.push(this.$style.item_isOpen)
+      }
+      return array
     },
     toggleClass: function () {
       if (!this.itemIsFolder) {
@@ -85,7 +94,7 @@ export default {
       }
     },
     toggleTabIndex: function () {
-      if (this.itemIsFolder) {
+      if (this.itemIsFolder && !this.itemIsActive) {
         return 0
       } else {
         return -1
@@ -93,6 +102,9 @@ export default {
     },
     itemIsFolder: function () {
       return this.model.children && this.model.children.length
+    },
+    itemIsActive: function () {
+      return this.$route.path === this.dirPrefix + this.model.path
     }
   },
   methods: {
@@ -125,6 +137,7 @@ export default {
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 @value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
@@ -163,6 +176,10 @@ export default {
 .item_isOpen {
   composes: bold  from c-text-style;
   color: $neutral-00;
+}
+
+.item_isActive {
+  // NEEDS WORK
 }
 
   .itemIcon {
