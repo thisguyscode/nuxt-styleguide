@@ -1,29 +1,3 @@
-<template>
-  <ul :class="$style.root">
-    <ui-directory-item
-      v-for="object in root.children"
-      :model="object"
-      :key="object.id"
-    />
-  </ul>
-</template>
-
-<script>
-import uiDirectoryItem from '~/components/ui-directory-item.vue'
-export default {
-  props: {
-    root: {
-      type: Object,
-      required: false
-    }
-  },
-  components: {
-    uiDirectoryItem
-  }
-}
-</script>
-
-<style lang="scss" module>
 
 /* Dependencies
 ========================================================================== */
@@ -41,6 +15,3 @@ export default {
   composes: list-directory  from o-list-directory;
   composes: padding-left-none  from u-spacings;
 }
-
-
-</style>
