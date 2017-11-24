@@ -1,0 +1,79 @@
+/* Dependencies
+========================================================================== */
+@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+
+@value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
+@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+
+
+
+/* Root class
+========================================================================== */
+.root {
+  composes: box box--sm  from o-box;
+  position: relative;
+}
+
+
+
+
+
+/* Layout
+========================================================================== */
+.list {
+  composes: list-inline list-inline--xs  from o-list-inline;
+  position: relative;
+}
+
+  .item {
+    composes: list-inline__item  from o-list-inline;
+    position: relative;
+  }
+  
+
+    
+
+
+/* Links
+========================================================================== */
+.routeLink {
+  composes: hover-neutral-90  from c-background-color;
+}
+
+.currentRouteLink {
+  composes: bold  from c-text-style;
+  text-decoration: none;
+  position: relative;
+}
+
+.currentRouteLink,
+.routeLink {
+  composes: padding-xs  from u-spacings;
+  composes: margin-right-xs  from u-spacings;
+  composes: text  from o-text;
+  position: relative;
+}
+
+
+
+
+
+/* Icons
+========================================================================== */
+.itemIcon {
+  composes: margin-right-xs  from u-spacings;
+  vertical-align: text-top;
+  height: 1.1em;
+  position: relative;
+}
+
+.seperatorIcon {
+  height: .6em;
+  position: relative;
+}

@@ -1,0 +1,22 @@
+<nav :class="$style.root">
+  <ul :class="$style.list">
+
+    <li :class="$style.item" v-for="(item, index) in list" :key="item.id">
+      <!-- if current -->
+      <span :class="$style.currentRouteLink" v-if="isLast(index)">
+        <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
+        <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
+        {{ showName(item) }}
+      </span>
+      <!-- if link -->
+      <nuxt-link :class="$style.routeLink" v-else :to="item.path">
+        <ui-icon :class="$style.itemIcon" v-if="isFirst(index)" name="home"/>
+        <ui-icon :class="$style.itemIcon" v-else :name="itemIconName(item)"/>
+        <span>{{ showName(item) }}</span>
+      </nuxt-link>
+      <!-- SEPERATOR ICON -->
+      <ui-icon :class="$style.seperatorIcon" v-if="!isLast(index)" name="chevron-right"/>
+    </li>
+
+  </ul>
+</nav>

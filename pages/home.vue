@@ -14,7 +14,7 @@
 
 
 <script>
-import uiBreadcrumbs from '~/components/ui-breadcrumbs'
+import uiBreadcrumbs from '~/components/ui-breadcrumbs.vue'
 
 export default {
   components: {

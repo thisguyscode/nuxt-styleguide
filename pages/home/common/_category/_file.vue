@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import uiCodeBlock from '~/components/ui-code-block'
+import uiCodeBlock from '~/components/ui-code-block.vue'
 export default {
   components: {
     uiCodeBlock

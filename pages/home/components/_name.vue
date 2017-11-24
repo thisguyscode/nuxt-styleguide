@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import uiCodeBlock from '~/components/ui-code-block'
+import uiCodeBlock from '~/components/ui-code-block.vue'
 import uiA from '~/components/ui-a.vue'
 export default {
   mounted () {
