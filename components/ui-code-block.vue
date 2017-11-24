@@ -1,9 +1,14 @@
 <template>
 <div :class="$style.root">
-  
-  <code :class="$style.code">
-    <pre :class="$style.pre" v-html="highlightedCode"></pre>
-  </code>
+
+  <div :class="$style.codeArea">
+    <div :class="$style.gutter">
+      <div :class="$style.gutterNumber" v-for="i in lineCount(highlightedCode)" :key="i">{{i}}</div>
+    </div>
+    <code :class="$style.code">
+      <pre :class="$style.pre" v-html="highlightedCode"></pre>
+    </code>
+  </div>
 
 </div>
 </template>
@@ -19,6 +24,11 @@ export default {
   computed: {
     highlightedCode: function () {
       return hljs.highlightAuto(this.code, this.languages).value
+    }
+  },
+  methods: {
+    lineCount: function (content) {
+      return content.split(/\r\n|\r|\n/).length
     }
   },
   props: {
@@ -42,16 +52,31 @@ export default {
 ========================================================================== */
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-code "sass-loader!~/assets/styles/objects/objects.code.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
-// @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+
+
+
+/* Variables
+========================================================================== */
+$gutter-width: 3rem;
+
 
 
 /* Root class
 ========================================================================== */
 .root {
   composes: neutral-10  from c-background-color;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 
@@ -59,14 +84,46 @@ export default {
 
 /* Code classes
 ========================================================================== */
+.codeArea {
+  box-shadow: inset 0 0 40px 4px black;
+  position: relative;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
 .code {
   composes: box  from o-box;
   composes: code  from o-code;
+  composes: padding-left-xl  from u-spacings;
+  // padding-left: $gutter-width;
 }
 
 .pre {
   //
 }
+
+
+
+
+/* Gutter
+========================================================================== */
+.gutter {
+  composes: box  from o-box;
+  composes: liner liner--break-right  from o-liner;
+  composes: padding-horizontal-sm  from u-spacings;
+  composes: neutral-70  from c-text-color;
+  composes: right very-heavy from c-border;
+  text-align: right;
+  width: $gutter-width;
+}
+
+  .gutterNumber {
+    composes: code  from o-code;
+  }
+
+
 </style>
 
 

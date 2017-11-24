@@ -36,6 +36,7 @@ $offsets: false;
 .grid {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -48,6 +49,7 @@ $offsets: false;
 ========================================================================== */
 .grid__cell {
   flex-grow: 1;
+  flex-shrink: 0;
 }
 
 
@@ -107,6 +109,11 @@ $offsets: false;
 /* Cell modifiers
 ========================================================================== */
 
+.grid__cell--shrink {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
 .grid__cell--top {
   align-self: flex-start;
 }
@@ -120,7 +127,8 @@ $offsets: false;
 }
 
 .grid__cell--auto-size {
-  flex: none;
+  flex: auto;
+  overflow: hidden;
 }
 
 

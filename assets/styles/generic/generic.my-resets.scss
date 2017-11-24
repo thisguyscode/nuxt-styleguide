@@ -12,9 +12,12 @@
 /* RESETS
 ========================================================================== */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important; //Temp !important
 }
 
+section {
+  max-width: 100%;
+}
 
 a {
   color: inherit;

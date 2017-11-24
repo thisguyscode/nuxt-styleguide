@@ -31,6 +31,11 @@ export default {
   components: {
     uiSidebar,
     uiDirectoryTree
+  },
+  computed: {
+    testCode: function () {
+      return require(`!raw-loader!~/assets/styles/config/config.baseline.scss`)
+    }
   }
 }
 </script>
@@ -41,6 +46,7 @@ export default {
 ========================================================================== */
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
@@ -50,6 +56,9 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
+  // display: flex;
+  // width: 100%;
+  // position: relative;
   composes: grid grid--no-wrap grid--align-stretch  from o-grid;
 }
 
@@ -60,6 +69,7 @@ export default {
 ========================================================================== */
 
   .sidebar {
+    // flex-basis: 20%;
     composes: grid__cell  grid__cell--1/4-at-tablet  grid__cell--1/5-at-desktop  from o-grid;
   }
 
@@ -78,7 +88,7 @@ export default {
 ========================================================================== */
 
   .contentArea {
-    composes: grid__cell  from o-grid;
+    composes: grid__cell  grid__cell--auto-size  from o-grid;
   }
 
 

@@ -28,6 +28,12 @@ $contrast-colors: (
   'neutral-00': $neutral-00,
   'neutral-05': $neutral-05,
   'neutral-10': $neutral-10,
+  'neutral-15': $neutral-15,
+  'neutral-20': $neutral-20,
+  'neutral-30': $neutral-30,
+  'neutral-70': $neutral-70,
+  'neutral-80': $neutral-80,
+  'neutral-85': $neutral-85,
   'neutral-90': $neutral-90,
   'neutral-95': $neutral-95,
   'neutral-100': $neutral-100
@@ -58,13 +64,13 @@ $common-colors: (
 
   .#{$contrast-color-namespace} {
     background-color: $contrast-color;
-    color: contrasting-color($contrast-color, $lightest, $darkest)
+    color: contrasting-color($contrast-color, $lightest, $darkest);
   }
 
   .hover-#{$contrast-color-namespace} {
     &:hover {
       background-color: $contrast-color;
-      color: contrasting-color($contrast-color, $lightest, $darkest)
+      color: contrasting-color($contrast-color, $lightest, $darkest);
     }
   }
   
@@ -80,13 +86,13 @@ $common-colors: (
   
   .#{$lightness-color-namespace} {
     background-color: $lightness-color;
-    color: contrasting-color($lightness-color, $lightest, $darkest)
+    color: contrasting-color($lightness-color, $lightest, $darkest);
   }
 
   .hover-#{$lightness-color-namespace} {
     &:hover {
       background-color: $lightness-color;
-      color: contrasting-color($lightness-color, $lightest, $darkest)
+      color: contrasting-color($lightness-color, $lightest, $darkest);
     }
   }
   
@@ -101,13 +107,13 @@ $common-colors: (
   
   .#{$common-color-namespace} {
     background-color: $common-color;
-    color: contrasting-color($common-color, $lightest, $darkest)
+    color: contrasting-color($common-color, $lightest, $darkest);
   }
 
   .hover-#{$common-color-namespace} {
     &:hover {
       background-color: $common-color;
-      color: contrasting-color($common-color, $lightest, $darkest)
+      color: contrasting-color($common-color, $lightest, $darkest);
     }
   }
   
