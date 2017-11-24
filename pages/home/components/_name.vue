@@ -1,61 +1,84 @@
 <template>
   <section>
     <h1 :class="$style.heading">{{ $route.params.name }}</h1>
-    <section>
-      
-      <form>
-        <input selected type="radio" id="template" value="template" v-model="selectedCode" name="selectedCode">
-        <label for="template">Template</label>
 
-        <input type="radio" id="script" value="script" v-model="selectedCode" name="selectedCode">
-        <label for="script">Script</label>
+    <div :class="$style.componentWrapper">
+      <component :is="componentName + '-example'"></component>
+    </div>
 
-        <input type="radio" id="style" value="style" v-model="selectedCode" name="selectedCode">
-        <label for="style">Style</label>
-
+    <nav :class="$style.nav">
+      <form :class="$style.navList">
+        <fieldset :class="$style.navItem" v-for="(obj, index) in codeArray" :key="index">
+          <input :class="$style.radio" type="radio" :id="index" :value="index" v-model="selected" name="selectedCode">
+          <label :class="$style.label" :for="index">{{ obj.name }}</label>
+        </fieldset>
       </form>
+    </nav>
 
-      <ui-code-block :code="code" :languages="codeLanguages"/>
-    </section>
+    <ui-code-block :code="selectedCode.code" :languages="[selectedCode.language]" rounded="bottom"/>
+
   </section>
 </template>
 
 <script>
-import uiCodeBlock from '~/components/ui-code-block.vue'
+import filesystem from '~/data/filesystem/main.json'
+require('~/plugins/all-components.js')
+
 export default {
-  mounted () {
-    console.log(uiCodeBlock)
-  },
   data: () => {
     return {
-      selectedCode: 'template',
-      codeLanguage: ['xml']
+      selected: 0,
+      filesystem: filesystem
     }
   },
-  components: {
-    uiCodeBlock
-  },
   computed: {
-    templateCode: function () {
-      return require(`!raw-loader!~/components/${this.$route.params.name}/template.html`)
+    componentName: function () {
+      var name = this.currentObject.name
+      var dotStart = name.lastIndexOf('.')
+      var full = name.substr(0, dotStart)
+      return full
     },
-    scriptCode: function () {
-      return require(`!raw-loader!~/components/${this.$route.params.name}/script.js`)
+    currentObject: function () {
+      var self = this
+      var rootFolders = this.filesystem.children
+      var compFolder = rootFolders.find(function (child) {
+        return child.name === 'components'
+      })
+      var currentObject = compFolder.children.find(function (child) {
+        return child.name === self.$route.params.name
+      })
+      return currentObject
     },
-    styleCode: function () {
-      return require(`!raw-loader!~/components/${this.$route.params.name}/style.scss`)
-    },
-    code: function () {
-      if (this.selectedCode === 'template') {
-        this.codeLanguages = ['xml']
-        return this.templateCode
-      } else if (this.selectedCode === 'script') {
-        this.codeLanguages = ['js']
-        return this.scriptCode
-      } else if (this.selectedCode === 'style') {
-        this.codeLanguages = ['scss']
-        return this.styleCode
+    codeArray: function () {
+      var array = []
+      var srcDir = this.currentObject.children
+      for (var file in srcDir) {
+        var current = srcDir[file].name
+        var extensionStart = current.lastIndexOf('.')
+        var codeObject = {
+          code: require(`!raw-loader!~/components/${this.$route.params.name}/${current}`),
+          name: current.substr(0, extensionStart)
+        }
+        if (current.endsWith('.html')) {
+          codeObject.language = 'xml'
+        } else if (current.endsWith('.vue')) {
+          codeObject.language = 'xml'
+        } else if (current.endsWith('.js')) {
+          codeObject.language = 'js'
+        } else if (current.endsWith('.scss')) {
+          codeObject.language = 'scss'
+        } else if (current.endsWith('.css')) {
+          codeObject.language = 'css'
+        }
+        // if (current !== 'index.vue') {
+        array.push(codeObject)
+        // }
       }
+      return array
+    },
+    selectedCode: function () {
+      var selected = this.selected
+      return this.codeArray[selected]
     }
   }
 }
@@ -65,9 +88,18 @@ export default {
 
 /* Dependencies
 ========================================================================== */
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
 
-// @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
+@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
 
@@ -79,5 +111,52 @@ export default {
   composes: heading heading--alpha  from o-heading;
 }
 
+
+
+
+.componentWrapper {
+  composes: box box--large  from o-box;
+  composes: neutral-100  from c-background-color;
+  composes: all heavy  from c-border;
+}
+
+
+
+
+.nav {
+  composes: neutral-00  from c-background-color;
+  composes: bottom heavy  from c-border;
+}
+
+.navList {
+  composes: list-inline list-inline--flush  from o-list-inline;
+}
+
+.navItem {
+  composes: list-inline__item  from o-list-inline;
+}
+
+
+
+
+
+.radio {
+  display: none;
+}
+.radio:checked {
+  ~ .label {
+    color: white !important;
+  }
+}
+.label {
+  composes: text text--sm  from o-text;
+  composes: neutral-70  from c-text-color;
+  composes: hover-orange  from c-background-color;
+  composes: bold  from c-text-style;
+  composes: padding-sm  from u-spacings;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+}
 
 </style>
