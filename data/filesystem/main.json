@@ -28,21 +28,28 @@
             {
               "path": "common/cosmetics/cosmetics.background-color.scss",
               "name": "cosmetics.background-color.scss",
-              "size": 2044,
+              "size": 2860,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/cosmetics/cosmetics.border.scss",
               "name": "cosmetics.border.scss",
-              "size": 1355,
+              "size": 1400,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/cosmetics/cosmetics.button.scss",
               "name": "cosmetics.button.scss",
-              "size": 586,
+              "size": 817,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "common/cosmetics/cosmetics.text-color.scss",
+              "name": "cosmetics.text-color.scss",
+              "size": 2043,
               "extension": ".scss",
               "type": "file"
             },
@@ -54,7 +61,7 @@
               "type": "file"
             }
           ],
-          "size": 4619,
+          "size": 7754,
           "type": "directory"
         },
         {
@@ -64,12 +71,12 @@
             {
               "path": "common/elements/elements.page.scss",
               "name": "elements.page.scss",
-              "size": 811,
+              "size": 841,
               "extension": ".scss",
               "type": "file"
             }
           ],
-          "size": 811,
+          "size": 841,
           "type": "directory"
         },
         {
@@ -79,12 +86,12 @@
             {
               "path": "common/generic/generic.my-resets.scss",
               "name": "generic.my-resets.scss",
-              "size": 747,
+              "size": 879,
               "extension": ".scss",
               "type": "file"
             }
           ],
-          "size": 747,
+          "size": 879,
           "type": "directory"
         },
         {
@@ -115,42 +122,56 @@
             {
               "path": "common/objects/objects.code.scss",
               "name": "objects.code.scss",
-              "size": 664,
+              "size": 687,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/objects/objects.grid.scss",
               "name": "objects.grid.scss",
-              "size": 7827,
+              "size": 8038,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/objects/objects.heading.scss",
               "name": "objects.heading.scss",
-              "size": 800,
+              "size": 953,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "common/objects/objects.liner.scss",
+              "name": "objects.liner.scss",
+              "size": 1974,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "common/objects/objects.link-bloater.scss",
+              "name": "objects.link-bloater.scss",
+              "size": 1419,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/objects/objects.list-bare.scss",
               "name": "objects.list-bare.scss",
-              "size": 448,
+              "size": 454,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/objects/objects.list-directory.scss",
               "name": "objects.list-directory.scss",
-              "size": 509,
+              "size": 842,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "common/objects/objects.list-inline.scss",
               "name": "objects.list-inline.scss",
-              "size": 1096,
+              "size": 1251,
               "extension": ".scss",
               "type": "file"
             },
@@ -169,7 +190,7 @@
               "type": "file"
             }
           ],
-          "size": 15044,
+          "size": 19318,
           "type": "directory"
         },
         {
@@ -213,6 +234,20 @@
           "name": "utilities",
           "children": [
             {
+              "path": "common/utilities/utilities.hidden-visually.scss",
+              "name": "utilities.hidden-visually.scss",
+              "size": 639,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "common/utilities/utilities.position.scss",
+              "name": "utilities.position.scss",
+              "size": 1043,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
               "path": "common/utilities/utilities.spacings.scss",
               "name": "utilities.spacings.scss",
               "size": 1701,
@@ -227,7 +262,7 @@
               "type": "file"
             }
           ],
-          "size": 6820,
+          "size": 8502,
           "type": "directory"
         },
         {
@@ -244,7 +279,7 @@
             {
               "path": "common/values/values.colors.scss",
               "name": "values.colors.scss",
-              "size": 1684,
+              "size": 1936,
               "extension": ".scss",
               "type": "file"
             },
@@ -272,16 +307,16 @@
             {
               "path": "common/values/values.typography.scss",
               "name": "values.typography.scss",
-              "size": 2908,
+              "size": 2923,
               "extension": ".scss",
               "type": "file"
             }
           ],
-          "size": 7902,
+          "size": 8169,
           "type": "directory"
         }
       ],
-      "size": 47047,
+      "size": 56567,
       "type": "directory"
     },
     {
@@ -291,9 +326,38 @@
         {
           "path": "components/ui-a.vue",
           "name": "ui-a.vue",
-          "size": 503,
-          "extension": ".vue",
-          "type": "file"
+          "children": [
+            {
+              "path": "components/ui-a.vue/index.vue",
+              "name": "index.vue",
+              "size": 133,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-a.vue/script.js",
+              "name": "script.js",
+              "size": 24,
+              "extension": ".js",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-a.vue/style.scss",
+              "name": "style.scss",
+              "size": 360,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-a.vue/template.html",
+              "name": "template.html",
+              "size": 54,
+              "extension": ".html",
+              "type": "file"
+            }
+          ],
+          "size": 571,
+          "type": "directory"
         },
         {
           "path": "components/ui-b.vue",
@@ -305,7 +369,7 @@
         {
           "path": "components/ui-breadcrumbs.vue",
           "name": "ui-breadcrumbs.vue",
-          "size": 3112,
+          "size": 4461,
           "extension": ".vue",
           "type": "file"
         },
@@ -317,16 +381,23 @@
           "type": "file"
         },
         {
+          "path": "components/ui-code-block.vue",
+          "name": "ui-code-block.vue",
+          "size": 4152,
+          "extension": ".vue",
+          "type": "file"
+        },
+        {
           "path": "components/ui-directory-item.vue",
           "name": "ui-directory-item.vue",
-          "size": 3305,
+          "size": 6707,
           "extension": ".vue",
           "type": "file"
         },
         {
           "path": "components/ui-directory-tree.vue",
           "name": "ui-directory-tree.vue",
-          "size": 831,
+          "size": 903,
           "extension": ".vue",
           "type": "file"
         },
@@ -340,12 +411,12 @@
         {
           "path": "components/ui-sidebar.vue",
           "name": "ui-sidebar.vue",
-          "size": 613,
+          "size": 748,
           "extension": ".vue",
           "type": "file"
         }
       ],
-      "size": 10376,
+      "size": 19554,
       "type": "directory"
     }
   ]

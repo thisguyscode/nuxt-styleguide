@@ -101,7 +101,11 @@ export default {
       }
     },
     itemIsFolder: function () {
-      return this.model.children && this.model.children.length
+      if (this.model.path.endsWith('.vue')) {
+        return false
+      } else {
+        return this.model.children && this.model.children.length
+      }
     },
     itemIsActive: function () {
       return this.$route.path === this.dirPrefix + this.model.path
