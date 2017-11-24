@@ -16,14 +16,12 @@
       </form>
 
       <ui-code-block :code="code" :languages="codeLanguages"/>
-      <ui-a></ui-a>
     </section>
   </section>
 </template>
 
 <script>
 import uiCodeBlock from '~/components/ui-code-block.vue'
-import uiA from '~/components/ui-a.vue'
 export default {
   mounted () {
     console.log(uiCodeBlock)
@@ -35,7 +33,6 @@ export default {
     }
   },
   components: {
-    uiA,
     uiCodeBlock
   },
   computed: {
@@ -56,7 +53,7 @@ export default {
         this.codeLanguages = ['js']
         return this.scriptCode
       } else if (this.selectedCode === 'style') {
-        this.codeLanguages = ['css']
+        this.codeLanguages = ['scss']
         return this.styleCode
       }
     }

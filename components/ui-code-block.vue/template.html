@@ -1,0 +1,12 @@
+<div :class="$style.root">
+    
+  <div :class="$style.codeArea">
+    <div :class="$style.gutter">
+      <div :class="$style.gutterNumber" v-for="i in lineCount(highlightedCode)" :key="i">{{i}}</div>
+    </div>
+    <code :class="$style.code">
+      <pre :class="$style.pre" v-html="highlightedCode"></pre>
+    </code>
+  </div>
+
+</div>

@@ -360,37 +360,88 @@
           "type": "directory"
         },
         {
-          "path": "components/ui-b.vue",
-          "name": "ui-b.vue",
-          "size": 502,
-          "extension": ".vue",
-          "type": "file"
-        },
-        {
           "path": "components/ui-breadcrumbs.vue",
           "name": "ui-breadcrumbs.vue",
-          "size": 4461,
-          "extension": ".vue",
-          "type": "file"
-        },
-        {
-          "path": "components/ui-c.vue",
-          "name": "ui-c.vue",
-          "size": 503,
-          "extension": ".vue",
-          "type": "file"
+          "children": [
+            {
+              "path": "components/ui-breadcrumbs.vue/index.vue",
+              "name": "index.vue",
+              "size": 133,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-breadcrumbs.vue/script.js",
+              "name": "script.js",
+              "size": 1621,
+              "extension": ".js",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-breadcrumbs.vue/style.scss",
+              "name": "style.scss",
+              "size": 1839,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-breadcrumbs.vue/template.html",
+              "name": "template.html",
+              "size": 876,
+              "extension": ".html",
+              "type": "file"
+            }
+          ],
+          "size": 4469,
+          "type": "directory"
         },
         {
           "path": "components/ui-code-block.vue",
           "name": "ui-code-block.vue",
-          "size": 4152,
-          "extension": ".vue",
-          "type": "file"
+          "children": [
+            {
+              "path": "components/ui-code-block.vue/index.vue",
+              "name": "index.vue",
+              "size": 189,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-code-block.vue/script.js",
+              "name": "script.js",
+              "size": 566,
+              "extension": ".js",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-code-block.vue/style.scss",
+              "name": "style.scss",
+              "size": 1856,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-code-block.vue/syntax-colors.scss",
+              "name": "syntax-colors.scss",
+              "size": 1284,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-code-block.vue/template.html",
+              "name": "template.html",
+              "size": 334,
+              "extension": ".html",
+              "type": "file"
+            }
+          ],
+          "size": 4229,
+          "type": "directory"
         },
         {
           "path": "components/ui-directory-item.vue",
           "name": "ui-directory-item.vue",
-          "size": 6707,
+          "size": 6799,
           "extension": ".vue",
           "type": "file"
         },
@@ -416,7 +467,7 @@
           "type": "file"
         }
       ],
-      "size": 19554,
+      "size": 18726,
       "type": "directory"
     }
   ]
