@@ -13,7 +13,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "prod": "nuxt build && nuxt start",
-    "filesystem": "node scripts/filesystem.js"
+    "filesystem": "node scripts/filesystem.js",
+    "components": "node scripts/components.js"
   },
   "dependencies": {
     "highlight.js": "^9.12.0",
@@ -24,6 +25,7 @@
     "nuxt": "^1.0.0-rc11",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
+    "to-camel-case": "^1.0.0",
     "vue-awesome": "^2.3.4",
     "webpack-node-externals": "^1.6.0"
   },
