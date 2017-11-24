@@ -1,4 +1,8 @@
 <section :class="$style.root">
-  <h1 :class="$style.sidebarHeading">Menu</h1>
-  <slot></slot>
+  <div :class="$style.inner">
+    <div :class="$style.innerInner">
+      <h1 :class="$style.sidebarHeading">Menu</h1>
+      <slot></slot>
+    </div>
+  </div>
 </section>
