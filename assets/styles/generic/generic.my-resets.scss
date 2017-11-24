@@ -9,7 +9,7 @@
 
 
 
-/* RESETS
+/* GENERAL
 ========================================================================== */
 * {
   box-sizing: border-box !important; //Temp !important
@@ -58,4 +58,17 @@ ul {
 
 pre {
   font-family: inherit;
+}
+
+
+
+
+/* FORMS
+========================================================================== */
+fieldset {
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
