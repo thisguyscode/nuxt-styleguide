@@ -50,7 +50,7 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
-  composes: grid grid--no-wrap grid--align-stretch  from o-grid;
+  composes: grid grid--align-stretch  from o-grid;
 }
 
 
@@ -62,7 +62,7 @@ export default {
   .sidebar {
     overflow-y: scroll;
     height: 100vh;
-    composes: grid__cell  grid__cell--auto-size  from o-grid;
+    composes: grid__cell  grid__cell--1/3-at-tablet  grid__cell--1/4-at-wide  from o-grid;
   }
 
 
@@ -74,7 +74,7 @@ export default {
 ========================================================================== */
 
   .contentArea {
-    composes: grid__cell  grid__cell--auto-size  from o-grid;
+    composes: grid__cell grid__cell--auto-size  from o-grid;
     overflow-y: scroll;
     height: 100vh;
   }

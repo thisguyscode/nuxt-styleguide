@@ -48,6 +48,7 @@ $offsets: false;
 /* Cell class
 ========================================================================== */
 .grid__cell {
+  flex-basis: 100%;
   flex-grow: 1;
   flex-shrink: 0;
 }
