@@ -44,7 +44,7 @@ module.exports = {
       ** compared to development (see below)
       */
       vueLoader.options.cssModules = {
-        localIdentName: '[name]__[local]'
+        localIdentName: '[name]__[local]__[hash:2]'
       }
 
       /*

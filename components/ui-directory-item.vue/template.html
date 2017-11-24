@@ -1,0 +1,47 @@
+<li :class="$style.root">
+    
+  <!-- ITEM -->
+  <div :class="[$style.item, itemClass]">
+
+    <!-- Link (if file) -->
+    <nuxt-link :class="$style.fileLink" :to="linkTo" v-if="!itemIsFolder">
+      <span :class="$style.fileLinkText">Go to {{ model.name }}</span>
+    </nuxt-link>
+    
+    <!-- Clickable toggle -->
+    <a
+      @click="toggleClickHandler"
+      @keyup.enter="toggleEnterHandler"
+      :class="[$style.toggle, toggleClass]"
+      :tabindex="toggleTabIndex">
+      <!-- Icon -->
+      <ui-icon :class="$style.itemIcon" name="folder-open-o" v-if="open && itemIsFolder"></ui-icon>
+      <ui-icon :class="$style.itemIcon" name="folder" v-else-if="open === false && itemIsFolder"></ui-icon>
+      <ui-icon :class="$style.itemIcon" name="file"  v-else></ui-icon>
+      <!-- Text -->
+      <span :class="$style.itemText">{{ model.name }}</span>
+    </a>
+
+    <!-- Preview Link -->
+    <nuxt-link :to="linkTo" v-if="itemIsFolder" :class="$style.previewLink">
+      <ui-icon :class="$style.previewLinkIcon" name="eye"/>
+    </nuxt-link>
+
+  </div>
+
+  <!-- CONTENTS (if folder) -->
+  <ul
+    v-show="open"
+    v-if="itemIsFolder"
+    :class="$style.folderContentsList">
+    <!-- Indentation Line -->
+    <div :class="$style.indentLine"></div>
+    <!-- Recursively use this component -->
+    <ui-directory-item
+      v-for="item in model.children"
+      :model="item"
+      :key="item.id">
+    </ui-directory-item>
+  </ul>
+
+</li>

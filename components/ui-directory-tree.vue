@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import uiDirectoryItem from '~/components/ui-directory-item'
+import uiDirectoryItem from '~/components/ui-directory-item.vue'
 export default {
   props: {
     root: {
