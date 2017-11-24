@@ -160,6 +160,7 @@ $offsets: false;
           // Build a class in the format `.grid--1/2-at-<breakpoint>`.
           .grid--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
             > .grid__cell {
+              overflow: hidden;
               flex-grow: 0;
               flex-shrink: 0;
               flex-basis: ($numerator / $denominator) * 100%;
@@ -168,6 +169,7 @@ $offsets: false;
           // Build a class in the format `.grid__cell--1/2-at-<breakpoint>`.
           .grid__cell--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
             &#{&} {
+              overflow: hidden;
               flex-grow: 0;
               flex-shrink: 0;
               flex-basis: ($numerator / $denominator) * 100%;
