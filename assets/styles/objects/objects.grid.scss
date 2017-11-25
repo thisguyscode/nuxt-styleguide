@@ -13,6 +13,7 @@
 
 // VALUES
 @import "~assets/styles/values/values.breakpoints";
+@import "~assets/styles/values/values.sizes";
 
 // TOOLS
 @import "node_modules/sass-mq/mq";
@@ -48,9 +49,9 @@ $offsets: false;
 /* Cell class
 ========================================================================== */
 .grid__cell {
-  flex-basis: 100%;
+  // flex-basis: 100%;
   flex-grow: 1;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 
@@ -129,7 +130,6 @@ $offsets: false;
 
 .grid__cell--auto-size {
   flex: auto;
-  overflow: hidden;
 }
 
 
@@ -160,7 +160,6 @@ $offsets: false;
           // Build a class in the format `.grid--1/2-at-<breakpoint>`.
           .grid--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
             > .grid__cell {
-              overflow: hidden;
               flex-grow: 0;
               flex-shrink: 0;
               flex-basis: ($numerator / $denominator) * 100%;
@@ -169,7 +168,6 @@ $offsets: false;
           // Build a class in the format `.grid__cell--1/2-at-<breakpoint>`.
           .grid__cell--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
             &#{&} {
-              overflow: hidden;
               flex-grow: 0;
               flex-shrink: 0;
               flex-basis: ($numerator / $denominator) * 100%;
@@ -328,12 +326,12 @@ $offsets: false;
 //   }
 // }
 
-// .grid--gutters {
-//   margin: -1em 0 1em -1em;
-// }
-// .grid--gutters > .grid__cell {
-//   padding: 1em 0 0 1em;
-// }
+.grid--gutters {
+  margin: -$unit-sm 0 $unit-sm -$unit-sm;
+}
+.grid--gutters > .grid__cell {
+  padding: $unit-sm 0 0 $unit-sm;
+}
 
 // .grid--guttersLg {
 //   margin: -1.5em 0 1.5em -1.5em;
