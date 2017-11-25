@@ -1,0 +1,12 @@
+<div :class="$style.root">
+  <div :class="$style.value">
+      {{ computedValue }}
+  </div>
+  <div :class="[$style.donutHalf, $style.donutHalfLeft]">
+      <div :class="$style.donutFill" id="jsDonutFillLeft"></div>
+  </div>
+  <div :class="[$style.donutHalf, $style.donutHalfRight]">
+    <div :class="$style.donutFill" id="jsDonutFillRight"></div>
+  </div>
+  
+</div>
