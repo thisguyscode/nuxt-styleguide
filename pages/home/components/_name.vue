@@ -95,6 +95,7 @@ export default {
 
 @value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-shadow "sass-loader!~/assets/styles/cosmetics/cosmetics.shadow.scss";
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 @value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
@@ -118,7 +119,9 @@ export default {
 .componentWrapper {
   composes: box box--large  from o-box;
   composes: neutral-100  from c-background-color;
-  composes: all heavy  from c-border;
+  composes: all light  from c-border;
+  composes: normal  from c-shadow;
+  margin-bottom: 40px;
 }
 
 
