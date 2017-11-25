@@ -1,4 +1,4 @@
-<div :class="$style.root">
+<!-- <div :class="$style.root">
   <div :class="$style.value">
       {{ computedValue }}
   </div>
@@ -9,4 +9,10 @@
     <div :class="$style.donutFill" id="jsDonutFillRight"></div>
   </div>
   
+</div> -->
+<div :class="$style.root">
+  <div :class="$style.donut">
+    <span :class="$style.value">{{ computedValue }}</span>
+    <span :class="$style.fill"></span>
+  </div>
 </div>

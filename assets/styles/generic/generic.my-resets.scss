@@ -12,7 +12,11 @@
 /* GENERAL
 ========================================================================== */
 * {
-  box-sizing: border-box !important; //Temp !important
+  box-sizing: border-box;
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
 }
 
 section {
