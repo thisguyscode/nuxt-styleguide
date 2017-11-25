@@ -6,35 +6,7 @@
       <component :is="componentName + '-example'"></component>
     </ui-card>
 
-    <nav :class="$style.nav">
-      <form :class="$style.navList">
-        <fieldset @click="handleNavItemClick" :class="$style.navItem" v-for="(obj, index) in codeArray" :key="index">
-          <input :class="$style.radio" type="radio" :id="index" :value="index" v-model="selected" name="selectedCode">
-          <label :class="$style.label" :for="index">{{ obj.name }}</label>
-        </fieldset>
-      </form>
-      
-      <span
-        @click="toggleCode"
-        :class="$style.codeToggle">
-        <div v-if="showCode">
-          <span :class="$style.codeToggleText">Collapse</span>
-          <ui-icon :class="$style.codeToggleIcon" name="chevron-up"/>
-        </div>
-        <div v-else>
-          <span :class="$style.codeToggleText">Show</span>
-          <ui-icon :class="$style.codeToggleIcon" name="chevron-down"/>
-        </div>
-      </span>
-
-    </nav>
-
-    <ui-code-block
-      v-if="showCode"
-      :code="selectedCode.code"
-      :languages="[selectedCode.language]"
-      rounded="bottom"
-    />
+    <ui-code-set :codeSet="codeArray"/>
 
   </section>
 </template>
@@ -46,19 +18,7 @@ require('~/plugins/all-components.js')
 export default {
   data: () => {
     return {
-      selected: 0,
-      filesystem: filesystem,
-      showCode: true
-    }
-  },
-  methods: {
-    toggleCode: function () {
-      this.showCode = !this.showCode
-    },
-    handleNavItemClick: function () {
-      if (!this.showCode) {
-        this.showCode = true
-      }
+      filesystem: filesystem
     }
   },
   computed: {
@@ -83,32 +43,29 @@ export default {
       var array = []
       var srcDir = this.currentObject.children
       for (var file in srcDir) {
-        var current = srcDir[file].name
-        var extensionStart = current.lastIndexOf('.')
+        var current = srcDir[file]
+        console.log(current)
+        var extensionStart = current.name.lastIndexOf('.')
         var codeObject = {
-          code: require(`!raw-loader!~/components/${this.$route.params.name}/${current}`),
-          name: current.substr(0, extensionStart)
+          code: require(`!raw-loader!~/components/${this.$route.params.name}/${current.name}`),
+          name: current.name.substr(0, extensionStart)
         }
-        if (current.endsWith('.html')) {
+        if (current.name.endsWith('.html')) {
           codeObject.language = 'xml'
-        } else if (current.endsWith('.vue')) {
+        } else if (current.name.endsWith('.vue')) {
           codeObject.language = 'xml'
-        } else if (current.endsWith('.js')) {
+        } else if (current.name.endsWith('.js')) {
           codeObject.language = 'js'
-        } else if (current.endsWith('.scss')) {
+        } else if (current.name.endsWith('.scss')) {
           codeObject.language = 'scss'
-        } else if (current.endsWith('.css')) {
+        } else if (current.name.endsWith('.css')) {
           codeObject.language = 'css'
         }
-        // if (current !== 'index.vue') {
+        // if (current.name !== 'index.vue') {
         array.push(codeObject)
         // }
       }
       return array
-    },
-    selectedCode: function () {
-      var selected = this.selected
-      return this.codeArray[selected]
     }
   }
 }

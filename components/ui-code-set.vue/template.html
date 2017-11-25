@@ -1,0 +1,30 @@
+<section>
+  <nav :class="$style.nav">
+    <form :class="$style.navList">
+      <fieldset @click="handleNavItemClick" :class="$style.navItem" v-for="(obj, index) in codeSet" :key="index">
+        <input :class="$style.radio" type="radio" :id="index" :value="index" v-model="selected" name="selectedCode">
+        <label :class="$style.label" :for="index">{{ obj.name }}</label>
+      </fieldset>
+    </form>
+    
+    <span
+      @click="toggleCode"
+      :class="$style.codeToggle">
+      <div v-if="showCode">
+        <span :class="$style.codeToggleText">Collapse</span>
+        <ui-icon :class="$style.codeToggleIcon" name="chevron-up"/>
+      </div>
+      <div v-else>
+        <span :class="$style.codeToggleText">Show</span>
+        <ui-icon :class="$style.codeToggleIcon" name="chevron-down"/>
+      </div>
+    </span>
+  </nav>
+
+  <ui-code-block
+    v-if="showCode"
+    :code="selectedCode.code"
+    :languages="[selectedCode.language]"
+    rounded="bottom"
+  />
+</section>
