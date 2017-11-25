@@ -17,6 +17,20 @@
 .root {
   composes: box  from o-box;
   composes: neutral-100  from c-background-color;
+  border-radius: 4px;
+}
+
+.root_contrastNormal {
   composes: all light  from c-border;
   composes: normal  from c-shadow;
+}
+
+.root_contrastHeavy {
+  composes: all heavy  from c-border;
+  composes: heavy  from c-shadow;
+}
+
+.root_contrastLight {
+  composes: all very-light  from c-border;
+  composes: light  from c-shadow;
 }
