@@ -18,9 +18,6 @@ import filesystem from '~/data/filesystem/main.json'
 require('~/plugins/all-components.js')
 
 export default {
-  mounted () {
-    console.log(this.codeArray)
-  },
   data: () => {
     return {
       filesystem: filesystem

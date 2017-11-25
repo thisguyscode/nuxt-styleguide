@@ -21,6 +21,7 @@
   composes: box  from o-box;
   composes: heavy all from c-border;
   composes: normal  from c-shadow;
+  position: relative;
 }
 
   .inner {
@@ -46,4 +47,16 @@
       .copy {
         composes: text  from o-text;
         composes: neutral-30  from c-text-color;
+      }
+
+
+    
+    .menuWrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+      .menuIcon {
+        height: 1em;
       }

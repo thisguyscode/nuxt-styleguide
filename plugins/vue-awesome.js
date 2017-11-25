@@ -16,6 +16,7 @@ import 'vue-awesome/icons/chevron-down'
 
 // MISC
 import 'vue-awesome/icons/eye'
+import 'vue-awesome/icons/bars'
 
 // Registered globally as ui-icon
 Vue.component('ui-icon', Icon)

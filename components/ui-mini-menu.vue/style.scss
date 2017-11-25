@@ -1,0 +1,27 @@
+/* Dependencies
+========================================================================== */
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+
+
+
+
+
+/* X
+========================================================================== */
+.root {
+  composes: padding-sm  from u-spacings;
+}
+
+.triggerWrapper {
+}
+
+
+.triggerIcon {
+  height: .8em;
+}
+
