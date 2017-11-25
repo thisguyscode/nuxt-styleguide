@@ -34,6 +34,7 @@ export default {
 ========================================================================== */
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 @value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
@@ -43,7 +44,7 @@ export default {
 /* Root class
 ========================================================================== */
 .root {
-  //
+  position: relative;
 }
 
 
@@ -52,9 +53,9 @@ export default {
 ========================================================================== */
 
   .contentHeader {
+    composes: liner liner--break-bottom  from o-liner;
     composes: bottom light  from c-border;
     composes: neutral-95  from c-background-color;
-    position: fixed;
     z-index: 20;
     width: 100%;
   }
