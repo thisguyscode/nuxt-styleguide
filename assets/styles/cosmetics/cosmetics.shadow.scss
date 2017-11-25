@@ -28,5 +28,13 @@
 /* Standard
 ========================================================================== */
 .normal {
-  box-shadow: 0 0 50px 10px rgba($neutral-00, .05);
+  box-shadow: 0 2px $neutral-70;
+}
+
+.heavy {
+  box-shadow: 0 2px $neutral-00;
+}
+
+.light {
+  box-shadow: 0 2px $neutral-90;
 }
