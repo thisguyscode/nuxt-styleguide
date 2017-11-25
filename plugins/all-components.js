@@ -15,6 +15,9 @@ import uiDirectoryItemExample from '~/components/ui-directory-item.vue/example'
 import uiDirectoryTree from '~/components/ui-directory-tree.vue'
 import uiDirectoryTreeExample from '~/components/ui-directory-tree.vue/example'
 
+import uiExampleComponent from '~/components/ui-example-component.vue'
+import uiExampleComponentExample from '~/components/ui-example-component.vue/example'
+
 import uiSidebar from '~/components/ui-sidebar.vue'
 import uiSidebarExample from '~/components/ui-sidebar.vue/example'
 
@@ -32,6 +35,9 @@ Vue.component('ui-directory-item-example', uiDirectoryItemExample)
 
 Vue.component('ui-directory-tree', uiDirectoryTree)
 Vue.component('ui-directory-tree-example', uiDirectoryTreeExample)
+
+Vue.component('ui-example-component', uiExampleComponent)
+Vue.component('ui-example-component-example', uiExampleComponentExample)
 
 Vue.component('ui-sidebar', uiSidebar)
 Vue.component('ui-sidebar-example', uiSidebarExample)

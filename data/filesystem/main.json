@@ -129,7 +129,7 @@
             {
               "path": "common/objects/objects.grid.scss",
               "name": "objects.grid.scss",
-              "size": 8122,
+              "size": 8038,
               "extension": ".scss",
               "type": "file"
             },
@@ -190,7 +190,7 @@
               "type": "file"
             }
           ],
-          "size": 19474,
+          "size": 19390,
           "type": "directory"
         },
         {
@@ -316,7 +316,7 @@
           "type": "directory"
         }
       ],
-      "size": 56998,
+      "size": 56914,
       "type": "directory"
     },
     {
@@ -394,7 +394,7 @@
             {
               "path": "components/ui-breadcrumbs.vue/style.scss",
               "name": "style.scss",
-              "size": 1838,
+              "size": 1863,
               "extension": ".scss",
               "type": "file"
             },
@@ -406,7 +406,7 @@
               "type": "file"
             }
           ],
-          "size": 4549,
+          "size": 4574,
           "type": "directory"
         },
         {
@@ -546,6 +546,49 @@
           "type": "directory"
         },
         {
+          "path": "components/ui-example-component.vue",
+          "name": "ui-example-component.vue",
+          "children": [
+            {
+              "path": "components/ui-example-component.vue/example.vue",
+              "name": "example.vue",
+              "size": 77,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-example-component.vue/index.vue",
+              "name": "index.vue",
+              "size": 133,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-example-component.vue/script.js",
+              "name": "script.js",
+              "size": 24,
+              "extension": ".js",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-example-component.vue/style.scss",
+              "name": "style.scss",
+              "size": 359,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-example-component.vue/template.html",
+              "name": "template.html",
+              "size": 53,
+              "extension": ".html",
+              "type": "file"
+            }
+          ],
+          "size": 646,
+          "type": "directory"
+        },
+        {
           "path": "components/ui-sidebar.vue",
           "name": "ui-sidebar.vue",
           "children": [
@@ -573,23 +616,23 @@
             {
               "path": "components/ui-sidebar.vue/style.scss",
               "name": "style.scss",
-              "size": 1106,
+              "size": 1127,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "components/ui-sidebar.vue/template.html",
               "name": "template.html",
-              "size": 104,
+              "size": 199,
               "extension": ".html",
               "type": "file"
             }
           ],
-          "size": 1650,
+          "size": 1766,
           "type": "directory"
         }
       ],
-      "size": 22731,
+      "size": 23518,
       "type": "directory"
     }
   ]
