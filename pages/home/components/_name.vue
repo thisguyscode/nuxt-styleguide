@@ -2,20 +2,39 @@
   <section>
     <h1 :class="$style.heading">{{ $route.params.name }}</h1>
 
-    <ui-card :class="$style.componentWrapper">
+    <ui-card :class="$style.componentWrapper" contrast="heavy">
       <component :is="componentName + '-example'"></component>
     </ui-card>
 
     <nav :class="$style.nav">
       <form :class="$style.navList">
-        <fieldset :class="$style.navItem" v-for="(obj, index) in codeArray" :key="index">
+        <fieldset @click="handleNavItemClick" :class="$style.navItem" v-for="(obj, index) in codeArray" :key="index">
           <input :class="$style.radio" type="radio" :id="index" :value="index" v-model="selected" name="selectedCode">
           <label :class="$style.label" :for="index">{{ obj.name }}</label>
         </fieldset>
       </form>
+      
+      <span
+        @click="toggleCode"
+        :class="$style.codeToggle">
+        <div v-if="showCode">
+          <span :class="$style.codeToggleText">Collapse</span>
+          <ui-icon :class="$style.codeToggleIcon" name="chevron-up"/>
+        </div>
+        <div v-else>
+          <span :class="$style.codeToggleText">Show</span>
+          <ui-icon :class="$style.codeToggleIcon" name="chevron-down"/>
+        </div>
+      </span>
+
     </nav>
 
-    <ui-code-block :code="selectedCode.code" :languages="[selectedCode.language]" rounded="bottom"/>
+    <ui-code-block
+      v-if="showCode"
+      :code="selectedCode.code"
+      :languages="[selectedCode.language]"
+      rounded="bottom"
+    />
 
   </section>
 </template>
@@ -28,7 +47,18 @@ export default {
   data: () => {
     return {
       selected: 0,
-      filesystem: filesystem
+      filesystem: filesystem,
+      showCode: true
+    }
+  },
+  methods: {
+    toggleCode: function () {
+      this.showCode = !this.showCode
+    },
+    handleNavItemClick: function () {
+      if (!this.showCode) {
+        this.showCode = true
+      }
     }
   },
   computed: {
@@ -92,6 +122,7 @@ export default {
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
 @value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
@@ -115,8 +146,10 @@ export default {
 
 
 .nav {
-  composes: neutral-00  from c-background-color;
+  composes: neutral-10  from c-background-color;
   composes: bottom heavy  from c-border;
+  composes: padding-right-xl  from u-spacings;
+  position: relative;
 }
 
 .navList {
@@ -149,9 +182,35 @@ export default {
   composes: hover-orange  from c-background-color;
   composes: bold  from c-text-style;
   composes: padding-sm  from u-spacings;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
+}
+
+
+
+
+.codeToggle {
+  composes: text text--sm  from o-text;
+  composes: bold  from c-text-style;
+  composes: padding-sm  from u-spacings;
+  composes: liner liner--break-left  from o-liner;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.codeToggleText {
+  composes: margin-right-xs  from u-spacings;
+}
+
+.codeToggleIcon {
+  position: relative;
+  height: 1em;
+  // width: 2rem;
+  // height: 2rem;
+  // font-size: 2rem;
+  vertical-align: text-top;
 }
 
 </style>

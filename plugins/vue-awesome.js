@@ -7,7 +7,12 @@ import 'vue-awesome/icons/folder'
 import 'vue-awesome/icons/folder-open-o'
 import 'vue-awesome/icons/file'
 import 'vue-awesome/icons/file-o'
+
+// ARROWS
 import 'vue-awesome/icons/chevron-right'
+import 'vue-awesome/icons/chevron-left'
+import 'vue-awesome/icons/chevron-up'
+import 'vue-awesome/icons/chevron-down'
 
 // MISC
 import 'vue-awesome/icons/eye'
