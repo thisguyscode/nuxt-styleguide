@@ -2,9 +2,9 @@
   <section>
     <h1 :class="$style.heading">{{ $route.params.name }}</h1>
 
-    <div :class="$style.componentWrapper">
+    <ui-card :class="$style.componentWrapper">
       <component :is="componentName + '-example'"></component>
-    </div>
+    </ui-card>
 
     <nav :class="$style.nav">
       <form :class="$style.navList">
@@ -114,19 +114,6 @@ export default {
 }
 
 
-
-
-.componentWrapper {
-  composes: box box--large  from o-box;
-  composes: neutral-100  from c-background-color;
-  composes: all light  from c-border;
-  composes: normal  from c-shadow;
-  margin-bottom: 40px;
-}
-
-
-
-
 .nav {
   composes: neutral-00  from c-background-color;
   composes: bottom heavy  from c-border;
@@ -142,6 +129,10 @@ export default {
 
 
 
+
+.componentWrapper {
+  composes: margin-bottom-md  from u-spacings;
+}
 
 
 .radio {
