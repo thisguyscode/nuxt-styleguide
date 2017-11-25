@@ -1,4 +1,7 @@
 export default {
+  mounted () {
+    console.log('ui-code-set mounted')
+  },
   data: () => {
     return {
       selected: 0,

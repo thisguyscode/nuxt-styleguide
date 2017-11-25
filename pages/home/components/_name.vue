@@ -16,6 +16,9 @@ import filesystem from '~/data/filesystem/main.json'
 require('~/plugins/all-components.js')
 
 export default {
+  mounted () {
+    console.log(this.codeArray)
+  },
   data: () => {
     return {
       filesystem: filesystem
@@ -42,9 +45,8 @@ export default {
     codeArray: function () {
       var array = []
       var srcDir = this.currentObject.children
-      for (var file in srcDir) {
-        var current = srcDir[file]
-        console.log(current)
+      for (var i = 0; i < srcDir.length; i++) {
+        var current = srcDir[i]
         var extensionStart = current.name.lastIndexOf('.')
         var codeObject = {
           code: require(`!raw-loader!~/components/${this.$route.params.name}/${current.name}`),
