@@ -6,8 +6,11 @@ export default {
     }
   },
   computed: {
+    trimmedCode: function () {
+      return this.code.replace(/^\s+|\s+$/g, '')
+    },
     highlightedCode: function () {
-      return hljs.highlightAuto(this.code, this.languages).value
+      return hljs.highlightAuto(this.trimmedCode, this.languages).value
     },
     rootClass: function () {
       var array = []
