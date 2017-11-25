@@ -1,11 +1,13 @@
 <div :class="$style.root">
-  <div :class="$style.donutWrapper">
-    <ui-donut :value="donutValue"/>
-  </div>
-  <div :class="$style.textWrapper">
-    <h3 :class="$style.heading" v-if="heading">{{ heading }}</h3>
-    <p :class="$style.copy">
-      <slot></slot>
-    </p>
+  <div :class="$style.inner">
+    <div :class="$style.donutWrapper">
+      <ui-donut :value="donutValue"/>
+    </div>
+    <div :class="$style.textWrapper">
+      <h3 :class="$style.heading" v-if="heading">{{ heading }}</h3>
+      <p :class="$style.copy">
+        <slot></slot>
+      </p>
+    </div>
   </div>
 </div>

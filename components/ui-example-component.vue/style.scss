@@ -6,6 +6,8 @@
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-shadow "sass-loader!~/assets/styles/cosmetics/cosmetics.shadow.scss";
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
@@ -16,27 +18,30 @@
 /* Root class
 ========================================================================== */
 .root {
-  composes: grid grid--no-wrap  from o-grid;
   composes: box  from o-box;
+  composes: heavy all from c-border;
+  composes: normal  from c-shadow;
 }
 
-
-.donutWrapper {
-  composes: grid__cell grid__cell--shrink  from o-grid; 
-}
-
-
-.textWrapper {
-  composes: grid__cell  from o-grid;
-  composes: padding-left-md padding-top-xs  from u-spacings;
-}
-
-  .heading {
-    composes: heading  from o-heading;
-    composes: margin-bottom-xs  from u-spacings;
+  .inner {
+    composes: grid grid--no-wrap  from o-grid;
   }
 
-  .copy {
-    composes: text  from o-text;
-    composes: neutral-30  from c-text-color;
-  }
+    .donutWrapper {
+      composes: grid__cell grid__cell--shrink  from o-grid; 
+    }
+
+    .textWrapper {
+      composes: grid__cell  from o-grid;
+      composes: padding-left-md padding-top-xs  from u-spacings;
+    }
+
+      .heading {
+        composes: heading  from o-heading;
+        composes: margin-bottom-xs  from u-spacings;
+      }
+
+      .copy {
+        composes: text  from o-text;
+        composes: neutral-30  from c-text-color;
+      }
