@@ -37,6 +37,11 @@
   .list-directory__item {
     position: relative;
     margin-bottom: $unit-xs;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
   }
 
     .list-directory__line {

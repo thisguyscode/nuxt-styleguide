@@ -31,8 +31,7 @@
 
   <!-- CONTENTS (if folder) -->
   <ul
-    v-show="open"
-    v-if="itemIsFolder"
+    v-if="itemIsFolder && open"
     :class="$style.folderContentsList">
     <!-- Indentation Line -->
     <div :class="$style.indentLine"></div>

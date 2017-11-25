@@ -1,11 +1,11 @@
 <template>
-  <span>
+  <ul :class="$style.list">
     <ui-directory-item
       v-for="object in root.children"
       :model="object"
       :key="object.id"
     />
-  </span>
+  </ul>
 </template>
 
 <script>
@@ -35,3 +35,16 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss" module>
+
+@value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+.list {
+  composes: list-directory  from o-list-directory;
+  composes: padding-left-none  from u-spacings;
+}
+
+</style>
