@@ -10,7 +10,11 @@
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
+// VALUES
+@import "~assets/styles/values/values.breakpoints";
 
+// TOOLS
+@import "node_modules/sass-mq/mq";
 
 
 /* Root class
@@ -18,14 +22,20 @@
 .root {
   // composes: box  from o-box;
   composes: neutral-95  from c-background-color;
-  composes: right light  from c-border;
+  composes: bottom right light  from c-border;
   position: relative;
-  height: 100vh;
-  overflow-y: scroll;
+  height: 100%;
+  @include mq($from: tablet) {
+    height: 100vh;
+    overflow-y: scroll;
+  }
 }
 
 .inner {
   composes: liner  from o-liner;
+  @include mq($until: tablet) {
+    position: relative;
+  }
 }
 
 .innerInner {
