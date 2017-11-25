@@ -47,6 +47,13 @@
               "type": "file"
             },
             {
+              "path": "common/cosmetics/cosmetics.shadow.scss",
+              "name": "cosmetics.shadow.scss",
+              "size": 653,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
               "path": "common/cosmetics/cosmetics.text-color.scss",
               "name": "cosmetics.text-color.scss",
               "size": 2043,
@@ -61,7 +68,7 @@
               "type": "file"
             }
           ],
-          "size": 7844,
+          "size": 8497,
           "type": "directory"
         },
         {
@@ -129,7 +136,7 @@
             {
               "path": "common/objects/objects.grid.scss",
               "name": "objects.grid.scss",
-              "size": 8038,
+              "size": 8094,
               "extension": ".scss",
               "type": "file"
             },
@@ -185,12 +192,12 @@
             {
               "path": "common/objects/objects.text.scss",
               "name": "objects.text.scss",
-              "size": 906,
+              "size": 908,
               "extension": ".scss",
               "type": "file"
             }
           ],
-          "size": 19390,
+          "size": 19448,
           "type": "directory"
         },
         {
@@ -316,7 +323,7 @@
           "type": "directory"
         }
       ],
-      "size": 56914,
+      "size": 57625,
       "type": "directory"
     },
     {
@@ -430,7 +437,7 @@
             {
               "path": "components/ui-code-block.vue/script.js",
               "name": "script.js",
-              "size": 895,
+              "size": 989,
               "extension": ".js",
               "type": "file"
             },
@@ -456,7 +463,7 @@
               "type": "file"
             }
           ],
-          "size": 4950,
+          "size": 5044,
           "type": "directory"
         },
         {
@@ -546,13 +553,56 @@
           "type": "directory"
         },
         {
+          "path": "components/ui-donut.vue",
+          "name": "ui-donut.vue",
+          "children": [
+            {
+              "path": "components/ui-donut.vue/example.vue",
+              "name": "example.vue",
+              "size": 85,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-donut.vue/index.vue",
+              "name": "index.vue",
+              "size": 133,
+              "extension": ".vue",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-donut.vue/script.js",
+              "name": "script.js",
+              "size": 311,
+              "extension": ".js",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-donut.vue/style.scss",
+              "name": "style.scss",
+              "size": 2580,
+              "extension": ".scss",
+              "type": "file"
+            },
+            {
+              "path": "components/ui-donut.vue/template.html",
+              "name": "template.html",
+              "size": 365,
+              "extension": ".html",
+              "type": "file"
+            }
+          ],
+          "size": 3474,
+          "type": "directory"
+        },
+        {
           "path": "components/ui-example-component.vue",
           "name": "ui-example-component.vue",
           "children": [
             {
               "path": "components/ui-example-component.vue/example.vue",
               "name": "example.vue",
-              "size": 77,
+              "size": 317,
               "extension": ".vue",
               "type": "file"
             },
@@ -566,26 +616,26 @@
             {
               "path": "components/ui-example-component.vue/script.js",
               "name": "script.js",
-              "size": 24,
+              "size": 250,
               "extension": ".js",
               "type": "file"
             },
             {
               "path": "components/ui-example-component.vue/style.scss",
               "name": "style.scss",
-              "size": 359,
+              "size": 1531,
               "extension": ".scss",
               "type": "file"
             },
             {
               "path": "components/ui-example-component.vue/template.html",
               "name": "template.html",
-              "size": 53,
+              "size": 341,
               "extension": ".html",
               "type": "file"
             }
           ],
-          "size": 646,
+          "size": 2572,
           "type": "directory"
         },
         {
@@ -632,7 +682,7 @@
           "type": "directory"
         }
       ],
-      "size": 23518,
+      "size": 29012,
       "type": "directory"
     }
   ]

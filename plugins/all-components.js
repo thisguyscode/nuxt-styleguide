@@ -15,6 +15,9 @@ import uiDirectoryItemExample from '~/components/ui-directory-item.vue/example'
 import uiDirectoryTree from '~/components/ui-directory-tree.vue'
 import uiDirectoryTreeExample from '~/components/ui-directory-tree.vue/example'
 
+import uiDonut from '~/components/ui-donut.vue'
+import uiDonutExample from '~/components/ui-donut.vue/example'
+
 import uiExampleComponent from '~/components/ui-example-component.vue'
 import uiExampleComponentExample from '~/components/ui-example-component.vue/example'
 
@@ -35,6 +38,9 @@ Vue.component('ui-directory-item-example', uiDirectoryItemExample)
 
 Vue.component('ui-directory-tree', uiDirectoryTree)
 Vue.component('ui-directory-tree-example', uiDirectoryTreeExample)
+
+Vue.component('ui-donut', uiDonut)
+Vue.component('ui-donut-example', uiDonutExample)
 
 Vue.component('ui-example-component', uiExampleComponent)
 Vue.component('ui-example-component-example', uiExampleComponentExample)

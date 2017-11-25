@@ -9,3 +9,9 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# filesystem
+data/filesystem/*
+
+# all-components-import
+plugins/all-components.js
