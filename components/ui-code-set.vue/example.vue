@@ -8,13 +8,13 @@ export default {
     return {
       codeArray: [
         {
-          name: 'ui-a.vue',
-          code: require(`!raw-loader!~/components/ui-a.vue/index.vue`),
-          language: 'xml'
+          name: 'ui-a',
+          code: require(`!raw-loader!~/components/ui-a.vue/style.scss`),
+          language: 'scss'
         },
         {
-          name: 'ui-a.vue',
-          code: require(`!raw-loader!~/components/ui-a.vue/index.vue`),
+          name: 'ui-breadcrumbs',
+          code: require(`!raw-loader!~/components/ui-breadcrumbs.vue/index.vue`),
           language: 'xml'
         }
       ]
