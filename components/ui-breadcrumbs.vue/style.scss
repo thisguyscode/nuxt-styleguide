@@ -57,6 +57,7 @@
   composes: padding-xs  from u-spacings;
   composes: margin-right-xs  from u-spacings;
   composes: text  from o-text;
+  display: inline-block;
   position: relative;
 }
 
