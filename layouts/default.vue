@@ -46,6 +46,12 @@ export default {
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
+// VALUES
+@import "~assets/styles/values/values.breakpoints";
+
+// TOOLS
+@import "node_modules/sass-mq/mq";
+
 
 /* Root class
 ========================================================================== */
@@ -60,9 +66,13 @@ export default {
 ========================================================================== */
 
   .sidebar {
-    overflow-y: scroll;
-    height: 100vh;
     composes: grid__cell  grid__cell--1/3-at-tablet  grid__cell--1/4-at-wide  from o-grid;
+    flex-basis: 100%;
+    @include mq($from: tablet) {
+      flex-basis: auto;
+      // overflow-y: scroll;
+      // height: 100vh;
+    }
   }
 
 
@@ -76,8 +86,10 @@ export default {
   .contentArea {
     composes: grid__cell grid__cell--2/3-at-tablet  grid__cell--3/4-at-wide  from o-grid;
     overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100vh;
+    @include mq($from: tablet) {
+      overflow-y: scroll;
+      height: 100vh;
+    }
   }
 
 
