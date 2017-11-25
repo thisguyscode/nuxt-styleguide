@@ -75,6 +75,7 @@ export default {
 
   .contentArea {
     composes: grid__cell grid__cell--2/3-at-tablet  grid__cell--3/4-at-wide  from o-grid;
+    overflow-x: hidden;
     overflow-y: scroll;
     height: 100vh;
   }

@@ -1,0 +1,42 @@
+/* Dependencies
+========================================================================== */
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
+
+@value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+
+
+
+/* Root class
+========================================================================== */
+.root {
+  composes: grid grid--no-wrap  from o-grid;
+  composes: box  from o-box;
+}
+
+
+.donutWrapper {
+  composes: grid__cell grid__cell--shrink  from o-grid; 
+}
+
+
+.textWrapper {
+  composes: grid__cell  from o-grid;
+  composes: padding-left-md padding-top-xs  from u-spacings;
+}
+
+  .heading {
+    composes: heading  from o-heading;
+    composes: margin-bottom-xs  from u-spacings;
+  }
+
+  .copy {
+    composes: text  from o-text;
+    composes: neutral-30  from c-text-color;
+  }
