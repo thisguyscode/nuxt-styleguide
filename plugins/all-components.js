@@ -6,6 +6,9 @@ import uiAExample from '~/components/ui-a.vue/example'
 import uiBreadcrumbs from '~/components/ui-breadcrumbs.vue'
 import uiBreadcrumbsExample from '~/components/ui-breadcrumbs.vue/example'
 
+import uiCard from '~/components/ui-card.vue'
+import uiCardExample from '~/components/ui-card.vue/example'
+
 import uiCodeBlock from '~/components/ui-code-block.vue'
 import uiCodeBlockExample from '~/components/ui-code-block.vue/example'
 
@@ -29,6 +32,9 @@ Vue.component('ui-a-example', uiAExample)
 
 Vue.component('ui-breadcrumbs', uiBreadcrumbs)
 Vue.component('ui-breadcrumbs-example', uiBreadcrumbsExample)
+
+Vue.component('ui-card', uiCard)
+Vue.component('ui-card-example', uiCardExample)
 
 Vue.component('ui-code-block', uiCodeBlock)
 Vue.component('ui-code-block-example', uiCodeBlockExample)
