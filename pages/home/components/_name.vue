@@ -109,6 +109,7 @@ export default {
 ========================================================================== */
 .heading {
   composes: heading heading--alpha  from o-heading;
+  composes: margin-bottom-md  from u-spacings;
 }
 
 
