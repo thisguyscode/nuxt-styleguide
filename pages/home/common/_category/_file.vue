@@ -1,6 +1,5 @@
 <template>
   <section :class="$style.root">
-    <!-- <span :class="$style.categoryHeading">{{ $route.params.category }}</span> -->
     <h1 :class="$style.heading">
       <ui-icon :class="$style.headingLogo" name="file"/>
       <span>{{ $route.params.file }}</span>
