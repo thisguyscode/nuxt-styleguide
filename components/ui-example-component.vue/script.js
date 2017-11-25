@@ -3,8 +3,12 @@ import uiMiniMenu from '~/components/ui-mini-menu.vue'
 export default {
   props: {
     donutValue: {
-      required: false,
-      default: 'XX'
+      type: Number,
+      required: true
+    },
+    donutOutOf: {
+      type: Number,
+      default: 100
     },
     heading: {
       type: String,

@@ -1,5 +1,5 @@
 <template>
-  <ui-donut></ui-donut>
+  <ui-donut :value="12" :outOf="100"></ui-donut>
 </template>
 
 <script>

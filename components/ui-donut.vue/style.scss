@@ -18,15 +18,6 @@
 
 /* Variables
 ========================================================================== */
-$value: 40; // 40% (0-100%)
-$size: 100px;
-$width: 4px;
-
-$value: $value * 360 / 100;
-$foreground-color: $green; // chart color
-$background-color: $neutral-70; // active color
-$t: transparent;
-$s: floor($value/90);
 
 
 
@@ -34,100 +25,30 @@ $s: floor($value/90);
 ========================================================================== */
 .root {
   position: relative;
-  width: $size;
-  height: $size;
+  display: inline-block;
+  width: 100px;
+  height: 100px;  
+}
+
+.svg {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 
-
-.donut {
-  width: $size;
-  height: $size;
-
-  &:before,
-  &:after {
-    content: '';
-    height: 100%;
-  }
-  
-  &:before {
-    display: inline-block;
-    font-size: 0;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    border: $width solid $foreground-color;
-    border-radius: 50%;
-  }
+.backgroundPath {
+  stroke: black;
 }
 
-.fill {
-  &:after,
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: $width solid;
-    border-radius: 50%;
-    border-color: $t;
-    @if ($s >= 0) {
-      border-top-color: $background-color;
-    }
-    @if ($s > 1) {
-      border-right-color: $background-color;
-    }
-    @if ($s > 2) {
-      border-bottom-color: $background-color;
-    }
-    @if ($s > 3) {
-      border-left-color: $background-color;
-    }
-    box-sizing: border-box;
-    transform: rotate(45deg);
-    @if ($value < 90) {
-      transform: rotate(#{$value - 45}deg);
-    }
-  }
-
-  &::after {
-    transform: rotate(#{$value%90 + 45}deg);
-    @if ($s == 0) {
-      content: none;
-    }
-    z-index: 3;
-  }
-
-  @if ($value < 90) {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 50%;
-    height: 50%;
-    overflow: hidden;
-    &:after, &:before {
-      left: -100%;
-      top: 0;
-      width: 200%;
-      height: 200%;
-    }
-  }
+.arcPath {
+  stroke: red;
 }
 
 .value {
   composes: heading heading--beta  from o-heading;
   composes: margin-bottom-none  from u-spacings;
   composes: neutral-00  from c-text-color;
+  line-height: 0;
   position: absolute;
   left: 0;
   top: 50%;

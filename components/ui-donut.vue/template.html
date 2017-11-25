@@ -1,18 +1,20 @@
-<!-- <div :class="$style.root">
-  <div :class="$style.value">
-      {{ computedValue }}
-  </div>
-  <div :class="[$style.donutHalf, $style.donutHalfLeft]">
-      <div :class="$style.donutFill" id="jsDonutFillLeft"></div>
-  </div>
-  <div :class="[$style.donutHalf, $style.donutHalfRight]">
-    <div :class="$style.donutFill" id="jsDonutFillRight"></div>
-  </div>
-  
-</div> -->
 <div :class="$style.root">
-  <div :class="$style.donut">
-    <span :class="$style.value">{{ computedValue }}</span>
-    <span :class="$style.fill"></span>
-  </div>
+  <svg :class="$style.svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    
+    <!-- Background circle -->
+    <path
+      fill="transparent"
+      :class="$style.backgroundPath"
+      :d="dBg"
+      :stroke-width="strokeWidth"/>
+    
+    <!-- Move to start position, start drawing arc -->
+    <path
+      fill="transparent"
+      :class="$style.arcPath"
+      :d="d"
+      :stroke-width="strokeWidth"/>
+
+  </svg>
+  <span :class="$style.value">{{ computedValue }}</span>
 </div>
