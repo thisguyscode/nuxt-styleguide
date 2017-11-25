@@ -11,7 +11,7 @@ npm-debug.log
 dist
 
 # filesystem
-data/filesystem/*
+data/filesystem
 
 # all-components-import
 plugins/all-components.js
