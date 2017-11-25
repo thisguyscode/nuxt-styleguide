@@ -1,6 +1,10 @@
 import uiDonut from '~/components/ui-donut.vue'
 export default {
   props: {
+    donutValue: {
+      required: false,
+      default: 'XX'
+    },
     heading: {
       type: String,
       required: false
@@ -8,10 +12,5 @@ export default {
   },
   components: {
     uiDonut
-  },
-  computed: {
-    donutValue: function () {
-      return 123
-    }
   }
 }

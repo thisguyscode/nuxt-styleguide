@@ -6,7 +6,9 @@
       <component :is="componentName + '-example'"></component>
     </ui-card>
 
-    <ui-code-set :codeSet="codeArray"/>
+    <ui-code-set :class="$style.codeSet" :codeSet="codeArray"/>
+
+    <h2 :class="$style.subheading">Code</h2>
 
   </section>
 </template>
@@ -104,6 +106,12 @@ export default {
 }
 
 
+.subheading {
+  composes: heading heading--gamma  from o-heading;
+  // composes: margin-bottom-md  from u-spacings;
+}
+
+
 .nav {
   composes: neutral-10  from c-background-color;
   composes: bottom heavy  from c-border;
@@ -166,10 +174,12 @@ export default {
 .codeToggleIcon {
   position: relative;
   height: 1em;
-  // width: 2rem;
-  // height: 2rem;
-  // font-size: 2rem;
   vertical-align: text-top;
+}
+
+
+.codeSet {
+  composes: margin-bottom-md  from u-spacings;
 }
 
 </style>
