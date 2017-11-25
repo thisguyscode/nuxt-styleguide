@@ -4,6 +4,8 @@
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
+
 
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
@@ -19,7 +21,6 @@
 ========================================================================== */
 .root {
   composes: box  from o-box;
-  composes: heavy all from c-border;
   composes: normal  from c-shadow;
   position: relative;
 }
@@ -47,16 +48,4 @@
       .copy {
         composes: text  from o-text;
         composes: neutral-30  from c-text-color;
-      }
-
-
-    
-    .menuWrapper {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    
-      .menuIcon {
-        height: 1em;
       }

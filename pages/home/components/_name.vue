@@ -3,7 +3,9 @@
     <h1 :class="$style.heading">{{ $route.params.name }}</h1>
 
     <ui-card :class="$style.componentWrapper" contrast="heavy">
-      <component :is="componentName + '-example'"></component>
+      <div :class="$style.componentInner">
+        <component :is="componentName + '-example'"></component>
+      </div>
     </ui-card>
 
     <ui-code-set :class="$style.codeSet" :codeSet="codeArray"/>
@@ -131,6 +133,9 @@ export default {
   composes: margin-bottom-md  from u-spacings;
 }
 
+.componentInner {
+  position: relative;
+}
 
 .radio {
   display: none;

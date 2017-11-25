@@ -1,8 +1,20 @@
 <div :class="$style.root">
-  <div :class="$style.triggerWrapper">
-    <ui-icon :class="$style.triggerIcon" name="bars"/>
+  
+  <!-- EMPTY div for the sake of layout -->
+  <div></div>
+
+  <!-- The actual content of the menu -->
+  <div :class="[$style.inner, innerClass]">
+
+    <div :class="$style.triggerWrapper" @click="handleTriggerClick">
+      <ui-icon v-if="open" :class="$style.triggerIcon" name="close"/>
+      <ui-icon v-else :class="$style.triggerIcon" name="bars"/>
+    </div>
+
+    <ul v-if="open" :class="$style.list">
+      <slot></slot>
+    </ul>
+
   </div>
-  <ul>
-    <slot></slot>
-  </ul>
+
 </div>

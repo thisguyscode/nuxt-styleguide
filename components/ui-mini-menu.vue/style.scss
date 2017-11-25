@@ -1,8 +1,13 @@
 /* Dependencies
 ========================================================================== */
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
+@value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
+@value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
+@value c-border-radius "sass-loader!~/assets/styles/cosmetics/cosmetics.border-radius.scss";
+@value c-shadow "sass-loader!~/assets/styles/cosmetics/cosmetics.shadow.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
@@ -13,11 +18,20 @@
 
 /* X
 ========================================================================== */
+
 .root {
-  composes: padding-sm  from u-spacings;
+  composes: liner liner--break-left  from o-liner;
+  text-align: right;
+  display: inline-block;
 }
 
+
+
 .triggerWrapper {
+  composes: padding-sm  from u-spacings;
+  composes: soft-hover-only  from c-button;
+  display: inline-block;
+  cursor: pointer;
 }
 
 
@@ -25,3 +39,22 @@
   height: .8em;
 }
 
+.list {
+  composes: list-bare  from o-list-bare;
+}
+
+.inner {
+  position: relative;
+  display: inline-block;
+  min-height: 100%;
+  *:not(.triggerWrapper) {
+    pointer-events: none;
+  }
+}
+
+.inner_isOpen {
+  composes: orange  from c-background-color;
+  *:not(.triggerWrapper) {
+    pointer-events: initial;
+  }
+}
