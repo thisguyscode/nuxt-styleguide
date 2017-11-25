@@ -67,15 +67,23 @@ module.exports = {
           })
         ]
       }
-      /*
-      ** Run ESLint on save
-      */
       if (ctx.dev && ctx.isClient) {
+        /*
+        ** Run ESLint on save
+        */
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
+        })
+      }
+      if (ctx.isClient) {
+        /** Remove sourcemap from es6-promise on client */
+        config.module.rules.push({
+          test: /\.js$/,
+          include: /node_modules\/es6-promise/,
+          loader: 'strip-sourcemap-loader'
         })
       }
     }
