@@ -22,7 +22,7 @@ $gutter-width: 3rem;
 /* Root class
 ========================================================================== */
 .root {
-  composes: neutral-00  from c-background-color;
+  composes: neutral-10  from c-background-color;
   max-width: 100%;
   overflow: hidden;
   position: relative;
