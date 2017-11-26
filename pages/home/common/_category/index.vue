@@ -39,22 +39,10 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+// @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 
 // @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
-@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+// @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
-
-
-/* Heading
-========================================================================== */
-.heading {
-  composes: heading heading--beta  from o-heading;
-}
-
-.headingIcon {
-  composes: margin-right-sm  from u-spacings;
-  height: .8em;
-}
 </style>

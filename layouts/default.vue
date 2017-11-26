@@ -36,6 +36,10 @@ export default {
 
 /* Dependencies
 ========================================================================== */
+
+@import "~assets/styles/values/values.breakpoints";
+@import "node_modules/sass-mq/mq";
+
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
@@ -44,15 +48,13 @@ export default {
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
-// VALUES
-@import "~assets/styles/values/values.breakpoints";
-
-// TOOLS
-@import "node_modules/sass-mq/mq";
 
 
-/* Root class
+
+
+/* Root
 ========================================================================== */
+
 .root {
   composes: grid grid--align-stretch  from o-grid;
 }
@@ -63,15 +65,14 @@ export default {
 /* Sidebar
 ========================================================================== */
 
-  .sidebar {
-    composes: grid__cell  grid__cell--1/3-at-tablet  grid__cell--1/4-at-wide  from o-grid;
-    flex-basis: 100%;
-    @include mq($from: tablet) {
-      flex-basis: auto;
-      // overflow-y: scroll;
-      // height: 100vh;
-    }
+.sidebar {
+  composes: grid__cell  grid__cell--1/3-at-tablet  grid__cell--1/4-at-wide  from o-grid;
+  flex-basis: 100%;
+  
+  @include mq($from: tablet) {
+    flex-basis: auto;
   }
+}
 
 
 
@@ -81,14 +82,14 @@ export default {
 /* ContentArea
 ========================================================================== */
 
-  .contentArea {
-    composes: grid__cell grid__cell--2/3-at-tablet  grid__cell--3/4-at-wide  from o-grid;
-    overflow-x: hidden;
-    @include mq($from: tablet) {
-      overflow-y: scroll;
-      height: 100vh;
-    }
+.contentArea {
+  composes: grid__cell grid__cell--2/3-at-tablet  grid__cell--3/4-at-wide  from o-grid;
+  overflow-x: hidden;
+  
+  @include mq($from: tablet) {
+    overflow-y: scroll;
+    height: 100vh;
   }
-
+}
 
 </style>

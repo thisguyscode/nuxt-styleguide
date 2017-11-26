@@ -54,7 +54,7 @@ export default {
 
     .headingLogo {
       composes: margin-right-xs from u-spacings;
-      height: .8em;
+      width: .8em;
     }
 
   .categoryHeading {

@@ -62,7 +62,7 @@ export default {
 
 .headingIcon {
   composes: margin-right-sm  from u-spacings;
-  height: .8em;
+  width: .8em;
 }
 
 </style>

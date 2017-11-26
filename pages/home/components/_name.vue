@@ -106,7 +106,7 @@ export default {
 
 .headingIcon {
   composes: margin-right-sm  from u-spacings;
-  height: .8em;
+  width: .8em;
 }
 
 .subheading {
@@ -191,7 +191,7 @@ export default {
 
 .codeToggleIcon {
   position: relative;
-  height: 1em;
+  width: 1em;
   vertical-align: text-top;
 }
 
