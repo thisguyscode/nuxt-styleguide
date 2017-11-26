@@ -20,6 +20,7 @@
 ========================================================================== */
 .root {
   composes: padding-vertical-xs padding-horizontal-sm  from u-spacings;
+  text-align: left;
   &:hover {
     cursor: pointer;
     background-color: $neutral-95;
@@ -36,13 +37,13 @@
 
 
 .label {
-  composes: margin-right-xs  from u-spacings;
   composes: text text--sm  from o-text;
   composes: bold  from c-text-style;
   opacity: .7;
 }
 
 .icon {
+  composes: margin-right-xs  from u-spacings;
   height: .8em;
   opacity: .7;
 }

@@ -27,14 +27,54 @@
 
 /* Standard
 ========================================================================== */
+.normal,
+.heavy,
+.light {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+}
+
 .normal {
-  box-shadow: inset 0 0 0 1px $neutral-70, 0 2px $neutral-70;
+  &:before {
+    box-shadow: inset 0 0 0 1px $neutral-70, 0 2px $neutral-70;
+  }
 }
 
 .heavy {
-  box-shadow: inset 0 0 0 1px $neutral-00, 0 2px $neutral-00;
+  &:before {
+    box-shadow: inset 0 0 0 1px $neutral-00, 0 2px $neutral-00;
+  }
 }
 
 .light {
-  box-shadow: inset 0 0 0 1px $neutral-90, 0 2px $neutral-90;
+  &:before {
+    box-shadow: inset 0 0 0 1px $neutral-90, 0 2px $neutral-90;
+  }
+}
+
+
+.rounded-sm {
+  &:before {
+    border-radius: 2px;
+  }
+}
+
+.rounded-md {
+  &:before {
+    border-radius: 4px;
+  }
+}
+
+.rounded-lg {
+  &:before {
+    border-radius: 8px;
+  }
 }

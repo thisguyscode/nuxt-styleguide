@@ -18,6 +18,7 @@
   composes: box  from o-box;
   composes: neutral-100  from c-background-color;
   composes: md from c-border-radius;
+  composes: rounded-md  from c-shadow;
   position: relative;
 }
 

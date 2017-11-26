@@ -27,7 +27,7 @@
 
 
 
-.triggerWrapper {
+.trigger {
   composes: padding-sm  from u-spacings;
   composes: soft-hover-only  from c-button;
   display: inline-block;
@@ -47,14 +47,16 @@
   position: relative;
   display: inline-block;
   min-height: 100%;
-  *:not(.triggerWrapper) {
+  > *:not(.trigger) {
     pointer-events: none;
   }
 }
 
 .inner_isOpen {
-  composes: orange  from c-background-color;
-  *:not(.triggerWrapper) {
+  composes: md  from c-border-radius;
+  composes: neutral-100  from c-background-color;
+  composes: heavy rounded-md  from c-shadow;
+  > *:not(.trigger) {
     pointer-events: initial;
   }
 }

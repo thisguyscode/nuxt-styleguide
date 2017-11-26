@@ -6,7 +6,7 @@
   <!-- The actual content of the menu -->
   <div :class="[$style.inner, innerClass]">
 
-    <div :class="$style.triggerWrapper" @click="handleTriggerClick">
+    <div :class="$style.trigger" @click="handleTriggerClick">
       <ui-icon v-if="open" :class="$style.triggerIcon" name="close"/>
       <ui-icon v-else :class="$style.triggerIcon" name="bars"/>
     </div>

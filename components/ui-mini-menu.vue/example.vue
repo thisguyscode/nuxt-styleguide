@@ -1,7 +1,8 @@
 <template>
   <ui-card>
     <ui-mini-menu>
-      <ui-menu-item label="X"></ui-menu-item>
+      <ui-menu-item label="Menu item"></ui-menu-item>
+      <ui-menu-item label="Another menu item"></ui-menu-item>
     </ui-mini-menu>
   </ui-card>
 </template>
