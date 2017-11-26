@@ -23,6 +23,13 @@ import uiBreadcrumbs from '~/components/ui-breadcrumbs.vue'
 export default {
   components: {
     uiBreadcrumbs
+  },
+  mounted () {
+    this.$store.dispatch('getFilesystem')
+  },
+  fetch ({store}) {
+    // getFilesystem action returns a Promise since it's defined as an async function
+    return store.dispatch('getFilesystem')
   }
 }
 </script>

@@ -19,17 +19,15 @@
 import uiSidebar from '~/components/ui-sidebar.vue'
 import uiDirectoryTree from '~/components/ui-directory-tree.vue'
 
-import fileSystem from '~/data/filesystem/main.json'
-
 export default {
-  data: () => {
-    return {
-      fileSystem: fileSystem
-    }
-  },
   components: {
     uiSidebar,
     uiDirectoryTree
+  },
+  computed: {
+    fileSystem: function () {
+      return this.$store.state.filesystem
+    }
   }
 }
 </script>

@@ -21,16 +21,13 @@
 </template>
 
 <script>
-import filesystem from '~/data/filesystem/main.json'
 require('~/plugins/all-components.js')
 
 export default {
-  data: () => {
-    return {
-      filesystem: filesystem
-    }
-  },
   computed: {
+    filesystem: function () {
+      return this.$store.state.filesystem
+    },
     componentName: function () {
       var name = this.currentObject.name
       var dotStart = name.lastIndexOf('.')
