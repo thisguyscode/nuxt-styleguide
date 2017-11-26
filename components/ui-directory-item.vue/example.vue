@@ -36,7 +36,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss" module>
 
 @value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";

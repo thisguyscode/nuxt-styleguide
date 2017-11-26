@@ -1,18 +1,17 @@
 <template>
   <section :class="$style.root">
-    <h1 :class="$style.heading">
-      <ui-icon :class="$style.headingLogo" name="file"/>
-      <span>{{ $route.params.file }}</span>
-    </h1>
+    <ui-page-heading icon="file-o">{{ $route.params.file }}</ui-page-heading>
     <ui-code-block :code="code" :languages="['scss', 'js']"/>
   </section>
 </template>
 
 <script>
 import uiCodeBlock from '~/components/ui-code-block.vue'
+import uiPageHeading from '~/components/ui-page-heading.vue'
 export default {
   components: {
-    uiCodeBlock
+    uiCodeBlock,
+    uiPageHeading
   },
   computed: {
     code: function () {

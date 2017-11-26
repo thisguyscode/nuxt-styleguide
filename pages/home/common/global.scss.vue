@@ -1,12 +1,23 @@
 <template>
   <section>
-    <h1 :class="$style.heading">global.scss</h1>
+    <ui-page-heading icon="file-o">global.scss</ui-page-heading>
+    <ui-code-block :code="code"/>
   </section>
 </template>
 
 <script>
+import uiCodeBlock from '~/components/ui-code-block.vue'
+import uiPageHeading from '~/components/ui-page-heading.vue'
 export default {
-
+  components: {
+    uiCodeBlock,
+    uiPageHeading
+  },
+  computed: {
+    code: function () {
+      return require(`!raw-loader!~/assets/styles/global.scss`)
+    }
+  }
 }
 </script>
 

@@ -1,12 +1,15 @@
 <template>
   <section>
-    <h1 :class="$style.heading">components</h1>
+    <ui-page-heading icon="folder">components</ui-page-heading>
   </section>
 </template>
 
 <script>
+import uiPageHeading from '~/components/ui-page-heading.vue'
 export default {
-
+  components: {
+    uiPageHeading
+  }
 }
 </script>
 

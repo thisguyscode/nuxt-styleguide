@@ -1,6 +1,7 @@
 <template>
   <section>
-    <h1 :class="$style.heading">{{ $route.params.name }}</h1>
+    
+    <ui-page-heading icon="file-o">{{ $route.params.name }}</ui-page-heading>
 
     <ui-card :class="$style.componentWrapper" contrast="heavy">
       <div :class="$style.componentInner">
@@ -100,10 +101,14 @@ export default {
 /* Heading
 ========================================================================== */
 .heading {
-  composes: heading heading--alpha  from o-heading;
+  composes: heading heading--beta  from o-heading;
   composes: margin-bottom-md  from u-spacings;
 }
 
+.headingIcon {
+  composes: margin-right-sm  from u-spacings;
+  height: .8em;
+}
 
 .subheading {
   composes: heading heading--gamma  from o-heading;
