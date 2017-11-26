@@ -4,7 +4,7 @@
     <ui-page-heading icon="folder-open-o">common</ui-page-heading>
     
     <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" :iconName="getIconName(i)" :to="i.path">
-      <p>A page about stuff that is really cool and stuff.</p>
+      <!-- <p>A page about stuff that is really cool and stuff.</p> -->
     </ui-page-preview>
 
   </section>
