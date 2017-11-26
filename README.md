@@ -1,7 +1,7 @@
 # nuxt-styleguide
 
 > Opinionated Nuxt starter with styleguide  
-> Live demo: https://thisguyscode.github.io/nuxt-styleguide/home/
+> Live demo: https://thisguyscode.github.io/nuxt-styleguide
 
 ## Build Setup
 
