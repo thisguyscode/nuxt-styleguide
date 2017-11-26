@@ -10,6 +10,8 @@
 
 /* Dependencies
 ========================================================================== */
+
+// VALUES
 @import "~assets/styles/values/values.colors";
 
 
@@ -25,7 +27,7 @@
  *    scrollbars naturally.
  */
 
- html {
+html {
   overflow: hidden; /* [1] */
   overflow-y: scroll; /* [1] */
   position: relative;
@@ -33,6 +35,7 @@
   color: $darkest;
   width: 100%;
 }
+
 
 body {
   width: 100%;

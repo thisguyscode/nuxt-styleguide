@@ -2,7 +2,7 @@
   <section>
     <ui-page-heading icon="folder-open-o">components</ui-page-heading>
     
-    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" iconName="file" :to="i.path">
+    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" iconName="file" :to="'/home/' + i.path">
       <!-- <p>A page about stuff that is really cool and stuff.</p> -->
     </ui-page-preview>
   </section>
@@ -37,7 +37,6 @@ export default {
 ========================================================================== */
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 
-// @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
 
 

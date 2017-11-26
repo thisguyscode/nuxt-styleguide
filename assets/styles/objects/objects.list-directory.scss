@@ -31,22 +31,29 @@
 
 
 
-/* Child classes
+/* Item
 ========================================================================== */
 
-  .list-directory__item {
-    position: relative;
-    margin-bottom: $unit-xs;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-
+.list-directory__item {
+  position: relative;
+  margin-bottom: $unit-xs;
+  
+  &:last-child {
+    margin-bottom: 0;
   }
 
-    .list-directory__line {
-      position: absolute;
-      top: $unit-xs;
-      left: $unit-xs;
-      bottom: $unit-xs;
-    }
+}
+
+
+
+
+
+/* Line
+========================================================================== */
+
+.list-directory__line {
+  position: absolute;
+  top: $unit-xs;
+  left: $unit-xs;
+  bottom: $unit-xs;
+}

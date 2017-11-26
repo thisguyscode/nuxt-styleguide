@@ -24,6 +24,7 @@
 
 /* Variables
 ========================================================================== */
+
 $widths-delimiter: \/;
 $breakpoint-delimiter: -at-;
 $fractions: 1 2 3 4 5;
@@ -32,8 +33,10 @@ $offsets: false;
 
 
 
+
 /* Base class
 ========================================================================== */
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -46,13 +49,15 @@ $offsets: false;
 
 
 
+
 /* Cell class
 ========================================================================== */
+
 .grid__cell {
-  // flex-basis: 100%;
   flex-grow: 1;
   flex-shrink: 1;
 }
+
 
 
 
@@ -66,35 +71,43 @@ $offsets: false;
   }
 }
 
+
 .grid--align-stretch {
   align-items: stretch;
 }
+
 
 .grid--no-wrap {
   flex-wrap: nowrap;
 }
 
+
 .grid--top {
   align-items: flex-start;
 }
+
 
 .grid--bottom {
   align-items: flex-end;
 }
 
+
 .grid--center {
   align-items: center;
 }
 
+
 .grid--justify-center {
   justify-content: center;
 }
+
 
 .grid--fit {
   > .grid__cell {
     flex-grow: 1;
   }
 }
+
 
 .grid--full {
   > .grid__cell {
@@ -116,17 +129,21 @@ $offsets: false;
   flex-shrink: 1;
 }
 
+
 .grid__cell--top {
   align-self: flex-start;
 }
+
 
 .grid__cell--bottom {
   align-self: flex-end;
 }
 
+
 .grid__cell--center {
   align-self: center;
 }
+
 
 .grid__cell--auto-size {
   flex: auto;
@@ -147,62 +164,62 @@ $offsets: false;
  *    @include widths(3 4, -sm);
  */
 
- @mixin widths($columns, $breakpoint: null) {
+@mixin widths($columns, $breakpoint: null) {
   
-    // Loop through the number of columns for each denominator of our fractions.
-    @each $denominator in $columns {
-  
-      // Begin creating a numerator for our fraction up until we hit the
-      // denominator.
-      @for $numerator from 1 through $denominator {
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $denominator in $columns {
 
-        @if $numerator != $denominator {
-          // Build a class in the format `.grid--1/2-at-<breakpoint>`.
-          .grid--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
-            > .grid__cell {
-              flex-grow: 0;
-              flex-shrink: 0;
-              flex-basis: ($numerator / $denominator) * 100%;
-            }
-          }
-          // Build a class in the format `.grid__cell--1/2-at-<breakpoint>`.
-          .grid__cell--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
-            &#{&} {
-              flex-grow: 0;
-              flex-shrink: 0;
-              flex-basis: ($numerator / $denominator) * 100%;
-            } 
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    @for $numerator from 1 through $denominator {
+
+      @if $numerator != $denominator {
+        // Build a class in the format `.grid--1/2-at-<breakpoint>`.
+        .grid--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+          > .grid__cell {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: ($numerator / $denominator) * 100%;
           }
         }
-  
-        @if ($offsets == true) {
-  
-          /**
-           *  1. Reset any leftover or conflicting `left`/`right` values.
-           */
-
-          // Build a class in the format `.push-1/2[@<breakpoint>]`.
-          .push-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
-            position: relative !important;
-            right: auto !important; /* [1] */
-            left: ($numerator / $denominator) * 100% !important;
-          }
-  
-          // Build a class in the format `.pull-5/6[@<breakpoint>]`.
-          .pull-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
-            position: relative !important;
-            right: ($numerator / $denominator) * 100% !important;
-            left: auto !important; /* [1] */
-          }
-  
+        // Build a class in the format `.grid__cell--1/2-at-<breakpoint>`.
+        .grid__cell--#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+          &#{&} {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: ($numerator / $denominator) * 100%;
+          } 
         }
-  
       }
-  
+
+      @if ($offsets == true) {
+
+        /**
+          *  1. Reset any leftover or conflicting `left`/`right` values.
+          */
+
+        // Build a class in the format `.push-1/2[@<breakpoint>]`.
+        .push-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+          position: relative !important;
+          right: auto !important; /* [1] */
+          left: ($numerator / $denominator) * 100% !important;
+        }
+
+        // Build a class in the format `.pull-5/6[@<breakpoint>]`.
+        .pull-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+          position: relative !important;
+          right: ($numerator / $denominator) * 100% !important;
+          left: auto !important; /* [1] */
+        }
+
+      }
+
     }
-  
+
   }
-  
+
+}
+ 
   
   
   
@@ -211,7 +228,6 @@ $offsets: false;
 ========================================================================== */
 
 @include widths($fractions);
-  
 
 
 
@@ -231,181 +247,3 @@ $offsets: false;
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .grid--1#{$delimiter}2 {
-//   > .grid__cell {
-//     flex-grow: 0;
-//     flex-shrink: 0;
-//     flex-basis: 50%;
-//   }
-// }
-
-// .grid--1#{$delimiter}3 {
-//   > .grid__cell {
-//     flex-grow: 0;
-//     flex-shrink: 0;
-//     flex-basis: 33.3333%;
-//   }
-// }
-
-// .grid--1#{$delimiter}4 {
-//   > .grid__cell {
-//     flex-grow: 0;
-//     flex-shrink: 0;
-//     flex-basis: 25%;
-//   }
-// }
-
-// @media (--break-sm) {
-//   .small-grid--fit > .grid__cell {
-//     flex: 1;
-//   }
-//   .small-grid--full > .grid__cell {
-//     flex: 0 0 100%;
-//   }
-//   .small-grid--1#{$delimiter}2 > .grid__cell {
-//     flex: 0 0 50%;
-//   }
-//   .small-grid--1#{$delimiter}3 > .grid__cell {
-//     flex: 0 0 33.3333%;
-//   }
-//   .small-grid--1#{$delimiter}4 > .grid__cell {
-//     flex: 0 0 25%;
-//   }
-// }
-
-// @media (--break-md) {
-//   .med-grid--fit > .grid__cell {
-//     flex: 1;
-//   }
-//   .med-grid--full > .grid__cell {
-//     flex: 0 0 100%;
-//   }
-//   .med-grid--1#{$delimiter}2 > .grid__cell {
-//     flex: 0 0 50%;
-//   }
-//   .med-grid--1#{$delimiter}3 > .grid__cell {
-//     flex: 0 0 33.3333%;
-//   }
-//   .med-grid--1#{$delimiter}4 > .grid__cell {
-//     flex: 0 0 25%;
-//   }
-// }
-
-// @media (--break-lg) {
-//   .large-grid--fit > .grid__cell {
-//     flex: 1;
-//   }
-//   .large-grid--full > .grid__cell {
-//     flex: 0 0 100%;
-//   }
-//   .large-grid--1#{$delimiter}2 > .grid__cell {
-//     flex: 0 0 50%;
-//   }
-//   .large-grid--1#{$delimiter}3 > .grid__cell {
-//     flex: 0 0 33.3333%;
-//   }
-//   .large-grid--1#{$delimiter}4 > .grid__cell {
-//     flex: 0 0 25%;
-//   }
-// }
-
-.grid--gutters {
-  margin: -$unit-sm 0 $unit-sm -$unit-sm;
-}
-.grid--gutters > .grid__cell {
-  padding: $unit-sm 0 0 $unit-sm;
-}
-
-// .grid--guttersLg {
-//   margin: -1.5em 0 1.5em -1.5em;
-// }
-// .grid--guttersLg > .grid__cell {
-//   padding: 1.5em 0 0 1.5em;
-// }
-
-// .grid--guttersXl {
-//   margin: -2em 0 2em -2em;
-// }
-// .grid--guttersXl > .grid__cell {
-//   padding: 2em 0 0 2em;
-// }
-
-// @media (--break-sm) {
-//   .small-grid--gutters {
-//     margin: -1em 0 1em -1em;
-//   }
-//   .small-grid--gutters > .grid__cell {
-//     padding: 1em 0 0 1em;
-//   }
-//   .small-grid--guttersLg {
-//     margin: -1.5em 0 1.5em -1.5em;
-//   }
-//   .small-grid--guttersLg > .grid__cell {
-//     padding: 1.5em 0 0 1.5em;
-//   }
-//   .small-grid--guttersXl {
-//     margin: -2em 0 2em -2em;
-//   }
-//   .small-grid--guttersXl > .grid__cell {
-//     padding: 2em 0 0 2em;
-//   }
-// }
-
-// @media (--break-md) {
-//   .med-grid--gutters {
-//     margin: -1em 0 1em -1em;
-//   }
-//   .med-grid--gutters > .grid__cell {
-//     padding: 1em 0 0 1em;
-//   }
-//   .med-grid--guttersLg {
-//     margin: -1.5em 0 1.5em -1.5em;
-//   }
-//   .med-grid--guttersLg > .grid__cell {
-//     padding: 1.5em 0 0 1.5em;
-//   }
-//   .med-grid--guttersXl {
-//     margin: -2em 0 2em -2em;
-//   }
-//   .med-grid--guttersXl > .grid__cell {
-//     padding: 2em 0 0 2em;
-//   }
-// }
-
-// @media (--break-lg) {
-//   .large-grid--gutters {
-//     margin: -1em 0 1em -1em;
-//   }
-//   .large-grid--gutters > .grid__cell {
-//     padding: 1em 0 0 1em;
-//   }
-//   .large-grid--guttersLg {
-//     margin: -1.5em 0 1.5em -1.5em;
-//   }
-//   .large-grid--guttersLg > .grid__cell {
-//     padding: 1.5em 0 0 1.5em;
-//   }
-//   .large-grid--guttersXl {
-//     margin: -2em 0 2em -2em;
-//   }
-//   .large-grid--guttersXl > .grid__cell {
-//     padding: 2em 0 0 2em;
-//   }
-// }

@@ -21,6 +21,7 @@
 
 
 
+
 /* Variables
 ========================================================================== */
 $colors:
@@ -35,15 +36,14 @@ $colors:
 
 
 
+
 /* Mixin
 ========================================================================== */
 
 @mixin iterate-colors ($background: true) {
-  // @each $color in $color-map {
   @for $i from 1 through length($colors) {
-    $color: nth($colors, $i);
     
-    // $i: index($color-map, $color);
+    $color: nth($colors, $i);
 
     @if ($background = true) {
       &:nth-of-type(#{$i}) {

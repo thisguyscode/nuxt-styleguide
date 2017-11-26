@@ -25,11 +25,11 @@
 
 
 
-/* Standard
+
+/* Base class
 ========================================================================== */
-.normal,
-.heavy,
-.light {
+
+.shadow {
   position: relative;
   &:before {
     content: '';
@@ -41,6 +41,13 @@
     pointer-events: none;
   }
 }
+
+
+
+
+
+/* Contrast modifiers
+========================================================================== */
 
 .normal {
   &:before {
@@ -60,6 +67,12 @@
   }
 }
 
+
+
+
+
+/* Rounding modifiers
+========================================================================== */
 
 .rounded-sm {
   &:before {

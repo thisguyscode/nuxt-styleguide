@@ -52,6 +52,7 @@ $common-colors: (
 
 
 
+
 /* By contrast
 ========================================================================== */
 @each $contrast-color-namespace, $contrast-color in $contrast-colors {
@@ -60,11 +61,11 @@ $common-colors: (
     color: $contrast-color;
   }
 
-  .hover-#{$contrast-color-namespace} {
-    &:hover {
-      color: $contrast-color;
-    }
-  }
+  // .hover-#{$contrast-color-namespace} {
+  //   &:hover {
+  //     color: $contrast-color;
+  //   }
+  // }
   
 }
 
@@ -80,13 +81,14 @@ $common-colors: (
     color: $lightness-color;
   }
 
-  .hover-#{$lightness-color-namespace} {
-    &:hover {
-      color: $lightness-color;
-    }
-  }
+  // .hover-#{$lightness-color-namespace} {
+  //   &:hover {
+  //     color: $lightness-color;
+  //   }
+  // }
   
 }
+
 
 
 
@@ -99,10 +101,10 @@ $common-colors: (
     color: $common-color;
   }
 
-  .hover-#{$common-color-namespace} {
-    &:hover {
-      color: $common-color;
-    }
-  }
+  // .hover-#{$common-color-namespace} {
+  //   &:hover {
+  //     color: $common-color;
+  //   }
+  // }
   
 }

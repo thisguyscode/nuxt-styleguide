@@ -21,7 +21,7 @@
 ========================================================================== */
 .root {
   composes: box  from o-box;
-  composes: normal  from c-shadow;
+  composes: shadow normal  from c-shadow;
   position: relative;
 }
 

@@ -14,37 +14,32 @@
 
 
 
-
 /* Base class
 ========================================================================== */
+
 @function calc-font-sizes($scale: $modular-scale, $font-sizes: $font-sizes, $font-size-default: $font-size-default) {
-	$size-map: 		();
-	$base-size: 	$base-font-size;
-	$scale-factor:	map-get($modular-scales, $scale);
-	$base-index:	index($font-sizes, $font-size-default);
+  $size-map: ();
+  $base-size: $base-font-size;
+  $scale-factor: map-get($modular-scales, $scale);
+  $base-index: index($font-sizes, $font-size-default);
 
-	// Calculate from the base index upwards.
-	@for $i from $base-index through length($font-sizes) {
-		$name: nth($font-sizes, $i);
-		$value: if($i == $base-index, $base-size, ($value * $scale-factor));
+  // Calculate from the base index upwards.
+  @for $i from $base-index through length($font-sizes) {
+    $name: nth($font-sizes, $i);
+    $value: if($i==$base-index, $base-size, ($value * $scale-factor));
+    $size-map: map-merge($size-map, ($name: $value));
+  }
 
-		$size-map: map-merge($size-map, ($name: $value));
-	}
+  // When we have smaller sizes below the base:
+  @if ($base-index - 1 > 0) {
+    // reset the value for next calculations,
+    $value: $base-size; // and calculate the remainder from the index and down.
+    @for $i from ($base-index - 1) through 1 {
+      $name: nth($font-sizes, $i);
+      $value: ($value / $scale-factor);
+      $size-map: map-merge($size-map, ($name: $value));
+    }
+  }
 
-	// When we have smaller sizes below the base:
-	@if ($base-index - 1 > 0) {
-
-		// reset the value for next calculations,
-		$value: $base-size;
-
-		// and calculate the remainder from the index and down.
-		@for $i from ($base-index - 1) through 1 {
-			$name: nth($font-sizes, $i);
-			$value: ($value / $scale-factor);
-
-			$size-map: map-merge($size-map, ($name: $value));
-		}
-	}
-
-	@return $size-map;
+  @return $size-map;
 }

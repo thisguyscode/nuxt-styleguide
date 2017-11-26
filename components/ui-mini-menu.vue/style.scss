@@ -55,7 +55,7 @@
 .inner_isOpen {
   composes: md  from c-border-radius;
   composes: neutral-100  from c-background-color;
-  composes: heavy rounded-md  from c-shadow;
+  composes: shadow heavy rounded-md  from c-shadow;
   > *:not(.trigger) {
     pointer-events: initial;
   }

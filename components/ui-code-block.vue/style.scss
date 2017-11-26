@@ -15,8 +15,8 @@
 
 /* Variables
 ========================================================================== */
-$gutter-width: 3rem;
-
+$gutter-width: 4rem;
+$horizontal-padding: 1.5rem;
 
 
 /* Root class
@@ -53,7 +53,9 @@ $gutter-width: 3rem;
 .code {
   composes: box  from o-box;
   composes: code  from o-code;
-  composes: padding-left-xl  from u-spacings;
+  // composes: padding-left-xl  from u-spacings;
+  padding-left: $gutter-width + $horizontal-padding;
+  margin-right: $horizontal-padding;
   overflow-x: scroll;
   // padding-left: $gutter-width;
 }

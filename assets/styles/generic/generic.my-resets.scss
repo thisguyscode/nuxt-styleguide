@@ -8,9 +8,9 @@
 
 
 
-
 /* GENERAL
 ========================================================================== */
+
 * {
   box-sizing: border-box;
   &:after,
@@ -19,14 +19,16 @@
   }
 }
 
+
 section {
   max-width: 100%;
 }
 
+
 a {
   color: inherit;
-  // text-decoration: none;
 }
+
 
 a,
 pre,
@@ -60,9 +62,11 @@ ul {
   vertical-align: middle;
 }
 
+
 pre {
   font-family: inherit;
 }
+
 
 
 

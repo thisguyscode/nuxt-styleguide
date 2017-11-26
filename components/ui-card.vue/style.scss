@@ -18,18 +18,18 @@
   composes: box  from o-box;
   composes: neutral-100  from c-background-color;
   composes: md from c-border-radius;
-  composes: rounded-md  from c-shadow;
+  composes: shadow rounded-md  from c-shadow;
   position: relative;
 }
 
 .root_contrastNormal {
-  composes: normal  from c-shadow;
+  composes: shadow normal  from c-shadow;
 }
 
 .root_contrastHeavy {
-  composes: heavy  from c-shadow;
+  composes: shadow heavy  from c-shadow;
 }
 
 .root_contrastLight {
-  composes: light  from c-shadow;
+  composes: shadow light  from c-shadow;
 }
