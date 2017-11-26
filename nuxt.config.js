@@ -1,3 +1,4 @@
+const getPaths = require('./utils/getPaths.js')
 const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
@@ -25,6 +26,16 @@ module.exports = {
   css: [
     '~assets/styles/global.scss'
   ],
+  generate: {
+    /*
+    ** Generate routes from 'linkTo' in project data file
+    */
+    routes: function () {
+      const fs = require('./data/filesystem/main.json')
+      var routesArray = getPaths(fs)
+      return routesArray
+    }
+  },
   /*
   ** Customize the progress bar color
   */
