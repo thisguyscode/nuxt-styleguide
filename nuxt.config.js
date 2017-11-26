@@ -5,7 +5,7 @@ module.exports = {
   router: {
     base: '/nuxt-styleguide/'
   },
-  // mode: 'spa',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
