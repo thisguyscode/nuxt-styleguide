@@ -3,7 +3,7 @@
 
     <ui-page-heading icon="folder-open-o">common</ui-page-heading>
     
-    <ui-page-preview heading="page-name" iconName="file">
+    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" :iconName="getIconName(i)" :to="i.path">
       <p>A page about stuff that is really cool and stuff.</p>
     </ui-page-preview>
 
@@ -17,6 +17,27 @@ export default {
   components: {
     uiPageHeading,
     uiPagePreview
+  },
+  computed: {
+    filesystem: function () {
+      return this.$store.state.filesystem
+    },
+    pages: function () {
+      var rootFolders = this.filesystem.children
+      var commonFolder = rootFolders.find(function (child) {
+        return child.name === 'common'
+      })
+      return commonFolder.children
+    }
+  },
+  methods: {
+    getIconName: function (object) {
+      if (object.type === 'file') {
+        return 'file'
+      } else {
+        return 'folder'
+      }
+    }
   }
 }
 </script>

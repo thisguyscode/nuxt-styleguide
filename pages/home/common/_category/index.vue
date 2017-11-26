@@ -1,14 +1,36 @@
 <template>
   <section>
     <ui-page-heading icon="folder-open-o">{{ $route.params.category }}</ui-page-heading>
+    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" iconName="file" :to="i.path">
+      <p>A page about stuff that is really cool and stuff.</p>
+    </ui-page-preview>
   </section>
 </template>
 
 <script>
 import uiPageHeading from '~/components/ui-page-heading.vue'
+import uiPagePreview from '~/components/ui-page-preview.vue'
 export default {
   components: {
-    uiPageHeading
+    uiPageHeading,
+    uiPagePreview
+  },
+  computed: {
+    filesystem: function () {
+      return this.$store.state.filesystem
+    },
+    pages: function () {
+      var self = this
+      var rootFolders = this.filesystem.children
+      var commonFolder = rootFolders.find(function (child) {
+        return child.name === 'common'
+      })
+      var currentObject = commonFolder.children.find(function (child) {
+        return child.name === self.$route.params.category
+      })
+      console.log(currentObject)
+      return currentObject.children
+    }
   }
 }
 </script>

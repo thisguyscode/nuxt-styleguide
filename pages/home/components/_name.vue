@@ -15,8 +15,6 @@
       <ui-code-set :class="$style.codeSet" :codeSet="codeArray"/>
     </section>
 
-    <h2 :class="$style.subheading">Code</h2>
-
   </section>
 </template>
 
@@ -143,6 +141,7 @@ export default {
 
 .codeSection {
   composes: page-section padded-x  from o-page-section;
+  composes: marging-bottom-lg  from u-spacings;
 }
 
 

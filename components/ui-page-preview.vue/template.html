@@ -1,6 +1,6 @@
-<div :class="$style.root">
+<nuxt-link :class="$style.root" :to="to">
   <h2 :class="$style.heading">
-    <ui-icon :class="$style.icon" :name="iconName"/>
+    <ui-icon :class="$style.headingIcon" :name="iconName"/>
     <span>
       {{ heading }}
     </span>
@@ -8,4 +8,5 @@
   <div :class="$style.description">
     <slot></slot>
   </div>
-</div>
+  <ui-icon :class="$style.hoverIcon" name="caret-right"/>
+</nuxt-link>
