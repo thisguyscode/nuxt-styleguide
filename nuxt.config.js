@@ -41,7 +41,7 @@ module.exports = {
 
       if (ctx.dev) {
         vueLoader.options.cssModules = {
-          localIdentName: '[name]__[local]'
+          localIdentName: '[name]__[local]__[hash:3]'
         }
       } else {
         vueLoader.options.cssModules = {
