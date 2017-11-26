@@ -2,6 +2,7 @@
 ========================================================================== */
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+@value o-page-section "sass-loader!~/assets/styles/objects/objects.page-section.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
@@ -12,7 +13,8 @@
 .root {
   composes: heading heading--beta  from o-heading;
   composes: margin-bottom-none from u-spacings;
-  composes: box box--lg  from o-box;
+  composes: page-section padded from o-page-section;
+  // composes: box box--lg  from o-box;
 }
 
 .icon {

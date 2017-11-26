@@ -12,7 +12,11 @@
 ========================================================================== */
 
 // VALUES
+@import "~assets/styles/values/values.breakpoints";
 @import "~assets/styles/values/values.sizes";
+
+// TOOLS
+@import "node_modules/sass-mq/mq";
 
 
 
@@ -29,10 +33,24 @@
 
 
 .padded {
-  padding: $unit-lg;
+  padding: $unit-lg $unit-sm;
+  @include mq($from: tablet) {
+    padding: $unit-lg $unit-md;
+  }
+  @include mq($from: desktop) {
+    padding: $unit-lg;
+  }
 }
 
 .padded-x {
-  padding-left: $unit-lg;
-  padding-right: $unit-lg;
+  padding-left: $unit-sm;
+  padding-right: $unit-sm;
+  @include mq($from: tablet) {
+    padding-left: $unit-md;
+    padding-right: $unit-md;
+  }
+  @include mq($from: tablet) {
+    padding-left: $unit-lg;
+    padding-right: $unit-lg;
+  }
 }

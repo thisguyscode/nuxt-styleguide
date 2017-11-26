@@ -20,6 +20,7 @@
 .root {
   composes: box box--lg from o-box;
   composes: top light  from c-border;
+  composes: neutral-95  from c-background-color;
   composes: hover-neutral-100  from c-background-color;
   position: relative;
   text-decoration: none;

@@ -1,5 +1,5 @@
 <template>
-  <ui-page-preview heading="page-name" iconName="file">
+  <ui-page-preview heading="page-name" iconName="file" to="/">
     <p>A page about stuff that is really cool and stuff.</p>
   </ui-page-preview>
 </template>
