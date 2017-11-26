@@ -7,6 +7,8 @@
   <div :class="[$style.inner, innerClass]">
 
     <div :class="$style.trigger" @click="handleTriggerClick">
+      <span :class="$style.triggerText" v-if="!open">Options</span>
+      <span :class="$style.triggerText" v-else>Close</span>
       <ui-icon v-if="open" :class="$style.triggerIcon" name="close"/>
       <ui-icon v-else :class="$style.triggerIcon" name="bars"/>
     </div>

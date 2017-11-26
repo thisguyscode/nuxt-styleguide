@@ -4,15 +4,12 @@
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
-@value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
-
 
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
-@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 @value c-shadow "sass-loader!~/assets/styles/cosmetics/cosmetics.shadow.scss";
-@value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
 
 
 
@@ -25,27 +22,42 @@
   position: relative;
 }
 
-  .inner {
-    composes: grid grid--no-wrap  from o-grid;
+
+
+
+
+/* Layout
+========================================================================== */
+
+.inner {
+  composes: grid grid--no-wrap  from o-grid;
+}
+
+
+  .donutWrapper {
+    composes: grid__cell  from o-grid; 
   }
 
-    .donutWrapper {
-      composes: grid__cell  from o-grid; 
-    }
 
-    .textWrapper {
-      composes: grid__cell  from o-grid;
-      composes: padding-left-md padding-top-xs  from u-spacings;
-      flex-basis: 100%;
-      flex-shrink: 1;
-    }
+  .textWrapper {
+    composes: grid__cell  from o-grid;
+    composes: padding-left-md padding-top-xs  from u-spacings;
+    flex-basis: 100%;
+    flex-shrink: 1;
+  }
 
-      .heading {
-        composes: heading  from o-heading;
-        composes: margin-bottom-xs  from u-spacings;
-      }
 
-      .copy {
-        composes: text  from o-text;
-        composes: neutral-30  from c-text-color;
-      }
+
+
+
+/* Text
+========================================================================== */
+.heading {
+  composes: heading  from o-heading;
+  composes: margin-bottom-xs  from u-spacings;
+}
+
+.copy {
+  composes: text  from o-text;
+  composes: neutral-30  from c-text-color;
+}

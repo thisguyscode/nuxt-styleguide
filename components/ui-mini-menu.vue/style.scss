@@ -7,6 +7,7 @@
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-border-radius "sass-loader!~/assets/styles/cosmetics/cosmetics.border-radius.scss";
+@value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
 @value c-shadow "sass-loader!~/assets/styles/cosmetics/cosmetics.shadow.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
@@ -34,6 +35,12 @@
   cursor: pointer;
 }
 
+.triggerText {
+  composes: text text--xs  from o-text;
+  composes: bold from c-text-style;
+  composes: margin-right-xs  from u-spacings;
+  text-transform: uppercase;
+}
 
 .triggerIcon {
   height: .8em;
