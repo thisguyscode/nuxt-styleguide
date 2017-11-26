@@ -1,16 +1,22 @@
 <template>
   <section>
 
-    <ui-page-heading icon="file-o">common</ui-page-heading>
+    <ui-page-heading icon="folder-open-o">common</ui-page-heading>
+    
+    <ui-page-preview heading="page-name" iconName="file">
+      <p>A page about stuff that is really cool and stuff.</p>
+    </ui-page-preview>
 
   </section>
 </template>
 
 <script>
 import uiPageHeading from '~/components/ui-page-heading.vue'
+import uiPagePreview from '~/components/ui-page-preview.vue'
 export default {
   components: {
-    uiPageHeading
+    uiPageHeading,
+    uiPagePreview
   }
 }
 </script>

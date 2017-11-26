@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ui-page-heading icon="folder">components</ui-page-heading>
+    <ui-page-heading icon="folder-open-o">components</ui-page-heading>
   </section>
 </template>
 

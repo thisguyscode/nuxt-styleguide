@@ -1,0 +1,11 @@
+<div :class="$style.root">
+  <h2 :class="$style.heading">
+    <ui-icon :class="$style.icon" :name="iconName"/>
+    <span>
+      {{ heading }}
+    </span>
+  </h2>
+  <div :class="$style.description">
+    <slot></slot>
+  </div>
+</div>

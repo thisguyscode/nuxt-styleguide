@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ui-page-heading icon="file-o">{{ $route.params.category }}</ui-page-heading>
+    <ui-page-heading icon="folder-open-o">{{ $route.params.category }}</ui-page-heading>
   </section>
 </template>
 

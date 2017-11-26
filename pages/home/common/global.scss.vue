@@ -1,7 +1,9 @@
 <template>
   <section>
     <ui-page-heading icon="file-o">global.scss</ui-page-heading>
-    <ui-code-block :code="code"/>
+    <section :class="$style.codeSection">
+      <ui-code-block :code="code"/>
+    </section>
   </section>
 </template>
 
@@ -26,10 +28,11 @@ export default {
 /* Dependencies
 ========================================================================== */
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-page-section "sass-loader!~/assets/styles/objects/objects.page-section.scss";
 
 // @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
-
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
 
@@ -37,6 +40,11 @@ export default {
 ========================================================================== */
 .heading {
   composes: heading heading--alpha  from o-heading;
+}
+
+.codeSection {
+  composes: page-section padded-x  from o-page-section;
+  composes: margin-bottom-lg  from u-spacings;
 }
 
 

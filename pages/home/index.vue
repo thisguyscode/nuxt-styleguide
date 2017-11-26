@@ -1,12 +1,15 @@
 <template>
   <section>
-    <h1 :class="$style.heading">home</h1>
+    <ui-page-heading icon="home">home</ui-page-heading>
   </section>
 </template>
 
 <script>
+import uiPageHeading from '~/components/ui-page-heading.vue'
 export default {
-
+  components: {
+    uiPageHeading
+  }
 }
 </script>
 
@@ -14,7 +17,7 @@ export default {
 
 /* Dependencies
 ========================================================================== */
-@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+// @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 
 // @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 
@@ -24,9 +27,6 @@ export default {
 
 /* Heading
 ========================================================================== */
-.heading {
-  composes: heading heading--alpha  from o-heading;
-}
 
 
 </style>

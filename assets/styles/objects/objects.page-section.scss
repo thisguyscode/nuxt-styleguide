@@ -1,0 +1,38 @@
+/* ==========================================================================
+   # PAGE-SECTION
+========================================================================== */
+
+/**
+ *  ___NOTES___
+ */
+
+
+
+/* Dependencies
+========================================================================== */
+
+// VALUES
+@import "~assets/styles/values/values.sizes";
+
+
+
+
+
+/* Base class
+========================================================================== */
+
+.page-section {
+  position: relative;
+  display: block;
+}
+
+
+
+.padded {
+  padding: $unit-lg;
+}
+
+.padded-x {
+  padding-left: $unit-lg;
+  padding-right: $unit-lg;
+}

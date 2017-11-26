@@ -1,0 +1,40 @@
+/* Dependencies
+========================================================================== */
+@value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
+@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
+@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
+
+@value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
+@value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
+@value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+
+@value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
+
+
+
+/* Root class
+========================================================================== */
+.root {
+  composes: box box--lg from o-box;
+  composes: y light  from c-border;
+}
+
+.heading {
+  composes: heading heading--beta  from o-heading;
+  composes: regular  from c-text-style;
+}
+
+  .icon {
+    composes: margin-right-sm  from u-spacings;
+    height: .8em;
+    vertical-align: middle;
+  }
+
+.description {
+  composes: text text--lg  from o-text;
+  composes: neutral-30  from c-text-color;
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

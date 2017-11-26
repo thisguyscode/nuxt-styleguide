@@ -3,13 +3,17 @@
     
     <ui-page-heading icon="file-o">{{ $route.params.name }}</ui-page-heading>
 
-    <ui-card :class="$style.componentWrapper" contrast="heavy">
-      <div :class="$style.componentInner">
-        <component :is="componentName + '-example'"></component>
-      </div>
-    </ui-card>
+    <section :class="$style.componentSection">
+      <ui-card :class="$style.componentWrapper" contrast="heavy">
+        <div :class="$style.componentInner">
+          <component :is="componentName + '-example'"></component>
+        </div>
+      </ui-card>
+    </section>
 
-    <ui-code-set :class="$style.codeSet" :codeSet="codeArray"/>
+    <section :class="$style.codeSection">
+      <ui-code-set :class="$style.codeSet" :codeSet="codeArray"/>
+    </section>
 
     <h2 :class="$style.subheading">Code</h2>
 
@@ -84,6 +88,7 @@ export default {
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
+@value o-page-section "sass-loader!~/assets/styles/objects/objects.page-section.scss";
 
 @value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
@@ -131,6 +136,17 @@ export default {
   composes: list-inline__item  from o-list-inline;
 }
 
+
+
+
+.componentSection {
+  composes: page-section padded-x  from o-page-section;
+}
+
+
+.codeSection {
+  composes: page-section padded-x  from o-page-section;
+}
 
 
 

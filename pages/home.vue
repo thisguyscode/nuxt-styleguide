@@ -67,7 +67,7 @@ export default {
   }
 
   .contentInner {
-    composes: box box--lg  from o-box;
+    // composes: box box--lg  from o-box;
   }
 
 </style>
