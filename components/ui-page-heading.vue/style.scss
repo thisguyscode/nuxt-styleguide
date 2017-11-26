@@ -8,14 +8,23 @@
 
 
 
-/* Heading
+
+
+/* Root
 ========================================================================== */
+
 .root {
   composes: heading heading--beta  from o-heading;
   composes: margin-bottom-none from u-spacings;
   composes: page-section padded from o-page-section;
-  // composes: box box--lg  from o-box;
 }
+
+
+
+
+
+/* Children
+========================================================================== */
 
 .icon {
   composes: margin-right-sm  from u-spacings;

@@ -1,5 +1,6 @@
 /* Dependencies
 ========================================================================== */
+
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 @value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
@@ -17,7 +18,7 @@
 
 
 
-/* X
+/* Root
 ========================================================================== */
 
 .root {
@@ -28,6 +29,11 @@
 
 
 
+
+
+/* Trigger
+========================================================================== */
+
 .trigger {
   composes: padding-sm  from u-spacings;
   composes: soft-hover-only  from c-button;
@@ -35,20 +41,24 @@
   cursor: pointer;
 }
 
-.triggerText {
-  composes: text text--xs  from o-text;
-  composes: bold from c-text-style;
-  composes: margin-right-xs  from u-spacings;
-  text-transform: uppercase;
-}
 
-.triggerIcon {
-  height: .8em;
-}
+  .triggerText {
+    composes: text text--xs  from o-text;
+    composes: bold from c-text-style;
+    composes: margin-right-xs  from u-spacings;
+    text-transform: uppercase;
+  }
 
-.list {
-  composes: list-bare  from o-list-bare;
-}
+  .triggerIcon {
+    height: .8em;
+  }
+
+
+
+
+
+/* Inner (wraps all content)
+========================================================================== */
 
 .inner {
   position: relative;
@@ -66,4 +76,15 @@
   > *:not(.trigger) {
     pointer-events: initial;
   }
+}
+
+
+
+
+
+/* List
+========================================================================== */
+
+.list {
+  composes: list-bare  from o-list-bare;
 }

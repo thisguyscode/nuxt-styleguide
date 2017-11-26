@@ -1,4 +1,4 @@
-<section>
+<section :class="$style.root">
   <nav :class="$style.nav">
     <form :class="$style.navList">
       <fieldset @click="handleNavItemClick" :class="$style.navItem" v-for="(obj, index) in codeSet" :key="index">

@@ -1,16 +1,18 @@
 /* Dependencies
 ========================================================================== */
+
+@import '~assets/styles/values/values.colors.scss';
+@import '~assets/styles/values/values.sizes.scss';
+
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-grid "sass-loader!~/assets/styles/objects/objects.grid.scss";
+@value o-absolute-center "sass-loader!~/assets/styles/objects/objects.absolute-center.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
-
-@import '~assets/styles/values/values.colors.scss';
-@import '~assets/styles/values/values.sizes.scss';
 
 
 
@@ -18,41 +20,56 @@
 
 /* Variables
 ========================================================================== */
+$radius: 50px;
+
+
 
 
 
 /* Root class
 ========================================================================== */
+
 .root {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 100px;  
+  width: $radius*2;
+  height: $radius*2;  
 }
 
-.svg {
-  max-width: 100%;
-  max-height: 100%;
-}
 
+
+
+
+/* Fills
+========================================================================== */
 
 .backgroundPath {
   stroke: $neutral-90;
 }
 
+
 .arcPath {
   stroke: $green;
 }
+
+
+
+
+
+/* Value
+========================================================================== */
+
+/**
+ *  1. Set line-height 0 to center on y-axis more precisely
+ *  2. Center on x-axs
+ */
 
 .value {
   composes: heading heading--beta  from o-heading;
   composes: margin-bottom-none  from u-spacings;
   composes: neutral-00  from c-text-color;
-  line-height: 0;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  width: 100%;
+  composes: y from o-absolute-center;
+  left: 0; /*[2]*/
+  text-align: center; /*[2]*/
+  width: 100%; /*[2]*/
 }

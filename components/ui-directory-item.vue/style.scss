@@ -1,9 +1,8 @@
 /* Dependencies
 ========================================================================== */
-// VALUES
+
 @import "~assets/styles/values/values.colors";
 
-// CLASSES
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-list-directory "sass-loader!~/assets/styles/objects/objects.list-directory.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
@@ -18,13 +17,15 @@
 @value u-hidden-visually "sass-loader!~/assets/styles/utilities/utilities.hidden-visually.scss";
 
 
+
+
+
 /* Root class
 ========================================================================== */
 
 .root {
   //
 }
-
 
 
 
@@ -45,14 +46,17 @@
   position: relative;
 }
 
+
 .item_isOpen {
   composes: bold  from c-text-style;
   color: $neutral-00;
 }
 
+
 .item_isActive {
   // NEEDS WORK
 }
+
 
   .itemIcon {
     composes: margin-right-sm  from u-spacings;
@@ -62,30 +66,33 @@
 
 
 
-
 /* Toggle
 ========================================================================== */
-  .toggle {
-    composes: padding-xs  from u-spacings;
-    display: block;
-    position: relative;
-    
-    &:hover,
-    &:focus {
-      background-color: $neutral-90;
-      box-shadow: inset 0 0 0 1px $neutral-70;
-    }
-  }
 
-  .toggle_isDisabled {
-    pointer-events: none;
+.toggle {
+  composes: padding-xs  from u-spacings;
+  display: block;
+  position: relative;
+  
+  &:hover,
+  &:focus {
+    background-color: $neutral-90;
+    box-shadow: inset 0 0 0 1px $neutral-70;
   }
+}
+
+
+.toggle_isDisabled {
+  pointer-events: none;
+}
+
 
 
 
 
 /* File Link
 ========================================================================== */
+
 .fileLink {
   composes: liner liner--link-bloater  from o-liner;
   
@@ -95,6 +102,7 @@
     box-shadow: inset 0 0 0 1px $neutral-70;
   }
 }
+
 
   .fileLinkText {
     composes: hidden-visually  from u-hidden-visually;
@@ -107,8 +115,11 @@
 /* Preview Link
 ========================================================================== */
 
-// Easiest to repeat .item here as all the code actually relates to
-// .previewLink
+/**
+ *  Easiest to repeat .item here as this block of code relates to
+ *  .previewLink
+ */
+
 .item {
   &:hover,
   &:focus {
@@ -124,7 +135,7 @@
     }
   }
 }
-  
+
 .previewLink {
   composes: liner liner--break-left  from o-liner;
   composes: padding-horizontal-xs  from u-spacings;
@@ -153,7 +164,6 @@
 
 
 
-
 /* Folder contents
 ========================================================================== */
 
@@ -164,5 +174,5 @@
 
   .indentLine {
     composes: list-directory__line  from o-list-directory;
-    border-left: 1px solid $neutral-30;
+    composes: heavy left  from c-border;
   }

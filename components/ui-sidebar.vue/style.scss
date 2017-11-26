@@ -1,5 +1,9 @@
 /* Dependencies
 ========================================================================== */
+
+@import "~assets/styles/values/values.breakpoints";
+@import "node_modules/sass-mq/mq";
+
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
@@ -10,38 +14,46 @@
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
-// VALUES
-@import "~assets/styles/values/values.breakpoints";
-
-// TOOLS
-@import "node_modules/sass-mq/mq";
 
 
-/* Root class
+
+/* Root
 ========================================================================== */
+
 .root {
-  // composes: box  from o-box;
   composes: neutral-95  from c-background-color;
   composes: bottom right light  from c-border;
   position: relative;
   height: 100%;
+  
   @include mq($from: tablet) {
     height: 100vh;
     overflow-y: scroll;
   }
 }
 
+
+/* Layout
+========================================================================== */
+
 .inner {
   composes: liner  from o-liner;
+  
   @include mq($until: tablet) {
     position: relative;
   }
 }
 
-.innerInner {
-  composes: box  from o-box;    
-}
+  .innerInner {
+    composes: box  from o-box;    
+  }
 
+
+
+
+
+/* Heading
+========================================================================== */
 .sidebarHeading {
   composes: heading heading--delta  from o-heading;
   composes: padding-bottom-sm  from u-spacings;

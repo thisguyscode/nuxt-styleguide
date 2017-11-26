@@ -1,7 +1,9 @@
 /* Dependencies
 ========================================================================== */
+
+@import "~assets/styles/values/values.colors";
+
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
-@value o-list-bare "sass-loader!~/assets/styles/objects/objects.list-bare.scss";
 
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-text-style "sass-loader!~/assets/styles/cosmetics/cosmetics.text-style.scss";
@@ -9,37 +11,47 @@
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
 
 
-// VALUES
-@import "~assets/styles/values/values.colors";
 
 
 
-
-/* X
+/* Root
 ========================================================================== */
+
 .root {
   composes: padding-vertical-xs padding-horizontal-sm  from u-spacings;
+  composes: hover-neutral-95  from c-background-color;
   text-align: left;
+
   &:hover {
     cursor: pointer;
-    background-color: $neutral-95;
+
     > .inner {
+      
       > .label {
         opacity: 1;
       }
+
       > .icon {
         opacity: 1;
       }
+
     }
   }
 }
 
+
+
+
+
+/* Child elements
+========================================================================== */
 
 .label {
   composes: text text--sm  from o-text;
   composes: bold  from c-text-style;
   opacity: .7;
 }
+
 
 .icon {
   composes: margin-right-xs  from u-spacings;

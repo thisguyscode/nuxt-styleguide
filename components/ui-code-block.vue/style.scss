@@ -1,5 +1,6 @@
 /* Dependencies
 ========================================================================== */
+
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-code "sass-loader!~/assets/styles/objects/objects.code.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
@@ -7,8 +8,10 @@
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
+@value c-border-radius "sass-loader!~/assets/styles/cosmetics/cosmetics.border-radius.scss";
 
 @value u-spacings "sass-loader!~/assets/styles/utilities/utilities.spacings.scss";
+
 
 
 
@@ -19,56 +22,54 @@ $gutter-width: 4rem;
 $horizontal-padding: 1.5rem;
 
 
+
+
+
 /* Root class
 ========================================================================== */
+
 .root {
   composes: neutral-10  from c-background-color;
-  max-width: 100%;
   overflow: hidden;
-  position: relative;
 }
+
 
 .root_rounded {
-  border-radius: 10px;
+  composes: lg  from c-border-radius;
 }
 
+
 .root_roundedBottomOnly {
-  border-radius: 0 0 10px 10px;
+  composes: bottom-lg  from c-border-radius;
 }
+
 
 
 
 
 /* Code classes
 ========================================================================== */
+
 .codeArea {
-  // box-shadow: inset 0 0 40px 4px black;
   position: relative;
-  max-width: 100%;
-  display: block;
-  position: relative;
-  overflow: hidden;
 }
 
-.code {
-  composes: box  from o-box;
-  composes: code  from o-code;
-  // composes: padding-left-xl  from u-spacings;
-  padding-left: $gutter-width + $horizontal-padding;
-  margin-right: $horizontal-padding;
-  overflow-x: scroll;
-  // padding-left: $gutter-width;
-}
 
-.pre {
-  //
-}
+  .code {
+    composes: box  from o-box;
+    composes: code  from o-code;
+    padding-left: $gutter-width + $horizontal-padding;
+    margin-right: $horizontal-padding;
+    overflow-x: scroll;
+  }
+
 
 
 
 
 /* Gutter
 ========================================================================== */
+
 .gutter {
   composes: box  from o-box;
   composes: liner liner--break-right  from o-liner;
@@ -76,9 +77,10 @@ $horizontal-padding: 1.5rem;
   composes: neutral-70  from c-text-color;
   composes: semi-neutral-00  from c-background-color;
   composes: right very-heavy from c-border;
-  text-align: right;
   width: $gutter-width;
+  text-align: right;
 }
+
 
   .gutterNumber {
     composes: code  from o-code;

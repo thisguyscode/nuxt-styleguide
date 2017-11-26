@@ -1,5 +1,6 @@
 /* Dependencies
 ========================================================================== */
+
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
 @value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
 @value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
@@ -42,8 +43,8 @@
   .textWrapper {
     composes: grid__cell  from o-grid;
     composes: padding-left-md padding-top-xs  from u-spacings;
-    flex-basis: 100%;
-    flex-shrink: 1;
+    flex-basis: 100%; // Need to add this to o-grid somehow
+    flex-shrink: 1; // Need to add this to o-grid somehow
   }
 
 

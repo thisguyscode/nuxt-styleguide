@@ -1,12 +1,10 @@
 /* Dependencies
 ========================================================================== */
+
 @value o-text "sass-loader!~/assets/styles/objects/objects.text.scss";
-@value o-heading "sass-loader!~/assets/styles/objects/objects.heading.scss";
-@value o-box "sass-loader!~/assets/styles/objects/objects.box.scss";
 @value o-list-inline "sass-loader!~/assets/styles/objects/objects.list-inline.scss";
 @value o-liner "sass-loader!~/assets/styles/objects/objects.liner.scss";
 
-@value c-button "sass-loader!~/assets/styles/cosmetics/cosmetics.button.scss";
 @value c-border "sass-loader!~/assets/styles/cosmetics/cosmetics.border.scss";
 @value c-background-color "sass-loader!~/assets/styles/cosmetics/cosmetics.background-color.scss";
 @value c-text-color "sass-loader!~/assets/styles/cosmetics/cosmetics.text-color.scss";
@@ -18,6 +16,20 @@
 
 
 
+/* Root
+========================================================================== */
+
+.root {
+
+}
+
+
+
+
+
+/* Nav
+========================================================================== */
+
 .nav {
   composes: neutral-10  from c-background-color;
   composes: bottom heavy  from c-border;
@@ -25,57 +37,68 @@
   position: relative;
 }
 
-.navList {
-  composes: list-inline list-inline--flush  from o-list-inline;
-}
 
-.navItem {
-  composes: list-inline__item  from o-list-inline;
-}
+  .navList {
+    composes: list-inline list-inline--flush  from o-list-inline;
+  }
 
 
+    .navItem {
+      composes: list-inline__item  from o-list-inline;
+    }
 
+
+
+
+
+/* Nav labels
+========================================================================== */
 
 .radio {
   display: none;
 }
+
+
+  .label {
+    composes: text text--sm  from o-text;
+    composes: neutral-70  from c-text-color;
+    composes: hover-orange  from c-background-color;
+    composes: bold  from c-text-style;
+    composes: padding-sm  from u-spacings;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+
 .radio:checked {
   ~ .label {
-    color: white !important;
+    color: white;
   }
 }
 
 
-.label {
-  composes: text text--sm  from o-text;
-  composes: neutral-70  from c-text-color;
-  composes: hover-orange  from c-background-color;
-  composes: bold  from c-text-style;
-  composes: padding-sm  from u-spacings;
-  // text-transform: uppercase;
-  cursor: pointer;
-  display: inline-block;
-}
 
 
 
+/* Show / Hide toggle
+========================================================================== */
 
 .codeToggle {
   composes: text text--sm  from o-text;
   composes: bold  from c-text-style;
   composes: padding-sm  from u-spacings;
   composes: liner liner--break-left  from o-liner;
-  display: block;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-.codeToggleText {
-  composes: margin-right-xs  from u-spacings;
-}
 
-.codeToggleIcon {
-  position: relative;
-  height: 1em;
-  vertical-align: text-top;
-}
+  .codeToggleText {
+    composes: margin-right-xs  from u-spacings;
+  }
+
+
+  .codeToggleIcon {
+    height: 1em;
+    vertical-align: text-top;
+  }

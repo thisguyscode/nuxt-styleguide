@@ -16,7 +16,6 @@
 ========================================================================== */
 .root {
   composes: box box--sm  from o-box;
-  position: relative;
 }
 
 
@@ -27,12 +26,10 @@
 ========================================================================== */
 .list {
   composes: list-inline list-inline--xs  from o-list-inline;
-  position: relative;
 }
 
   .item {
     composes: list-inline__item  from o-list-inline;
-    position: relative;
   }
   
 
@@ -48,7 +45,6 @@
 .currentRouteLink {
   composes: bold  from c-text-style;
   text-decoration: none;
-  position: relative;
 }
 
 .currentRouteLink,
@@ -57,7 +53,6 @@
   composes: margin-right-xs  from u-spacings;
   composes: text  from o-text;
   display: inline-block;
-  position: relative;
 }
 
 
@@ -70,10 +65,8 @@
   composes: margin-right-xs  from u-spacings;
   vertical-align: text-top;
   height: 1.1em;
-  position: relative;
 }
 
 .seperatorIcon {
   height: .6em;
-  position: relative;
 }
