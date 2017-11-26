@@ -39,26 +39,16 @@ module.exports = {
       */
       const vueLoader = config.module.rules.find(({loader}) => loader === 'vue-loader')
 
-      /*
-      ** Temporary - should be different localIdentName for production as
-      ** compared to development (see below)
-      */
-      vueLoader.options.cssModules = {
-        localIdentName: '[name]__[local]__[hash:2]'
+      if (ctx.dev) {
+        vueLoader.options.cssModules = {
+          localIdentName: '[name]__[local]'
+        }
+      } else {
+        vueLoader.options.cssModules = {
+          localIdentName: '[hash:8]'
+        }
       }
 
-      /*
-      ** Commented out for debugging convenience
-      */
-      // if (ctx.dev) {
-      //   vueLoader.options.cssModules = {
-      //     localIdentName: '[name]__[local]'
-      //   }
-      // } else {
-      //   vueLoader.options.cssModules = {
-      //     localIdentName: '[hash:8]'
-      //   }
-      // }
       if (ctx.isServer) {
         /** Dunno why but this allows vue-awesome icons to be rendered server-side */
         config.externals = [
