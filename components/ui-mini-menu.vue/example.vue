@@ -1,8 +1,8 @@
 <template>
   <ui-card>
     <ui-mini-menu>
-      <ui-menu-item label="Menu item"></ui-menu-item>
-      <ui-menu-item label="Another menu item"></ui-menu-item>
+      <ui-menu-item label="Menu item" @labelClicked="act('xyz')"/>
+      <ui-menu-item label="Another menu item" @labelClicked="act('xyz')"/>
     </ui-mini-menu>
   </ui-card>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     uiMenuItem,
     uiCard
+  },
+  methods: {
+    act: function (value) {
+      alert(value)
+    }
   }
 }
 </script>

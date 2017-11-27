@@ -1,6 +1,6 @@
 <template>
   <ul :class="$style.root">
-    <ui-menu-item :label="'Yo'" :onClick="act" :onClickArg="'acted'"/>
+    <ui-menu-item :label="'Yo'" @labelClicked="act('xyz')"/>
   </ul>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   methods: {
     act: function (value) {
-      console.log(value)
+      alert(value)
     }
   }
 }

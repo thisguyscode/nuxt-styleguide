@@ -1,6 +1,6 @@
 <li :class="$style.root">
   <span :class="$style.inner">
     <ui-icon :class="$style.icon" :name="iconName"/>
-    <span :class="$style.label" @click="clickFunction">{{label}}</span>
+    <span :class="$style.label" @click="$emit('labelClicked', data)">{{label}}</span>
   </span>
 </li>
