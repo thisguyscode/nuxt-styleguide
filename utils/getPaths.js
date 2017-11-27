@@ -4,7 +4,7 @@ function get (directoryObject) {
   var children = directoryObject.children
   for (var key in children) {
     var current = children[key]
-    paths.push('/home/' + current.path)
+    paths.push('/styleguide/' + current.path)
     if (current.children) {
       getPaths(current)
     }

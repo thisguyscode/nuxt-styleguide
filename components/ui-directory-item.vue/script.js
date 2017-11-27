@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     dirPrefix: function () {
-      return '/home/'
+      return '/styleguide/'
     },
     linkTo: function () {
       return this.dirPrefix + this.model.path

@@ -9,13 +9,13 @@ export default {
           var end = obj.path.length - 1
           var testString = obj.path.substr(start, end)
           if (testString === ':name') {
-            obj.path = '/home/components/' + this.$route.params.name
+            obj.path = '/styleguide/components/' + this.$route.params.name
             obj.type = 'file'
           } else if (testString === ':category') {
-            obj.path = '/home/common/' + this.$route.params.category
+            obj.path = '/styleguide/common/' + this.$route.params.category
             obj.type = 'folder'
           } else if (testString === ':file') {
-            obj.path = '/home/common/' + this.$route.params.category + '/' + this.$route.params.file
+            obj.path = '/styleguide/common/' + this.$route.params.category + '/' + this.$route.params.file
             obj.type = 'file'
           }
           list.push(obj)

@@ -1,7 +1,7 @@
 <template>
   <section>
-    <ui-page-heading icon="home">home</ui-page-heading>
-    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" iconName="folder" :to="'/home/' + i.path"/>
+    <ui-page-heading icon="home">styleguide</ui-page-heading>
+    <ui-page-preview v-for="i in pages" :key="i.id" :heading="i.name" iconName="folder" :to="'/styleguide/' + i.path"/>
   </section>
 </template>
 
