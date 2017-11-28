@@ -28,7 +28,6 @@ export default {
       var currentObject = commonFolder.children.find(function (child) {
         return child.name === self.$route.params.category
       })
-      console.log(currentObject)
       return currentObject.children
     }
   }
